@@ -65,9 +65,9 @@ personal-website/
 ## 👤 Author
 
 Egemen Günel
-- Website: [your-website-url]
-- GitHub: [@your-github]
-- LinkedIn: [your-linkedin]
+- Website: []
+- GitHub: [@egemengunel]
+- LinkedIn: [linkedin.com/in/egemengunel/]
 
 ## 📜 License
 
