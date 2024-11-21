@@ -66,8 +66,8 @@ personal-website/
 
 Egemen Günel
 - Website: []
-- GitHub: [@egemengunel]
-- LinkedIn: [linkedin.com/in/egemengunel/]
+- GitHub: @egemengunel
+- LinkedIn: linkedin.com/in/egemengunel/
 
 ## 📜 License
 
