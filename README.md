@@ -25,15 +25,16 @@ My personal portfolio website showcasing my projects, skills, and experiences.
 
 ## 📁 Project Structure
 personal-website/
-├── public/ # Static files and assets
+├── public/             # Static files and assets
 ├── src/
-│ ├── components/ # Reusable UI components
-│ ├── pages/ # Main page components
-│ ├── styles/ # Global styles and Tailwind utilities
-│ ├── hooks/ # Custom React hooks
-│ ├── utils/ # Helper functions
-│ └── App.tsx # Main App component
+│   ├── components/     # Reusable UI components
+│   ├── pages/          # Main page components
+│   ├── styles/         # Global styles and Tailwind utilities
+│   ├── hooks/          # Custom React hooks
+│   ├── utils/          # Helper functions
+│   └── App.tsx         # Main App component
 ├── index.html
+└── package.json
 
 
 ## 🔧 Configuration Files
