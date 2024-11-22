@@ -1,31 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   darkMode: 'class',
-  theme: {
-    extend: {
-      colors: {
-        black: '#000000',
-      },
-      animation: {
-        gradient: 'gradient 8s linear infinite',
-      },
-      keyframes: {
-        gradient: {
-          '0%, 100%': {
-            'background-size': '200% 200%',
-            'background-position': 'left center'
-          },
-          '50%': {
-            'background-size': '200% 200%',
-            'background-position': 'right center'
-          },
-        },
-      },
-    },
-  },
-  plugins: [],
+  safelist: [
+    'dark:bg-gray-800',
+    'dark:text-white',
+    'dark:hover:bg-gray-600',
+    'dark:bg-gray-700',
+    'dark:text-gray-400'
+  ]
 }

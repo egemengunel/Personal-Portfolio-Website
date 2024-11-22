@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { FaDownload } from 'react-icons/fa';
 
-export function CVDownload() {
+const CVDownload = () => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -22,3 +22,5 @@ export function CVDownload() {
     </motion.div>
   );
 }
+
+export default CVDownload;

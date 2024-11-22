@@ -17,3 +17,5 @@ export function Footer() {
     </motion.footer>
   );
 }
+
+export default Footer;

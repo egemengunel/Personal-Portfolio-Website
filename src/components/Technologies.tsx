@@ -64,7 +64,7 @@ const TechGrid = ({ technologies }: { technologies: typeof currentTechnologies }
   </div>
 );
 
-export function Technologies() {
+const Technologies = () => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -83,3 +83,5 @@ export function Technologies() {
     </motion.div>
   );
 }
+
+export default Technologies;

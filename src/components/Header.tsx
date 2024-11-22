@@ -18,6 +18,8 @@ export function Header() {
           <img
             src="/profile.jpeg"
             alt="Profile"
+            loading="eager"
+            decoding="async"
             className="relative z-10 w-full h-full rounded-full object-cover border-4 dark:border-gray-700/50 border-gray-200/50"
           />
           <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-200/50 to-gray-200/50 dark:from-blue-500/10 dark:to-purple-500/10 blur-md" />
