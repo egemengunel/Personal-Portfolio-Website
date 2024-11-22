@@ -1,41 +1,25 @@
-# Personal Website
+# Personal Portfolio Website
 
-My personal portfolio website showcasing my projects, skills, and experiences.
+A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS.
 
 ## 🚀 Features
 
-- Responsive design optimized for all devices
-- Dark/Light theme support
-- Interactive project showcase
-- Smooth animations and transitions
-- Contact form integration
-- Blog section for tech articles
-- SEO optimized
+- Responsive design for all devices
+- Dark/Light theme toggle
+- Project showcase with modal views
+- Interactive technology stack display
+- Social media links
+- Resume download
+- Git LFS for media files
 
-## 🛠️ Technologies
+## 🛠 Tech Stack
 
 - React 18
 - TypeScript
 - Tailwind CSS
+- Framer Motion
 - Vite
-- PostCSS
-- Framer Motion for animations
-- React Router for navigation
-- Email.js for contact form
-
-## 📁 Project Structure
-personal-website/
-├── public/             # Static files and assets
-├── src/
-│   ├── components/     # Reusable UI components
-│   ├── pages/          # Main page components
-│   ├── styles/         # Global styles and Tailwind utilities
-│   ├── hooks/          # Custom React hooks
-│   ├── utils/          # Helper functions
-│   └── App.tsx         # Main App component
-├── index.html
-└── package.json
-
+- Git LFS
 
 ## 🔧 Configuration Files
 
@@ -55,8 +39,7 @@ personal-website/
 
 ## 🎨 Color Scheme
 
-- Primary: `#007AFF`
-- Secondary: `#6B7280`
+- Primary: Blue gradient
 - Background (Light): `#FFFFFF`
 - Background (Dark): `#1A1A1A`
 - Text (Light): `#1F2937`
@@ -65,9 +48,8 @@ personal-website/
 ## 👤 Author
 
 Egemen Günel
-- Website: []
-- GitHub: @egemengunel
-- LinkedIn: linkedin.com/in/egemengunel/
+- GitHub: [@egemengunel](https://github.com/egemengunel)
+- LinkedIn: [egemengunel](https://linkedin.com/in/egemengunel/)
 
 ## 📜 License
 

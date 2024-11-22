@@ -83,19 +83,21 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
             ))}
           </div>
 
-          <div className="p-6">
-            <p className="text-gray-600 dark:text-gray-400 mb-8">
+          <div className="p-3 md:p-6">
+            <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 mb-4 md:mb-6">
               {project.description}
             </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
               {project.features.map((feature) => (
                 <div
                   key={feature.title}
-                  className="p-6 rounded-lg bg-gray-50 dark:bg-gray-700/50"
+                  className="p-3 md:p-6 rounded-lg bg-gray-50 dark:bg-gray-700/50"
                 >
-                  <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <h3 className="text-base md:text-xl font-semibold mb-1.5 md:mb-3">
+                    {feature.title}
+                  </h3>
+                  <p className="text-sm md:text-base text-gray-600 dark:text-gray-400">
                     {feature.description}
                   </p>
                 </div>
