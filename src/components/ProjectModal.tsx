@@ -1,5 +1,6 @@
 import { FaGithub, FaTimes } from 'react-icons/fa';
 import type { Project } from '../types/project';
+import { useState, useEffect } from 'react';
 
 interface ProjectModalProps {
   project: Project;
@@ -8,6 +9,22 @@ interface ProjectModalProps {
 }
 
 export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsLoading(true);
+      setError(null);
+    }
+  }, [isOpen]);
+
+  const handleIframeError = () => {
+    console.error('Failed to load video');
+    setError('Failed to load video');
+    setIsLoading(false);
+  };
+
   if (!isOpen) return null;
 
   return (
@@ -60,17 +77,27 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
             {project.media.map((media) => (
               <div key={media.url} className="relative">
                 {media.type === 'video' ? (
-                  <video
-                    src={media.url}
-                    poster={media.thumbnail}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full"
-                  >
-                    <source src={media.url} type="video/mp4" />
-                  </video>
+                  <div className="relative w-full aspect-video bg-gray-800">
+                    {isLoading && (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500" />
+                      </div>
+                    )}
+                    {error && (
+                      <div className="absolute inset-0 flex items-center justify-center text-red-500">
+                        {error}
+                      </div>
+                    )}
+                    <iframe
+                      src={`${media.url}?autoplay=1&loop=1&background=1&muted=1&controls=0&playsinline=1&transparent=1&app_id=58479`}
+                      allow="autoplay; fullscreen; picture-in-picture"
+                      className="absolute top-0 left-0 w-full h-full"
+                      frameBorder="0"
+                      title={media.caption}
+                      onLoad={() => setIsLoading(false)}
+                      onError={handleIframeError}
+                    />
+                  </div>
                 ) : (
                   <img
                     src={media.url}

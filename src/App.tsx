@@ -3,7 +3,7 @@ import { Header } from './components/Header';
 import { ThemeProvider } from './context/ThemeContext';
 import { ThemeToggle } from './components/ThemeToggle';
 
-const Projects = lazy(() => import('./components/Projects'));
+const Projects = lazy(() => import('./components/Projects').then(module => ({ default: module.Projects })));
 const Technologies = lazy(() => import('./components/Technologies'));
 const Footer = lazy(() => import('./components/Footer'));
 const CVDownload = lazy(() => import('./components/CVDownload'));
