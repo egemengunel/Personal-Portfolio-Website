@@ -42,7 +42,7 @@ export const projects: Project[] = [
   },
   {
     title: "Traveled Website",
-    description: "A modern travel planning platform built with PHP and MySQL, helping users discover and organize their travel experiences.",
+    description: "A modern travel blogging platform built with PHP and MySQL, helping users discover and organize their travel experiences.",
     link: "https://github.com/egemengunel/Traveled-Website-Project",
     techStack: [
       { icon: SiPhp, name: 'PHP' },
@@ -65,16 +65,16 @@ export const projects: Project[] = [
         description: "Comprehensive tools for planning and organizing trips"
       },
       {
-        title: "User Profiles",
-        description: "Personalized user accounts with travel preferences and history"
+        title: "Advanced Search Functionality",
+        description: "Advanced serach function to find places that have been blogged about"
       },
       {
         title: "Destination Discovery",
         description: "Explore popular destinations with detailed information"
       },
       {
-        title: "Interactive Maps",
-        description: "Visual travel planning with interactive map integration"
+        title: "Adding Reviews",
+        description: "Easy blog entry options right from the website"
       }
     ]
   },
@@ -100,7 +100,7 @@ export const projects: Project[] = [
     features: [
       {
         title: "User Authentication",
-        description: "Secure login and registration system with email verification"
+        description: "Secure login and registration system with email"
       },
       {
         title: "Pet Browse & Filter",
@@ -118,7 +118,7 @@ export const projects: Project[] = [
   },
   {
     title: "QUOX (Early Private Development)",
-    description: "A SwiftUI-based AI-powered quote generator currently in early private development. The development repository is private as the project evolves.",
+    description: "A joint SwiftUI-based AI-powered quote generator project with a friend,currently in early private development. The repository is kept private for the time being.",
     link: "#",
     techStack: [
       { icon: SiSwift, name: 'Swift' },
