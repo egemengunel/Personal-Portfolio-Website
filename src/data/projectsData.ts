@@ -18,7 +18,8 @@ export const projects: Project[] = [
       {
         type: 'video',
         url: 'https://player.vimeo.com/video/1032591004?h=708f6d97be&badge=0&autopause=0&player_id=0&app_id=58479',
-        caption: 'APOD Daily App Preview'
+        caption: 'APOD Daily App Preview',
+        thumbnail: ''
       }
     ],
     features: [
@@ -56,7 +57,8 @@ export const projects: Project[] = [
       {
         type: 'video',
         url: 'https://player.vimeo.com/video/1032591780?h=a19c024761&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
-        caption: 'Traveled Website Walkthrough'
+        caption: 'Traveled Website Walkthrough',
+        thumbnail: ''
       }
     ],
     features: [
@@ -94,7 +96,8 @@ export const projects: Project[] = [
       {
         type: 'video',
         url: 'https://player.vimeo.com/video/1032590859?h=d769a1670e&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
-        caption: 'AdoptMe Website Walkthrough'
+        caption: 'AdoptMe Website Walkthrough',
+        thumbnail: ''
       }
     ],
     features: [
@@ -132,7 +135,8 @@ export const projects: Project[] = [
       {
         type: 'video',
         url: 'https://player.vimeo.com/video/1032590894?h=da32acede6&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
-        caption: 'QUOX App Preview'
+        caption: 'QUOX App Preview',
+        thumbnail: ''
       }
     ],
     features: [

@@ -1,6 +1,6 @@
 import { FaGithub, FaTimes } from 'react-icons/fa';
 import type { Project } from '../types/project';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 interface ProjectModalProps {
   project: Project;
@@ -11,19 +11,6 @@ interface ProjectModalProps {
 export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (isOpen) {
-      setIsLoading(true);
-      setError(null);
-    }
-  }, [isOpen]);
-
-  const handleIframeError = () => {
-    console.error('Failed to load video');
-    setError('Failed to load video');
-    setIsLoading(false);
-  };
 
   if (!isOpen) return null;
 
@@ -79,8 +66,9 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
                 {media.type === 'video' ? (
                   <div className="relative w-full aspect-video bg-gray-800">
                     {isLoading && (
-                      <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
                         <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500" />
+                        <p className="text-sm text-gray-400">Loading video...</p>
                       </div>
                     )}
                     {error && (
@@ -89,13 +77,17 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
                       </div>
                     )}
                     <iframe
-                      src={`${media.url}?autoplay=1&loop=1&background=1&muted=1&controls=0&playsinline=1&transparent=1&app_id=58479`}
+                      src={`${media.url}?autoplay=0&preload=metadata&quality=auto&background=1&muted=1&controls=1&playsinline=1&transparent=1`}
                       allow="autoplay; fullscreen; picture-in-picture"
-                      className="absolute top-0 left-0 w-full h-full"
+                      className={`absolute top-0 left-0 w-full h-full transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
                       frameBorder="0"
                       title={media.caption}
                       onLoad={() => setIsLoading(false)}
-                      onError={handleIframeError}
+                      onError={() => {
+                        setError('Failed to load video');
+                        setIsLoading(false);
+                      }}
+                      loading="lazy"
                     />
                   </div>
                 ) : (
