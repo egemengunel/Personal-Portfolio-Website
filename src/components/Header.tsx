@@ -8,6 +8,10 @@ export function Header() {
           src="/profile.jpeg"
           alt="Profile"
           className="w-20 h-20 md:w-32 md:h-32 rounded-full mx-auto border-4 border-gray-200 dark:border-gray-700"
+          loading="eager"
+          decoding="async"
+          width={128}
+          height={128}
         />
         <h1 className="text-3xl md:text-5xl font-bold mt-3 md:mt-6 mb-3 md:mb-6 leading-relaxed bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
           Egemen Günel

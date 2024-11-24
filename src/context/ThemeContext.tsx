@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, ReactNode, useCallback } from 'react';
 
 interface ThemeContextType {
   isDark: boolean;
@@ -9,13 +9,10 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [isDark, setIsDark] = useState(() => {
-    // Check localStorage first
+    if (typeof window === 'undefined') return false;
     const stored = localStorage.getItem('darkMode');
-    if (stored !== null) {
-      return stored === 'true';
-    }
-    // Fall back to system preference
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return stored !== null ? stored === 'true' 
+      : window.matchMedia('(prefers-color-scheme: dark)').matches;
   });
 
   useEffect(() => {
@@ -36,13 +33,13 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
-  const toggleTheme = () => {
+  const toggleTheme = useCallback(() => {
     setIsDark(prev => {
       const newValue = !prev;
       localStorage.setItem('darkMode', String(newValue));
       return newValue;
     });
-  };
+  }, []);
 
   return (
     <ThemeContext.Provider value={{ isDark, toggleTheme }}>

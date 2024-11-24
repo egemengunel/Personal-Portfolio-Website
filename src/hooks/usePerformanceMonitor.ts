@@ -6,7 +6,11 @@ export function usePerformanceMonitor(componentName: string) {
     
     return () => {
       const endTime = performance.now();
-      console.debug(`${componentName} render time: ${endTime - startTime}ms`);
+      // Only log in development
+      const isDev = typeof window !== 'undefined' && window.location.hostname === 'localhost';
+      if (isDev) {
+        console.debug(`${componentName} render time: ${endTime - startTime}ms`);
+      }
     };
   }, [componentName]);
 }

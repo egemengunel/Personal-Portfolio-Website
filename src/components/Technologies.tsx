@@ -18,28 +18,39 @@ import {
 } from 'react-icons/si';
 import { TbAugmentedReality } from 'react-icons/tb';
 
+const TechIcons = {
+  Current: {
+    SiPhp, SiSwift, SiJavascript, SiHtml5, SiCss3, 
+    SiGit, SiMysql, SiFigma, SiXcode
+  },
+  Learning: {
+    SiPython, SiCsharp, SiDotnet, SiReact, 
+    SiTailwindcss, SiTypescript, TbAugmentedReality
+  }
+};
+
 const currentTechnologies = [
-  { icon: SiPhp, name: 'PHP' },
-  { icon: SiSwift, name: 'Swift/SwiftUI' },
-  { icon: SiJavascript, name: 'JavaScript' },
-  { icon: SiHtml5, name: 'HTML5' },
-  { icon: SiCss3, name: 'CSS3' },
-  { icon: SiGit, name: 'Git' },
-  { icon: SiMysql, name: 'MySQL' },
-  { icon: SiFigma, name: 'Figma' },
-  { icon: SiXcode, name: 'Xcode' }
+  { icon: TechIcons.Current.SiPhp, name: 'PHP' },
+  { icon: TechIcons.Current.SiSwift, name: 'Swift/SwiftUI' },
+  { icon: TechIcons.Current.SiJavascript, name: 'JavaScript' },
+  { icon: TechIcons.Current.SiHtml5, name: 'HTML5' },
+  { icon: TechIcons.Current.SiCss3, name: 'CSS3' },
+  { icon: TechIcons.Current.SiGit, name: 'Git' },
+  { icon: TechIcons.Current.SiMysql, name: 'MySQL' },
+  { icon: TechIcons.Current.SiFigma, name: 'Figma' },
+  { icon: TechIcons.Current.SiXcode, name: 'Xcode' }
 ];
 
 const learningTechnologies = [
- { icon: SiPython, name: 'Python' },
-  { icon: SiCsharp, name: 'C#' },
-  { icon: SiDotnet, name: '.NET' },
-  { icon: SiReact, name: 'React' },
-  { icon: SiTailwindcss, name: 'Tailwind' },
-  { icon: SiTypescript, name: 'TypeScript' },
-  { icon: TbAugmentedReality, name: 'RealityKit' },
+ { icon: TechIcons.Learning.SiPython, name: 'Python' },
+  { icon: TechIcons.Learning.SiCsharp, name: 'C#' },
+  { icon: TechIcons.Learning.SiDotnet, name: '.NET' },
+  { icon: TechIcons.Learning.SiReact, name: 'React' },
+  { icon: TechIcons.Learning.SiTailwindcss, name: 'Tailwind' },
+  { icon: TechIcons.Learning.SiTypescript, name: 'TypeScript' },
+  { icon: TechIcons.Learning.TbAugmentedReality, name: 'RealityKit' },
   { 
-    icon: TbAugmentedReality, 
+    icon: TechIcons.Learning.TbAugmentedReality, 
     name: 'Reality Composer Pro',
     className: "transform rotate-180"
   }

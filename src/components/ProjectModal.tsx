@@ -1,6 +1,6 @@
 import { FaGithub, FaTimes } from 'react-icons/fa';
 import type { Project } from '../types/project';
-import { useState } from 'react';
+import { useState, useCallback, useEffect, memo } from 'react';
 
 interface ProjectModalProps {
   project: Project;
@@ -8,9 +8,28 @@ interface ProjectModalProps {
   onClose: () => void;
 }
 
-export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
+export const ProjectModal = memo(function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  const handleEscape = useCallback((e: KeyboardEvent) => {
+    if (e.key === 'Escape') onClose();
+  }, [onClose]);
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [handleEscape]);
+
+  // Prevent scroll when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = 'unset';
+      };
+    }
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
@@ -127,6 +146,6 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
       </div>
     </div>
   );
-}
+});
 
 export default ProjectModal;

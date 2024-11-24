@@ -1,15 +1,32 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { visualizer } from 'rollup-plugin-visualizer';
 
-export default defineConfig({
-  plugins: [react()],
+export default defineConfig(({ mode }) => ({
+  plugins: [
+    react(),
+    mode === 'analyze' && visualizer({
+      open: true,
+      gzipSize: true,
+      brotliSize: true,
+    }),
+  ].filter(Boolean),
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react/jsx-dev-runtime'],
+    force: true // Force dependency optimization on every serve
+  },
   server: {
-    port: 5173,
-    host: true
+    watch: {
+      usePolling: true // Add polling for better HMR
+    },
+    hmr: {
+      overlay: true // Show HMR overlay for better error reporting
+    }
   },
   build: {
-    outDir: 'dist',
-    sourcemap: true,
+    target: 'esnext',
+    minify: 'terser',
+    sourcemap: false,
     rollupOptions: {
       output: {
         manualChunks: {
@@ -17,14 +34,10 @@ export default defineConfig({
           'icons': ['react-icons']
         }
       }
-    }
-  },
-  optimizeDeps: {
-    include: ['react', 'react-dom', 'framer-motion', 'react-icons']
-  },
-  resolve: {
-    alias: {
-      '@': '/src'
+    },
+    commonjsOptions: {
+      include: [/node_modules/],
+      extensions: ['.js', '.cjs']
     }
   }
-});
+}));
