@@ -1,6 +1,6 @@
 # Personal Portfolio Website
 
-A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS.
+A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. Visit the live site at [egemengunel.dev](https://egemengunel.dev)
 
 ## 🚀 Features
 
@@ -10,7 +10,7 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 - Interactive technology stack display
 - Social media links
 - Resume download
-- Git LFS for media files
+- Smooth animations with Framer Motion
 
 ## 🛠 Tech Stack
 
@@ -19,7 +19,6 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 - Tailwind CSS
 - Framer Motion
 - Vite
-- Git LFS
 
 ## 🔧 Configuration Files
 
@@ -48,6 +47,7 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 ## 👤 Author
 
 Egemen Günel
+- Website: [egemengunel.dev](https://egemengunel.dev)
 - GitHub: [@egemengunel](https://github.com/egemengunel)
 - LinkedIn: [egemengunel](https://linkedin.com/in/egemengunel/)
 
