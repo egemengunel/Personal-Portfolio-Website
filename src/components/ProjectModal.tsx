@@ -9,8 +9,7 @@ interface ProjectModalProps {
 }
 
 export const ProjectModal = memo(function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [isVideoLoading, setIsVideoLoading] = useState(true);
 
   const handleEscape = useCallback((e: KeyboardEvent) => {
     if (e.key === 'Escape') onClose();
@@ -80,43 +79,33 @@ export const ProjectModal = memo(function ProjectModal({ project, isOpen, onClos
           </div>
 
           <div className="relative">
-            {project.media.map((media) => (
-              <div key={media.url} className="relative">
-                {media.type === 'video' ? (
-                  <div className="relative w-full aspect-video bg-gray-800">
-                    {isLoading && (
-                      <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
-                        <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500" />
-                        <p className="text-sm text-gray-400">Loading video...</p>
+            {project.media.map((item, index) => (
+              <div key={index} className="relative">
+                {item.type === 'video' ? (
+                  <>
+                    {isVideoLoading && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-gray-100 dark:bg-gray-800">
+                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
                       </div>
                     )}
-                    {error && (
-                      <div className="absolute inset-0 flex items-center justify-center text-red-500">
-                        {error}
-                      </div>
-                    )}
-                    <iframe
-                      src={`${media.url}?autoplay=0&preload=metadata&quality=auto&background=1&muted=1&controls=1&playsinline=1&transparent=1`}
-                      allow="autoplay; fullscreen; picture-in-picture"
-                      className={`absolute top-0 left-0 w-full h-full transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
-                      frameBorder="0"
-                      title={media.caption}
-                      onLoad={() => setIsLoading(false)}
-                      onError={() => {
-                        setError('Failed to load video');
-                        setIsLoading(false);
-                      }}
-                      loading="lazy"
-                    />
-                  </div>
+                    <div className="relative pt-[56.25%]">
+                      <iframe
+                        src={`${item.url}&autoplay=1&controls=0&loop=1&background=1&muted=1`}
+                        className="absolute inset-0 w-full h-full rounded-lg"
+                        allow="autoplay; fullscreen; picture-in-picture"
+                        onLoad={() => setIsVideoLoading(false)}
+                      ></iframe>
+                    </div>
+                  </>
                 ) : (
                   <img
-                    src={media.url}
-                    alt={media.caption}
+                    src={item.url}
+                    alt={item.caption}
                     className="w-full"
                     loading="lazy"
                   />
                 )}
+                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">{item.caption}</p>
               </div>
             ))}
           </div>
