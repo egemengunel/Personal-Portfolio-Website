@@ -1,14 +1,12 @@
 import { SiPhp, SiMysql, SiHtml5, SiCss3, SiSwift, SiFigma, SiXcode, SiGit } from 'react-icons/si';
 import { TbBrain } from 'react-icons/tb';
-import { SiReact, SiTailwindcss, SiOpenai, SiGooglecloud } from 'react-icons/si';
-import { SiMapbox, SiTypescript } from 'react-icons/si';
 import type { Project } from '../types/project';
 
 export const projects: Project[] = [
   {
-    title: "APOD Daily",
+    title: "Cosmo Papers (Private Development)",
     description: "A SwiftUI application that showcases NASA's Astronomy Picture of the Day, featuring daily space imagery and educational content.",
-    link: "https://github.com/egemengunel/APOD-Daily",
+    link: "#",
     techStack: [
       { icon: SiSwift, name: 'Swift' },
       { icon: SiSwift, name: 'SwiftUI' },
@@ -19,8 +17,8 @@ export const projects: Project[] = [
     media: [
       {
         type: 'video',
-        url: 'https://player.vimeo.com/video/1032591004?h=708f6d97be&badge=0&autopause=0&player_id=0&app_id=58479',
-        caption: 'APOD Daily App Preview',
+        url: 'https://player.vimeo.com/video/1067137946?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+        caption: '',
         thumbnail: ''
       }
     ],
@@ -59,7 +57,7 @@ export const projects: Project[] = [
       {
         type: 'video',
         url: 'https://player.vimeo.com/video/1032591780?h=a19c024761&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
-        caption: 'Traveled Website Walkthrough',
+        caption: '',
         thumbnail: ''
       }
     ],
@@ -98,7 +96,7 @@ export const projects: Project[] = [
       {
         type: 'video',
         url: 'https://player.vimeo.com/video/1032590859?h=d769a1670e&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
-        caption: 'AdoptMe Website Walkthrough',
+        caption: '',
         thumbnail: ''
       }
     ],
@@ -122,7 +120,7 @@ export const projects: Project[] = [
     ]
   },
   {
-    title: "QUOX (Early Private Development)",
+    title: "QUOX (Private Development)",
     description: "A joint SwiftUI-based AI-powered quote generator project with a friend,currently in early private development. The repository is kept private for the time being.",
     link: "#",
     techStack: [
@@ -153,45 +151,6 @@ export const projects: Project[] = [
       {
         title: "Development Status",
         description: "Currently in early private development phase, focusing on core functionality and user experience"
-      }
-    ]
-  },
-  {
-    title: "AI Travel Planner (Early Private Development)",
-    description: "A SaaS platform leveraging AI to create personalized travel itineraries with real-time optimization and interactive features.",
-    link: "#",
-    techStack: [
-      { icon: SiReact, name: 'React' },
-      { icon: SiTypescript, name: 'TypeScript' },
-      { icon: SiTailwindcss, name: 'TailwindCSS' },
-      { icon: SiOpenai, name: 'OpenAI' },
-      { icon: SiGooglecloud, name: 'Google Maps' },
-      { icon: SiMapbox, name: 'Mapbox' }
-    ],
-    media: [
-      {
-        type: 'video',
-        url: 'https://player.vimeo.com/video/1037032951?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
-        caption: '',
-        thumbnail: ''
-      }
-    ],
-    features: [
-      {
-        title: "AI-Powered Itineraries",
-        description: "Generates personalized travel plans using advanced AI algorithms and user preferences"
-      },
-      {
-        title: "Route Optimization",
-        description: "Smart routing system for efficient city exploration and multi-city trips"
-      },
-      {
-        title: "Interactive Maps",
-        description: "Visual journey planning with integrated Google Maps and points of interest"
-      },
-      {
-        title: "Freemium Model",
-        description: "Free basic features with premium tier offering advanced customization ($5.99/month)"
       }
     ]
   }

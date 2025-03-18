@@ -3,7 +3,7 @@ import { SocialLink } from './SocialLink';
 
 const socialLinks = [
   {
-    href: "https://x.com/OnlyTrueNote7",
+    href: "https://x.com/EgemenTheDev",
     icon: FaTwitter,
     label: "Twitter"
   },

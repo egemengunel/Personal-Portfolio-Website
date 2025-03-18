@@ -11,6 +11,9 @@ export default defineConfig(({ mode }) => ({
       brotliSize: true,
     }),
   ].filter(Boolean),
+  define: {
+    'process.env.NODE_ENV': JSON.stringify(mode)
+  },
   optimizeDeps: {
     include: ['react', 'react-dom', 'react/jsx-dev-runtime'],
     force: true // Force dependency optimization on every serve
