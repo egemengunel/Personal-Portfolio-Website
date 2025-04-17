@@ -42,43 +42,43 @@ export const projects: Project[] = [
     ]
   },
   {
-    title: "Traveled Website",
-    description: "A modern travel blogging platform built with PHP and MySQL, helping users discover and organize their travel experiences.",
-    link: "https://github.com/egemengunel/Traveled-Website-Project",
+    title: "Moodful Music",
+    description: "A macOS app that creates personalized tracks based on mood and envorinment selections using an ML Model.",
+    link: "https://github.com/egemengunel/Moodful-Music",
     techStack: [
-      { icon: SiPhp, name: 'PHP' },
-      { icon: SiMysql, name: 'MySQL' },
-      { icon: SiHtml5, name: 'HTML5' },
-      { icon: SiCss3, name: 'CSS3' },
-      { icon: SiGit, name: 'Git' },
-      { icon: SiFigma, name: 'Figma' }
+      { icon: SiSwift, name: 'Swift' },
+      { icon: SiSwift, name: 'SwiftUI' },
+      { icon: SiFigma, name: 'Figma' },
+      { icon: SiXcode, name: 'Xcode' },
+      { icon: SiGit, name: 'Git' }
     ],
     media: [
       {
         type: 'video',
-        url: 'https://player.vimeo.com/video/1032591780?h=a19c024761&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+        url: 'https://player.vimeo.com/video/1076403650?h=6d4923ed5c&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
         caption: '',
         thumbnail: ''
       }
     ],
     features: [
       {
-        title: "Travel Planning",
-        description: "Comprehensive tools for planning and organizing trips"
+        title: "Mood-Based Recommendations",
+        description: "Get personalized music suggestions based on your current mood and surroundings"
       },
       {
-        title: "Advanced Search Functionality",
-        description: "Advanced serach function to find places that have been blogged about"
+        title: "Core ML Integration",
+        description: "Powered by a custom-trained text classification model using Create ML"
       },
       {
-        title: "Destination Discovery",
-        description: "Explore popular destinations with detailed information"
+        title: "Minimal SwiftUI Design",
+        description: "Clean, modern interface with a lightweight and responsive layout"
       },
       {
-        title: "Adding Reviews",
-        description: "Easy blog entry options right from the website"
+        title: "Built-in Audio Playback",
+        description: "Listen to curated tracks instantly with seamless AVFoundation integration"
       }
     ]
+    
   },
   {
     title: "AdoptMe Website",
