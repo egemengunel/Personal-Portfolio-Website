@@ -1,62 +1,42 @@
 import { motion } from 'framer-motion';
 import { 
-  SiPhp, 
-  SiSwift, 
-  SiDotnet, 
-  SiReact, 
+  SiSwift,  
   SiTailwindcss, 
-  SiTypescript,
   SiJavascript,
-  SiHtml5,
-  SiCss3,
+  SiTypescript,
   SiGit,
-  SiMysql,
-  SiCsharp,
+  SiPrisma,
   SiPython,
   SiFigma,
   SiXcode
 } from 'react-icons/si';
-import { TbAugmentedReality } from 'react-icons/tb';
 
 const TechIcons = {
   Current: {
-    SiPhp, SiSwift, SiJavascript, SiHtml5, SiCss3, 
-    SiGit, SiMysql, SiFigma, SiXcode
+    SiSwift, SiJavascript, SiTypescript, SiPython
   },
-  Learning: {
-    SiPython, SiCsharp, SiDotnet, SiReact, 
-    SiTailwindcss, SiTypescript, TbAugmentedReality
+  Tools: {
+    SiGit, SiPrisma, SiFigma, SiXcode, SiTailwindcss
   }
 };
 
-const currentTechnologies = [
-  { icon: TechIcons.Current.SiPhp, name: 'PHP' },
-  { icon: TechIcons.Current.SiSwift, name: 'Swift/SwiftUI' },
+const languages = [
+  { icon: TechIcons.Current.SiSwift, name: 'Swift' },
   { icon: TechIcons.Current.SiJavascript, name: 'JavaScript' },
-  { icon: TechIcons.Current.SiHtml5, name: 'HTML5' },
-  { icon: TechIcons.Current.SiCss3, name: 'CSS3' },
-  { icon: TechIcons.Current.SiGit, name: 'Git' },
-  { icon: TechIcons.Current.SiMysql, name: 'MySQL' },
-  { icon: TechIcons.Current.SiFigma, name: 'Figma' },
-  { icon: TechIcons.Current.SiXcode, name: 'Xcode' }
+  { icon: TechIcons.Current.SiTypescript, name: 'TypeScript' },
+  { icon: TechIcons.Current.SiPython, name: 'Python' }
+ 
 ];
 
-const learningTechnologies = [
- { icon: TechIcons.Learning.SiPython, name: 'Python' },
-  { icon: TechIcons.Learning.SiCsharp, name: 'C#' },
-  { icon: TechIcons.Learning.SiDotnet, name: '.NET' },
-  { icon: TechIcons.Learning.SiReact, name: 'React' },
-  { icon: TechIcons.Learning.SiTailwindcss, name: 'Tailwind' },
-  { icon: TechIcons.Learning.SiTypescript, name: 'TypeScript' },
-  { icon: TechIcons.Learning.TbAugmentedReality, name: 'RealityKit' },
-  { 
-    icon: TechIcons.Learning.TbAugmentedReality, 
-    name: 'Reality Composer Pro',
-    className: "transform rotate-180"
-  }
+const tools = [
+  { icon: TechIcons.Tools.SiGit, name: 'Git' },
+  { icon: TechIcons.Tools.SiPrisma, name: 'Prisma' },
+  { icon: TechIcons.Tools.SiFigma, name: 'Figma' },
+  { icon: TechIcons.Tools.SiXcode, name: 'XCode' },
+  { icon: TechIcons.Tools.SiTailwindcss, name: 'Tailwind' },
 ];
 
-const TechGrid = ({ technologies }: { technologies: typeof currentTechnologies }) => (
+const TechGrid = ({ technologies }: { technologies: typeof languages }) => (
   <div className="flex flex-wrap justify-center gap-6">
     {technologies.map((tech) => (
       <motion.div
@@ -84,13 +64,13 @@ const Technologies = () => {
       className="mb-16"
     >
       <h2 className="text-2xl font-bold mb-8 text-center dark:text-white text-gray-900">
-        Technologies I Work With
+        Technologies I Work With:
       </h2>
-      <TechGrid technologies={currentTechnologies} />
+      <TechGrid technologies={languages} />
       <h2 className="text-2xl font-bold mt-16 mb-8 text-center dark:text-white text-gray-900">
-        Technologies I'm Learning
+       Tools I Use:
       </h2>
-      <TechGrid technologies={learningTechnologies} />
+      <TechGrid technologies={tools} />
     </motion.div>
   );
 }

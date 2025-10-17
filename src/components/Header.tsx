@@ -13,25 +13,29 @@ export function Header() {
           width={128}
           height={128}
         />
-        <h1 className="text-3xl md:text-5xl font-bold mt-3 md:mt-6 mb-3 md:mb-6 leading-relaxed bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
+        <h1 className="text-3xl md:text-5xl font-bold mt-3 md:mt-6 mb-3 md:mb-6 leading-relaxed text-gray-900 dark:text-white">
           Egemen Günel
         </h1>
       </div>
 
       <div className="space-y-3 md:space-y-6 text-gray-600 dark:text-gray-300">
         <p className="text-base md:text-xl leading-relaxed">
-          Hey 👋 I'm a Computer Engineering student at{" "}
+          Hello 👋, I'm a Computer Engineering student at{" "}
           <span className="text-blue-500 dark:text-blue-400">
-            Opole University of Technology
+            Opole University of Technology,
           </span>{" "}
-          with a passion for exploring all things technology. Currently, I'm focusing on web development and iOS development, where I enjoy building personal projects alongside my university coursework. My Swift projects and this website are great examples of this hands-on approach.
+          specializing in iOS and full-stack web development. I've published my own app on the App Store, contributed to an established web platform during my internship at WeDance, and am currently developing a respiratory health app using SwiftUI and machine learning for my thesis.
         </p>
 
         <p className="text-sm md:text-lg leading-relaxed">
-          I'm always looking to discover and learn new technologies. In the future, I would love to dive deeper into{" "}
-          <span className="text-purple-500 dark:text-purple-400">Machine Learning</span> algorithms, integrate{" "}
-          <span className="text-green-500 dark:text-green-400">RealityKit</span> into my projects, and create spatial applications for{" "}
-          <span className="text-blue-500 dark:text-blue-400">visionOS</span>. Embracing the latest advancements in technology is what drives me forward.
+        My passion lies in creating polished user experiences through clean code and thoughtful design. I enjoy working with{" "}
+          <span className="text-purple-500 dark:text-purple-400">Swift, SwiftUI,</span>
+          {" "}
+          <span className="text-green-500 dark:text-green-400">TypeScript</span> and modern web frameworks like {" "}
+          <span className="text-blue-500 dark:text-blue-400">Vue and Nuxt.</span>When I'm not coding, you'll find me exploring new technologies and refining my UI animation skills.
+        </p>
+        <p className="text-sm md:text-lg leading-relaxed">
+        I'm currently looking for opportunities where I can apply my skills in iOS or web development while continuing to grow as a developer.
         </p>
       </div>
 
