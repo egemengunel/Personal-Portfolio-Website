@@ -17,7 +17,7 @@ function App() {
   return (
     <ErrorBoundary>
   
-        <div className="min-h-screen bg-white text-gray-900">
+        <div className="min-h-screen bg-gray-50 text-gray-900">
           <div className="max-w-4xl mx-auto px-4 py-16">
             <MemoizedHeader />
             <Suspense fallback={<div className="animate-pulse h-16 bg-gray-200 rounded" />}>

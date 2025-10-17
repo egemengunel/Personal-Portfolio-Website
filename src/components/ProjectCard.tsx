@@ -14,7 +14,7 @@ export function ProjectCard(project: Project) {
         onClick={() => setIsModalOpen(true)}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className="block p-4 md:p-6 rounded-lg dark:bg-gray-800/50 bg-gray-100/70 hover:bg-gray-200/80 dark:hover:bg-gray-800/70 transition-colors cursor-pointer"
+        className="block p-4 md:p-6 rounded-lg bg-gray-200 hover:bg-gray-300 transition-colors cursor-pointer"
         initial={false}
         animate={{
           scale: isHovered ? 1.02 : 1,

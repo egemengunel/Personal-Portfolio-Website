@@ -5,7 +5,7 @@ import { projects } from '../data/projectsData';
 export function Projects() {
   return (
     <section className="mb-8 md:mb-16">
-      <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
+      <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-8 text-gray-900">
         My Projects
       </h2>
       

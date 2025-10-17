@@ -4,7 +4,7 @@ import type { Project } from '../types/project';
 
 export const projects: Project[] = [
   {
-    title: "Cosmo Papers (Private Development)",
+    title: "Cosmo Papers",
     description: "A SwiftUI application that showcases NASA's Astronomy Picture of the Day, featuring daily space imagery and educational content.",
     link: "#",
     techStack: [
@@ -78,7 +78,7 @@ export const projects: Project[] = [
         description: "Listen to curated tracks instantly with seamless AVFoundation integration"
       }
     ]
-    
+
   },
   {
     title: "AdoptMe Website",
