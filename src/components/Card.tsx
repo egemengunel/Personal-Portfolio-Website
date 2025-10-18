@@ -5,8 +5,9 @@ import { DetailModal } from './DetailModal';
 export function Card(project: Project) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   
-  // Get the first tech stack icon as the main icon
+  // Get the icon - either custom image or first tech stack icon
   const Icon = project.techStack[0]?.icon;
+  const hasCustomIcon = !!project.icon;
 
   return (
     <>
@@ -16,11 +17,19 @@ export function Card(project: Project) {
       >
         {/* Icon Section */}
         <div className="flex-shrink-0">
-          <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl bg-gray-900 flex items-center justify-center">
-            {Icon && (
-              <Icon className="w-6 h-6 md:w-8 md:h-8 text-white" />
-            )}
-          </div>
+          {hasCustomIcon ? (
+            <img 
+              src={project.icon} 
+              alt={`${project.title} icon`}
+              className="w-12 h-12 md:w-16 md:h-16 rounded-xl object-cover"
+            />
+          ) : (
+            <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl bg-gray-900 flex items-center justify-center">
+              {Icon && (
+                <Icon className="w-6 h-6 md:w-8 md:h-8 text-white" />
+              )}
+            </div>
+          )}
         </div>
 
         {/* Content Section */}

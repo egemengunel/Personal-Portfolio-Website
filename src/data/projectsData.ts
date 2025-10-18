@@ -7,6 +7,7 @@ export const projects: Project[] = [
     title: "Coughylyzer (Thesis Project)",
     description: "An iOS application that analyzes respiratory sounds to identify potential respiratory conditions using machine learning, developed as my Computer Engineering thesis.",
     link: "#",
+    icon: "/icons/coughylyzer-icon.png",
     techStack: [
       { icon: SiSwift, name: 'Swift' },
       { icon: SiSwift, name: 'SwiftUI' },
@@ -64,6 +65,7 @@ export const projects: Project[] = [
     title: "Cosmo Papers",
     description: "A SwiftUI application that showcases NASA's Astronomy Picture of the Day, featuring daily space imagery and educational content.",
     link: "#",
+    icon: "/icons/cosmo-papers-icon.png",
     techStack: [
       { icon: SiSwift, name: 'Swift' },
       { icon: SiSwift, name: 'SwiftUI' },
@@ -116,6 +118,7 @@ export const projects: Project[] = [
     title: "Moodful Music",
     description: "A macOS app that creates personalized tracks based on mood and envorinment selections using an ML Model.",
     link: "https://github.com/egemengunel/Moodful-Music",
+    icon: "/icons/moodful-music-icon.png",
     techStack: [
       { icon: SiSwift, name: 'Swift' },
       { icon: SiSwift, name: 'SwiftUI' },
@@ -161,6 +164,7 @@ export const projects: Project[] = [
     title: "AdoptMe Website",
     description: "A responsive web application built with PHP that simplifies the pet adoption process, featuring user authentication and favorites system.",
     link: "https://github.com/egemengunel/AdoptMe-Website",
+    icon: "/icons/adoptme-website-icon.jpg",
     techStack: [
       { icon: SiPhp, name: 'PHP' },
       { icon: SiMysql, name: 'MySQL' },
@@ -171,11 +175,17 @@ export const projects: Project[] = [
     ],
     media: [
       {
-        type: 'video',
-        url: 'https://player.vimeo.com/video/1032590859?h=d769a1670e&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
-
-        thumbnail: ''
-      }
+        type: 'image',
+        url: '/projects/adoptme-website/screenshot1.jpg',
+      },
+      {
+        type: 'image',
+        url: '/projects/adoptme-website/screenshot2.jpg',
+      },
+      {
+        type: 'image',
+        url: '/projects/adoptme-website/screenshot3.jpg',
+      },
     ],
     features: [
       {

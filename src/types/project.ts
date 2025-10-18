@@ -4,6 +4,7 @@ export interface Project {
   title: string;
   description: string;
   link: string;
+  icon?: string; // Optional custom icon path
   techStack: {
     name: string;
     icon: IconType;

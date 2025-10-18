@@ -6,6 +6,7 @@ export const workExperience: Project[] = [
         title: "Fullstack Web Developer Intern",
         description: "WeDance | June 2024 - Sep. 2024",
         link: "https://wedance.vip",
+        icon: "/icons/wedance-icon.png",
         techStack: [
             { icon: SiTypescript, name: 'TypeScript' },
             { icon: SiVuedotjs, name: 'Vue.js' },
@@ -16,7 +17,15 @@ export const workExperience: Project[] = [
         media: [
             {
                 type: 'image',
-                url: '',
+                url: '/public/work-experience/wedance/screenshot1.png',
+            },
+            {
+                type: 'image',
+                url: '/public/work-experience/wedance/screenshot2.png',
+            },
+            {
+                type: 'image',
+                url: '/public/work-experience/wedance/screenshot3.png',
             }
         ],
         features: [
@@ -42,6 +51,7 @@ export const workExperience: Project[] = [
         title: "iOS Developer (Collaboration)",
         description: "QUOX | Oct. 2024 - May. 2025",
         link: "https://quox.app",
+        icon: "/icons/quox-icon.png",
         techStack: [
             { icon: SiSwift, name: 'Swift' },
             { icon: SiSwift, name: 'SwiftUI' },
