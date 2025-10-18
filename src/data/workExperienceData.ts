@@ -3,9 +3,11 @@ import type { Project } from '../types/project';
 
 export const workExperience: Project[] = [
     {
-        title: "Fullstack Web Developer Intern",
-        description: "WeDance | June 2024 - Sep. 2024",
+        title: "WeDance",
+        description: "Fullstack Web Developer Intern | June 2025 - Sep. 2025",
         link: "https://wedance.vip",
+        linkText: "Visit WeDance",
+        linkIcon: "/icons/wedance-icon.png",
         icon: "/icons/wedance-icon.png",
         techStack: [
             { icon: SiTypescript, name: 'TypeScript' },
@@ -48,9 +50,11 @@ export const workExperience: Project[] = [
         ]
     },
     {
-        title: "iOS Developer (Collaboration)",
-        description: "QUOX | Oct. 2024 - May. 2025",
+        title: "QUOX",
+        description: "iOS Developer (Collaboration) | Oct. 2024 - May. 2025",
         link: "https://quox.app",
+        linkText: "Visit QUOX",
+        linkIcon: "/icons/quox-visit-icon.png",
         icon: "/icons/quox-icon.png",
         techStack: [
             { icon: SiSwift, name: 'Swift' },

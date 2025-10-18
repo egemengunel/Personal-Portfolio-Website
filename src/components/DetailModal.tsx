@@ -1,4 +1,4 @@
-import { FaGithub, FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaGithub, FaTimes, FaChevronLeft, FaChevronRight, FaApple } from 'react-icons/fa';
 import type { Project } from '../types/project';
 import { useState, useCallback, useEffect, memo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -96,14 +96,20 @@ export const DetailModal = memo(function DetailModal({ project, isOpen, onClose 
         <div className="relative bg-white rounded-lg w-full max-w-4xl">
           <div className="p-4 md:p-6 border-b border-gray-200">
             <div className="flex flex-col gap-3 md:gap-4">
-              <div className="flex items-start justify-between">
-                <h2 className="text-xl md:text-2xl font-bold">{project.title}</h2>
-                <button
-                  onClick={onClose}
-                  className="p-1.5 md:p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
-                >
-                  <FaTimes className="w-4 h-4 md:w-5 md:h-5" />
-                </button>
+              <div className="flex flex-col">
+                <div className="flex items-start justify-between">
+                  <h2 className="text-xl md:text-2xl font-bold">{project.title}</h2>
+                  <button
+                    onClick={onClose}
+                    className="p-1.5 md:p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+                  >
+                    <FaTimes className="w-4 h-4 md:w-5 md:h-5" />
+                  </button>
+                </div>
+
+                <p className="text-sm md:text-base text-gray-600">
+                  {project.description}
+                </p>
               </div>
 
               <div className="flex flex-col md:flex-row gap-3 md:gap-4 md:items-center md:justify-between">
@@ -127,8 +133,14 @@ export const DetailModal = memo(function DetailModal({ project, isOpen, onClose 
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 px-3 py-2 md:px-4 md:py-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
                   >
-                    <FaGithub className="w-4 h-4 md:w-5 md:h-5" />
-                    <span className="text-xs md:text-sm">View on GitHub</span>
+                    {project.linkIcon === 'appstore' ? (
+                      <FaApple className="w-4 h-4 md:w-5 md:h-5" />
+                    ) : project.linkIcon ? (
+                      <img src={project.linkIcon} alt="" className="w-4 h-4 md:w-5 md:h-5 rounded grayscale brightness-0 object-contain" />
+                    ) : (
+                      <FaGithub className="w-4 h-4 md:w-5 md:h-5" />
+                    )}
+                    <span className="text-xs md:text-sm">{project.linkText || 'View on GitHub'}</span>
                   </a>
                 )}
               </div>
@@ -209,10 +221,6 @@ export const DetailModal = memo(function DetailModal({ project, isOpen, onClose 
           </div>
 
           <div className="p-3 md:p-6">
-            <p className="text-sm md:text-base text-gray-600 mb-4 md:mb-6">
-              {project.description}
-            </p>
-            
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
               {project.features.map((feature) => (
                 <div

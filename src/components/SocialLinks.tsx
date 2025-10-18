@@ -1,11 +1,11 @@
-import { FaTwitter, FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaXTwitter, FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa6';
 import { SocialLink } from './SocialLink';
 
 const socialLinks = [
   {
     href: "https://x.com/EgemenTheDev",
-    icon: FaTwitter,
-    label: "Twitter"
+    icon: FaXTwitter,
+    label: "X (Twitter)"
   },
   {
     href: "https://github.com/egemengunel",

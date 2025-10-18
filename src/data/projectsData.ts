@@ -4,7 +4,7 @@ import type { Project } from '../types/project';
 
 export const projects: Project[] = [
   {
-    title: "Coughylyzer (Thesis Project)",
+    title: "Coughylyzer",
     description: "An iOS application that analyzes respiratory sounds to identify potential respiratory conditions using machine learning, developed as my Computer Engineering thesis.",
     link: "#",
     icon: "/icons/coughylyzer-icon.png",
@@ -64,7 +64,9 @@ export const projects: Project[] = [
   {
     title: "Cosmo Papers",
     description: "A SwiftUI application that showcases NASA's Astronomy Picture of the Day, featuring daily space imagery and educational content.",
-    link: "#",
+    link: "https://cosmopapers.app",
+    linkText: "View on App Store",
+    linkIcon: "appstore",
     icon: "/icons/cosmo-papers-icon.png",
     techStack: [
       { icon: SiSwift, name: 'Swift' },
@@ -161,7 +163,7 @@ export const projects: Project[] = [
 
   },
   {
-    title: "AdoptMe Website",
+    title: "AdoptMe",
     description: "A responsive web application built with PHP that simplifies the pet adoption process, featuring user authentication and favorites system.",
     link: "https://github.com/egemengunel/AdoptMe-Website",
     icon: "/icons/adoptme-website-icon.jpg",

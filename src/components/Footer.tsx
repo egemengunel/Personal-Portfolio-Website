@@ -12,7 +12,7 @@ export function Footer() {
         Made with <span className="text-red-500">❤️</span> by Egemen Günel
       </p>
       <p className="mt-1">
-        at Wrocław and Opole, Poland
+        at Wrocław, Poland
       </p>
     </motion.footer>
   );

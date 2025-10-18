@@ -6,8 +6,7 @@ import { ErrorBoundary } from './components/ErrorBoundary';
 const LazyComponents = {
   WorkExperience: lazy(() => import('./components/WorkExperience').then(m => ({ default: m.WorkExperience }))),
   Projects: lazy(() => import('./components/Projects').then(m => ({ default: m.Projects }))),
-  Footer: lazy(() => import('./components/Footer')),
-  CVDownload: lazy(() => import('./components/CVDownload'))
+  Footer: lazy(() => import('./components/Footer'))
 };
 
 // Memoize static components
@@ -21,7 +20,6 @@ function App() {
           <div className="max-w-4xl mx-auto px-4 py-16">
             <MemoizedHeader />
             <Suspense fallback={<div className="animate-pulse h-16 bg-gray-200 rounded" />}>
-              <LazyComponents.CVDownload />
               <LazyComponents.WorkExperience />
               <LazyComponents.Projects />
               <LazyComponents.Footer />

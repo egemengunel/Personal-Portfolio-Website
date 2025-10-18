@@ -1,4 +1,5 @@
 import { SocialLinks } from './SocialLinks';
+import CVDownload from './CVDownload';
 
 export function Header() {
   return (
@@ -27,23 +28,22 @@ export function Header() {
 
           <div className="space-y-3 md:space-y-4 text-gray-700 text-base md:text-lg">
             <p className="leading-relaxed">
-              Hello, I'm a Computer Engineering student at{" "}
-              <strong className="font-semibold">
-                Opole University of Technology
-              </strong>, specializing in iOS and full-stack web development. I've published my own app on the App Store, contributed to an established web platform during my internship at WeDance, and am currently developing a respiratory health app using SwiftUI and machine learning for my thesis.
+              Hey there, I'm Egemen! Currently finishing up my Computer Engineering degree at{" "}
+              <strong className="font-semibold">Opole University of Technology</strong> in Poland. Most of my time goes into building iOS apps (got one on the App Store!) and tinkering with web projects. Last summer, I interned at WeDance where I built features that help dancing community come together as one.
             </p>
 
             <p className="leading-relaxed">
-              My passion lies in creating polished user experiences through clean code and thoughtful design. I enjoy working with{" "}
-              <strong className="font-semibold">Swift, SwiftUI</strong>,{" "}
-              <strong className="font-semibold">TypeScript</strong> and modern web frameworks like{" "}
-              <strong className="font-semibold">Vue and Nuxt</strong>. When I'm not coding, you'll find me exploring new technologies and refining my UI animation skills.
+              I'm currently working on my thesis project{" "}
+              <strong className="font-semibold">Coughylyzer</strong>. It's an iOS app that listens to breathing patterns and tries to identify respiratory issues. Been wrestling with machine learning models for months (turns out coughs are complicated!), but I've had way more fun designing the UI with the new{" "}
+              <strong className="font-semibold">iOS 26 liquid glass effects</strong>.I am absolutely loveing the new glass animations and morphs.
             </p>
 
             <p className="leading-relaxed">
-              I'm currently looking for opportunities where I can apply my skills in iOS or web development while continuing to grow as a developer.
+              When my eyes need a break from screens, you'll usually find me cruising around the city on electric scooters or diving into Billie Eilish's latest album. Currently hunting for iOS or web dev roles where I can keep building things people actually use.
             </p>
           </div>
+
+          <CVDownload />
 
           <div className="flex justify-center md:justify-start gap-6 mt-6 md:mt-8">
             <SocialLinks />

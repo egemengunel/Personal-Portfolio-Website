@@ -4,7 +4,9 @@ export interface Project {
   title: string;
   description: string;
   link: string;
-  icon?: string; // Optional custom icon path
+  linkText?: string; // Custom link text (default: "View on GitHub")
+  linkIcon?: string; // Link icon: 'appstore' for Apple icon, or image URL for custom icon
+  icon?: string; // Card display icon
   techStack: {
     name: string;
     icon: IconType;
