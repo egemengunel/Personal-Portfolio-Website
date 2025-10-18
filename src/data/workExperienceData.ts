@@ -4,7 +4,7 @@ import type { Project } from '../types/project';
 export const workExperience: Project[] = [
     {
         title: "Fullstack Web Developer Intern",
-        description: "WeDance (wedance.vip) | June 2024 – Sep. 2024",
+        description: "WeDance | June 2024 - Sep. 2024",
         link: "https://wedance.vip",
         techStack: [
             { icon: SiTypescript, name: 'TypeScript' },
@@ -17,7 +17,6 @@ export const workExperience: Project[] = [
             {
                 type: 'image',
                 url: '',
-                caption: 'Fullstack Development at WeDance'
             }
         ],
         features: [
@@ -41,7 +40,7 @@ export const workExperience: Project[] = [
     },
     {
         title: "iOS Developer (Collaboration)",
-        description: "QUOX (quox.app) | Oct. 2024 – May. 2025",
+        description: "QUOX | Oct. 2024 - May. 2025",
         link: "https://quox.app",
         techStack: [
             { icon: SiSwift, name: 'Swift' },
@@ -51,11 +50,17 @@ export const workExperience: Project[] = [
         ],
         media: [
             {
-                type: 'video',
-                url: 'https://player.vimeo.com/video/1032590894?h=da32acede6&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
-                caption: '',
-                thumbnail: ''
-            }
+                type: 'image',
+                url: '/work-experience/quox/screenshot1.png',
+            },
+            {
+                type: 'image',
+                url: '/work-experience/quox/screenshot2.png',
+            },
+            {
+                type: 'image',
+                url: '/work-experience/quox/screenshot3.png',
+            },
         ],
         features: [
             {

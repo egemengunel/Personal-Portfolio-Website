@@ -12,7 +12,6 @@ export interface Project {
     type: 'image' | 'video';
     url: string;
     thumbnail?: string;
-    caption: string;
   }[];
   features: {
     title: string;

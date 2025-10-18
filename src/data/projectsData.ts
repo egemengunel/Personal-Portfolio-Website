@@ -4,6 +4,63 @@ import type { Project } from '../types/project';
 
 export const projects: Project[] = [
   {
+    title: "Coughylyzer (Thesis Project)",
+    description: "An iOS application that analyzes respiratory sounds to identify potential respiratory conditions using machine learning, developed as my Computer Engineering thesis.",
+    link: "#",
+    techStack: [
+      { icon: SiSwift, name: 'Swift' },
+      { icon: SiSwift, name: 'SwiftUI' },
+      { icon: TbBrain, name: 'Core ML' },
+      { icon: SiXcode, name: 'Xcode' },
+      { icon: SiGit, name: 'Git' }
+    ],
+    media: [
+      {
+        type: 'image',
+        url: '/projects/coughylyzer/screenshot1.png',
+
+      },
+      {
+        type: 'image',
+        url: '/projects/coughylyzer/screenshot2.png',
+
+      },
+      {
+        type: 'image',
+        url: '/projects/coughylyzer/screenshot3.png',
+
+      },
+      {
+        type: 'image',
+        url: '/projects/coughylyzer/screenshot4.png',
+
+      },
+      {
+        type: 'image',
+        url: '/projects/coughylyzer/screenshot5.png',
+
+      }
+    ],
+    features: [
+      {
+        title: "Real-time Audio Analysis",
+        description: "Engineering respiratory analysis platform that processes audio input in real-time using AVFoundation for precise sound capture."
+      },
+      {
+        title: "Machine Learning Classification",
+        description: "Integrating ML model trained on Coswara dataset that achieves 66% accuracy in respiratory pattern classification with on-device Core ML inference."
+      },
+      {
+        title: "Health Metrics Tracking",
+        description: "Building comprehensive chart and scoring system for tracking lung health metrics over time (0-100 scale) with persistent Core Data storage."
+      },
+      {
+        title: "Liquid Glass UI Effects",
+        description: "Implemented iOS 26's Liquid Glass effects for morphing UI transitions and dynamic elements, creating smooth state changes during recording."
+      }
+    ]
+  },
+  {
     title: "Cosmo Papers",
     description: "A SwiftUI application that showcases NASA's Astronomy Picture of the Day, featuring daily space imagery and educational content.",
     link: "#",
@@ -16,11 +73,25 @@ export const projects: Project[] = [
     ],
     media: [
       {
-        type: 'video',
-        url: 'https://player.vimeo.com/video/1067137946?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
-        caption: '',
-        thumbnail: ''
-      }
+        type: 'image',
+        url: '/projects/cosmo-papers/screenshot1.png',
+
+      },
+      {
+        type: 'image',
+        url: '/projects/cosmo-papers/screenshot2.jpg',
+
+      },
+      {
+        type: 'image',
+        url: '/projects/cosmo-papers/screenshot3.jpg',
+
+      },
+      {
+        type: 'image',
+        url: '/projects/cosmo-papers/screenshot4.jpg',
+
+      },
     ],
     features: [
       {
@@ -54,11 +125,17 @@ export const projects: Project[] = [
     ],
     media: [
       {
-        type: 'video',
-        url: 'https://player.vimeo.com/video/1076403650?h=6d4923ed5c&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
-        caption: '',
-        thumbnail: ''
-      }
+        type: 'image',
+        url: '/projects/moodful-music/screenshot1.png',
+      },
+      {
+        type: 'image',
+        url: '/projects/moodful-music/screenshot2.png',
+      },
+      {
+        type: 'image',
+        url: '/projects/moodful-music/screenshot3.png',
+      },
     ],
     features: [
       {
@@ -96,7 +173,7 @@ export const projects: Project[] = [
       {
         type: 'video',
         url: 'https://player.vimeo.com/video/1032590859?h=d769a1670e&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
-        caption: '',
+
         thumbnail: ''
       }
     ],

@@ -1,6 +1,7 @@
-import { FaGithub, FaTimes } from 'react-icons/fa';
+import { FaGithub, FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import type { Project } from '../types/project';
 import { useState, useCallback, useEffect, memo } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface DetailModalProps {
   project: Project;
@@ -9,7 +10,9 @@ interface DetailModalProps {
 }
 
 export const DetailModal = memo(function DetailModal({ project, isOpen, onClose }: DetailModalProps) {
-  const [isVideoLoading, setIsVideoLoading] = useState(true);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [direction, setDirection] = useState(1); // 1 for forward, -1 for backward
 
   const handleEscape = useCallback((e: KeyboardEvent) => {
     if (e.key === 'Escape') onClose();
@@ -29,6 +32,60 @@ export const DetailModal = memo(function DetailModal({ project, isOpen, onClose 
       };
     }
   }, [isOpen]);
+
+  // Navigation handlers
+  const nextImage = useCallback(() => {
+    setDirection(1); // Moving forward
+    setCurrentImageIndex((prev) => 
+      prev === project.media.length - 1 ? 0 : prev + 1
+    );
+  }, [project.media.length]);
+
+  const prevImage = useCallback(() => {
+    setDirection(-1); // Moving backward
+    setCurrentImageIndex((prev) => 
+      prev === 0 ? project.media.length - 1 : prev - 1
+    );
+  }, [project.media.length]);
+
+  const goToImage = useCallback((index: number) => {
+    setDirection(index > currentImageIndex ? 1 : -1);
+    setCurrentImageIndex(index);
+  }, [currentImageIndex]);
+
+  // Autoplay functionality
+  useEffect(() => {
+    if (!isAutoPlaying || project.media.length <= 1) return;
+
+    const interval = setInterval(() => {
+      nextImage();
+    }, 4000); // Change image every 4 seconds
+
+    return () => clearInterval(interval);
+  }, [isAutoPlaying, nextImage, project.media.length]);
+
+  // Touch/swipe support
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStart - touchEnd > 75) {
+      // Swiped left - go to next
+      nextImage();
+    }
+    if (touchStart - touchEnd < -75) {
+      // Swiped right - go to previous
+      prevImage();
+    }
+  };
 
   if (!isOpen) return null;
 
@@ -78,36 +135,77 @@ export const DetailModal = memo(function DetailModal({ project, isOpen, onClose 
             </div>
           </div>
 
-          <div className="relative">
-            {project.media.map((item, index) => (
-              <div key={index} className="relative">
-                {item.type === 'video' ? (
-                  <>
-                    {isVideoLoading && (
-                      <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
-                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
-                      </div>
-                    )}
-                    <div className="relative pt-[56.25%]">
-                      <iframe
-                        src={`${item.url}&autoplay=1&controls=0&loop=1&background=1&muted=1`}
-                        className="absolute inset-0 w-full h-full rounded-lg"
-                        allow="autoplay; fullscreen; picture-in-picture"
-                        onLoad={() => setIsVideoLoading(false)}
-                      ></iframe>
-                    </div>
-                  </>
-                ) : (
-                  <img
-                    src={item.url}
-                    alt={item.caption}
-                    className="w-full"
-                    loading="lazy"
+          {/* Image Carousel */}
+          <div 
+            className="relative bg-gray-50 overflow-hidden rounded-lg"
+            onMouseEnter={() => setIsAutoPlaying(false)}
+            onMouseLeave={() => setIsAutoPlaying(true)}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
+            {/* Image Display */}
+            <div className="relative aspect-video flex items-center justify-center bg-gray-50 pt-4 md:pt-6">
+              <AnimatePresence mode="wait" custom={direction}>
+                <motion.img
+                  key={currentImageIndex}
+                  src={project.media[currentImageIndex].url}
+                  className="max-w-full max-h-full object-contain rounded-lg"
+                  custom={direction}
+                  initial={{ opacity: 0, x: direction * 100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: direction * -100 }}
+                  transition={{ duration: 0.3 }}
+                  loading="lazy"
+                />
+              </AnimatePresence>
+
+              {/* Navigation Arrows */}
+              {project.media.length > 1 && (
+                <>
+                  <button
+                    onClick={prevImage}
+                    className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 p-2 md:p-3 rounded-full bg-black/50 hover:bg-black/70 text-white transition-all"
+                    aria-label="Previous image"
+                  >
+                    <FaChevronLeft className="w-4 h-4 md:w-5 md:h-5" />
+                  </button>
+                  <button
+                    onClick={nextImage}
+                    className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 p-2 md:p-3 rounded-full bg-black/50 hover:bg-black/70 text-white transition-all"
+                    aria-label="Next image"
+                  >
+                    <FaChevronRight className="w-4 h-4 md:w-5 md:h-5" />
+                  </button>
+                </>
+              )}
+
+              {/* Image Counter */}
+              {project.media.length > 1 && (
+                <div className="absolute top-2 md:top-4 right-2 md:right-4 px-3 py-1.5 rounded-full bg-black/50 text-white text-xs md:text-sm">
+                  {currentImageIndex + 1} / {project.media.length}
+                </div>
+              )}
+            </div>
+
+            {/* Dot Indicators */}
+            {project.media.length > 1 && (
+              <div className="flex justify-center gap-2 py-4 bg-gray-50">
+                {project.media.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => goToImage(index)}
+                    className={`w-2 h-2 rounded-full transition-all ${
+                      index === currentImageIndex
+                        ? 'bg-gray-900 w-6'
+                        : 'bg-gray-400 hover:bg-gray-600'
+                    }`}
+                    aria-label={`Go to image ${index + 1}`}
                   />
-                )}
-                <p className="mt-2 text-sm text-gray-600">{item.caption}</p>
+                ))}
               </div>
-            ))}
+            )}
+
           </div>
 
           <div className="p-3 md:p-6">
