@@ -19,15 +19,15 @@ export const workExperience: Project[] = [
         media: [
             {
                 type: 'image',
-                url: '/public/work-experience/wedance/screenshot1.png',
+                url: '/work-experience/wedance/screenshot1.png',
             },
             {
                 type: 'image',
-                url: '/public/work-experience/wedance/screenshot2.png',
+                url: '/work-experience/wedance/screenshot2.png',
             },
             {
                 type: 'image',
-                url: '/public/work-experience/wedance/screenshot3.png',
+                url: '/work-experience/wedance/screenshot3.png',
             }
         ],
         features: [

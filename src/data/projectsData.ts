@@ -118,7 +118,7 @@ export const projects: Project[] = [
   },
   {
     title: "Moodful Music",
-    description: "A macOS app that creates personalized tracks based on mood and envorinment selections using an ML Model.",
+    description: "A macOS app that creates personalized tracks based on mood and environment selections using an ML Model. | Swift Student Challange 2025 Submission",
     link: "https://github.com/egemengunel/Moodful-Music",
     icon: "/icons/moodful-music-icon.png",
     techStack: [
