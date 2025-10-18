@@ -1,34 +1,24 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { FaArrowRight } from 'react-icons/fa';
 import type { Project } from '../types/project';
-import { ProjectModal } from './ProjectModal';
+import { DetailModal } from './DetailModal';
 
-export function ProjectCard(project: Project) {
+export function Card(project: Project) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
   
-  // Get the first tech stack icon as the main project icon
-  const ProjectIcon = project.techStack[0]?.icon;
+  // Get the first tech stack icon as the main icon
+  const Icon = project.techStack[0]?.icon;
 
   return (
     <>
-      <motion.div
+      <div
         onClick={() => setIsModalOpen(true)}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
         className="flex gap-4 md:gap-6 p-4 md:p-6 rounded-lg bg-gray-100 hover:bg-gray-200 border-2 border-transparent hover:border-gray-300 transition-all cursor-pointer group"
-        initial={false}
-        animate={{
-          x: isHovered ? 4 : 0,
-          transition: { duration: 0.2 }
-        }}
       >
         {/* Icon Section */}
         <div className="flex-shrink-0">
           <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl bg-gray-900 flex items-center justify-center">
-            {ProjectIcon && (
-              <ProjectIcon className="w-6 h-6 md:w-8 md:h-8 text-white" />
+            {Icon && (
+              <Icon className="w-6 h-6 md:w-8 md:h-8 text-white" />
             )}
           </div>
         </div>
@@ -49,10 +39,10 @@ export function ProjectCard(project: Project) {
             </span>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {isModalOpen && (
-        <ProjectModal
+        <DetailModal
           project={project}
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
@@ -62,4 +52,5 @@ export function ProjectCard(project: Project) {
   );
 }
 
-export default ProjectCard;
+export default Card;
+

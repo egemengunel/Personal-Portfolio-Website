@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ProjectCard } from './ProjectCard';
+import { Card } from './Card';
 import { projects } from '../data/projectsData';
 
 export function Projects() {
@@ -22,7 +22,7 @@ export function Projects() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 + index * 0.1 }}
           >
-            <ProjectCard {...project} />
+            <Card {...project} />
           </motion.div>
         ))}
       </motion.div>

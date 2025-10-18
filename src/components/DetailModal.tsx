@@ -2,13 +2,13 @@ import { FaGithub, FaTimes } from 'react-icons/fa';
 import type { Project } from '../types/project';
 import { useState, useCallback, useEffect, memo } from 'react';
 
-interface ProjectModalProps {
+interface DetailModalProps {
   project: Project;
   isOpen: boolean;
   onClose: () => void;
 }
 
-export const ProjectModal = memo(function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
+export const DetailModal = memo(function DetailModal({ project, isOpen, onClose }: DetailModalProps) {
   const [isVideoLoading, setIsVideoLoading] = useState(true);
 
   const handleEscape = useCallback((e: KeyboardEvent) => {
@@ -36,14 +36,14 @@ export const ProjectModal = memo(function ProjectModal({ project, isOpen, onClos
     <div className="fixed inset-0 z-50 overflow-y-auto">
       <div className="flex items-center justify-center min-h-screen p-2 md:p-4">
         <div className="fixed inset-0 bg-black opacity-50" onClick={onClose} />
-        <div className="relative bg-white dark:bg-gray-800 rounded-lg w-full max-w-4xl">
-          <div className="p-4 md:p-6 border-b border-gray-200 dark:border-gray-700">
+        <div className="relative bg-white rounded-lg w-full max-w-4xl">
+          <div className="p-4 md:p-6 border-b border-gray-200">
             <div className="flex flex-col gap-3 md:gap-4">
               <div className="flex items-start justify-between">
                 <h2 className="text-xl md:text-2xl font-bold">{project.title}</h2>
                 <button
                   onClick={onClose}
-                  className="p-1.5 md:p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                  className="p-1.5 md:p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
                 >
                   <FaTimes className="w-4 h-4 md:w-5 md:h-5" />
                 </button>
@@ -54,7 +54,7 @@ export const ProjectModal = memo(function ProjectModal({ project, isOpen, onClos
                   {project.techStack.map((tech) => (
                     <div
                       key={tech.name}
-                      className="flex items-center gap-1.5 px-2.5 py-1.5 md:px-3 md:py-2 rounded-full bg-gray-100 dark:bg-gray-700 text-sm"
+                      className="flex items-center gap-1.5 px-2.5 py-1.5 md:px-3 md:py-2 rounded-full bg-gray-100 text-sm"
                       title={tech.name}
                     >
                       <tech.icon className="w-3.5 h-3.5 md:w-4 md:h-4" />
@@ -68,7 +68,7 @@ export const ProjectModal = memo(function ProjectModal({ project, isOpen, onClos
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 px-3 py-2 md:px-4 md:py-2 bg-gray-100 dark:bg-gray-700 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                    className="flex items-center justify-center gap-2 px-3 py-2 md:px-4 md:py-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
                   >
                     <FaGithub className="w-4 h-4 md:w-5 md:h-5" />
                     <span className="text-xs md:text-sm">View on GitHub</span>
@@ -84,7 +84,7 @@ export const ProjectModal = memo(function ProjectModal({ project, isOpen, onClos
                 {item.type === 'video' ? (
                   <>
                     {isVideoLoading && (
-                      <div className="absolute inset-0 flex items-center justify-center bg-gray-100 dark:bg-gray-800">
+                      <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
                         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
                       </div>
                     )}
@@ -105,13 +105,13 @@ export const ProjectModal = memo(function ProjectModal({ project, isOpen, onClos
                     loading="lazy"
                   />
                 )}
-                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">{item.caption}</p>
+                <p className="mt-2 text-sm text-gray-600">{item.caption}</p>
               </div>
             ))}
           </div>
 
           <div className="p-3 md:p-6">
-            <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 mb-4 md:mb-6">
+            <p className="text-sm md:text-base text-gray-600 mb-4 md:mb-6">
               {project.description}
             </p>
             
@@ -119,12 +119,12 @@ export const ProjectModal = memo(function ProjectModal({ project, isOpen, onClos
               {project.features.map((feature) => (
                 <div
                   key={feature.title}
-                  className="p-3 md:p-6 rounded-lg bg-gray-50 dark:bg-gray-700/50"
+                  className="p-3 md:p-6 rounded-lg bg-gray-50"
                 >
                   <h3 className="text-base md:text-xl font-semibold mb-1.5 md:mb-3">
                     {feature.title}
                   </h3>
-                  <p className="text-sm md:text-base text-gray-600 dark:text-gray-400">
+                  <p className="text-sm md:text-base text-gray-600">
                     {feature.description}
                   </p>
                 </div>
@@ -137,4 +137,5 @@ export const ProjectModal = memo(function ProjectModal({ project, isOpen, onClos
   );
 });
 
-export default ProjectModal;
+export default DetailModal;
+

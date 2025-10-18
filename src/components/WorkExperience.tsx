@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ProjectCard } from './ProjectCard';
+import { Card } from './Card';
 import { workExperience } from '../data/workExperienceData';
 
 export function WorkExperience() {
@@ -22,7 +22,7 @@ export function WorkExperience() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 + index * 0.1 }}
           >
-            <ProjectCard {...experience} />
+            <Card {...experience} />
           </motion.div>
         ))}
       </motion.div>
