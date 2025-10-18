@@ -119,39 +119,4 @@ export const projects: Project[] = [
       }
     ]
   },
-  {
-    title: "QUOX (Private Development)",
-    description: "A joint SwiftUI-based AI-powered quote generator project with a friend,currently in early private development. The repository is kept private for the time being.",
-    link: "#",
-    techStack: [
-      { icon: SiSwift, name: 'Swift' },
-      { icon: SiSwift, name: 'SwiftUI' },
-      { icon: TbBrain, name: 'AI Integration' },
-      { icon: SiFigma, name: 'Figma' },
-      { icon: SiXcode, name: 'Xcode' },
-      { icon: SiGit, name: 'Git' }
-    ],
-    media: [
-      {
-        type: 'video',
-        url: 'https://player.vimeo.com/video/1032590894?h=da32acede6&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
-        caption: 'QUOX App Preview',
-        thumbnail: ''
-      }
-    ],
-    features: [
-      {
-        title: "AI-Powered Quotes",
-        description: "Intelligent quote generation based on user preferences and context"
-      },
-      {
-        title: "Modern SwiftUI Interface",
-        description: "Clean and intuitive design with smooth animations and transitions"
-      },
-      {
-        title: "Development Status",
-        description: "Currently in early private development phase, focusing on core functionality and user experience"
-      }
-    ]
-  }
 ];

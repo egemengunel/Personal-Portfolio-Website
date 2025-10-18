@@ -4,8 +4,8 @@ import { ErrorBoundary } from './components/ErrorBoundary';
 
 // Group lazy loaded components
 const LazyComponents = {
+  WorkExperience: lazy(() => import('./components/WorkExperience').then(m => ({ default: m.WorkExperience }))),
   Projects: lazy(() => import('./components/Projects').then(m => ({ default: m.Projects }))),
-  Technologies: lazy(() => import('./components/Technologies')),
   Footer: lazy(() => import('./components/Footer')),
   CVDownload: lazy(() => import('./components/CVDownload'))
 };
@@ -22,7 +22,7 @@ function App() {
             <MemoizedHeader />
             <Suspense fallback={<div className="animate-pulse h-16 bg-gray-200 rounded" />}>
               <LazyComponents.CVDownload />
-              <LazyComponents.Technologies />
+              <LazyComponents.WorkExperience />
               <LazyComponents.Projects />
               <LazyComponents.Footer />
             </Suspense>

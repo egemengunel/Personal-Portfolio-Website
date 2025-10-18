@@ -7,6 +7,9 @@ import { ProjectModal } from './ProjectModal';
 export function ProjectCard(project: Project) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  
+  // Get the first tech stack icon as the main project icon
+  const ProjectIcon = project.techStack[0]?.icon;
 
   return (
     <>
@@ -14,24 +17,37 @@ export function ProjectCard(project: Project) {
         onClick={() => setIsModalOpen(true)}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className="block p-4 md:p-6 rounded-lg bg-gray-200 hover:bg-gray-300 transition-colors cursor-pointer"
+        className="flex gap-4 md:gap-6 p-4 md:p-6 rounded-lg bg-gray-100 hover:bg-gray-200 border-2 border-transparent hover:border-gray-300 transition-all cursor-pointer group"
         initial={false}
         animate={{
-          scale: isHovered ? 1.02 : 1,
+          x: isHovered ? 4 : 0,
           transition: { duration: 0.2 }
         }}
       >
-        <h3 className="text-xl md:text-2xl font-semibold mb-2 md:mb-4 dark:text-white text-gray-900">
-          {project.title}
-        </h3>
-        <p className="text-sm md:text-base dark:text-gray-400 text-gray-600 mb-3 md:mb-4">
-          {project.description}
-        </p>
-        <div className="flex items-center text-blue-600 dark:text-blue-400">
-          <span className="text-sm md:text-base mr-2">
-            {project.link === '#' ? 'View Details' : 'View Project'}
-          </span>
-          <FaArrowRight className="w-3.5 h-3.5 md:w-4 md:h-4" />
+        {/* Icon Section */}
+        <div className="flex-shrink-0">
+          <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl bg-gray-900 flex items-center justify-center">
+            {ProjectIcon && (
+              <ProjectIcon className="w-6 h-6 md:w-8 md:h-8 text-white" />
+            )}
+          </div>
+        </div>
+
+        {/* Content Section */}
+        <div className="flex-1 min-w-0 flex flex-col">
+          <h3 className="text-lg md:text-xl font-semibold mb-1 md:mb-2 text-gray-900">
+            {project.title}
+          </h3>
+          <p className="text-sm md:text-base text-gray-600 mb-3 flex-1">
+            {project.description}
+          </p>
+          
+          {/* Link at bottom right */}
+          <div className="flex justify-end">
+            <span className="text-sm md:text-base text-gray-900 underline decoration-2 underline-offset-4 group-hover:text-black transition-colors">
+              {project.link === '#' ? 'View Details' : 'View Project'}
+            </span>
+          </div>
         </div>
       </motion.div>
 
