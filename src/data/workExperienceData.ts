@@ -65,15 +65,15 @@ export const workExperience: Project[] = [
         media: [
             {
                 type: 'image',
-                url: '/work-experience/quox/screenshot1.png',
+                url: '/work-experience/quox/Quox-1.png',
             },
             {
                 type: 'image',
-                url: '/work-experience/quox/screenshot2.png',
+                url: '/work-experience/quox/Quox-2.png',
             },
             {
                 type: 'image',
-                url: '/work-experience/quox/screenshot3.png',
+                url: '/work-experience/quox/Quox-3.png',
             },
         ],
         features: [

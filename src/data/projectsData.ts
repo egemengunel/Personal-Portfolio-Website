@@ -6,7 +6,7 @@ export const projects: Project[] = [
   {
     title: "Coughylyzer",
     description: "An iOS application that analyzes respiratory sounds to identify potential respiratory conditions using machine learning, developed as my Computer Engineering thesis.",
-    link: "#",
+    link: "https://github.com/egemengunel/Coughylyzer",
     icon: "/icons/coughylyzer-icon.png",
     techStack: [
       { icon: SiSwift, name: 'Swift' },
@@ -18,27 +18,22 @@ export const projects: Project[] = [
     media: [
       {
         type: 'image',
-        url: '/projects/coughylyzer/screenshot1.png',
+        url: '/projects/coughylyzer/Coughylyzer1.png',
 
       },
       {
         type: 'image',
-        url: '/projects/coughylyzer/screenshot2.png',
+        url: '/projects/coughylyzer/Coughylyzer2.png',
 
       },
       {
         type: 'image',
-        url: '/projects/coughylyzer/screenshot3.png',
+        url: '/projects/coughylyzer/Coughylyzer3.png',
 
       },
       {
         type: 'image',
-        url: '/projects/coughylyzer/screenshot4.png',
-
-      },
-      {
-        type: 'image',
-        url: '/projects/coughylyzer/screenshot5.png',
+        url: '/projects/coughylyzer/Coughylyzer4.png',
 
       }
     ],
@@ -78,22 +73,22 @@ export const projects: Project[] = [
     media: [
       {
         type: 'image',
-        url: '/projects/cosmo-papers/screenshot1.png',
+        url: '/projects/cosmo-papers/cosmo1.png',
 
       },
       {
         type: 'image',
-        url: '/projects/cosmo-papers/screenshot2.jpg',
+        url: '/projects/cosmo-papers/cosmo2.png',
 
       },
       {
         type: 'image',
-        url: '/projects/cosmo-papers/screenshot3.jpg',
+        url: '/projects/cosmo-papers/cosmo3.png',
 
       },
       {
         type: 'image',
-        url: '/projects/cosmo-papers/screenshot4.jpg',
+        url: '/projects/cosmo-papers/cosmo4.png',
 
       },
     ],
@@ -131,15 +126,15 @@ export const projects: Project[] = [
     media: [
       {
         type: 'image',
-        url: '/projects/moodful-music/screenshot1.png',
+        url: '/projects/moodful-music/Moodful Music-1.png',
       },
       {
         type: 'image',
-        url: '/projects/moodful-music/screenshot2.png',
+        url: '/projects/moodful-music/Moodful Music-2.png',
       },
       {
         type: 'image',
-        url: '/projects/moodful-music/screenshot3.png',
+        url: '/projects/moodful-music/Moodful Music-3.png',
       },
     ],
     features: [
