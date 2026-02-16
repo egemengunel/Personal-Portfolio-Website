@@ -13,12 +13,12 @@ export function SocialLink({ href, icon: Icon, label }: SocialLinkProps) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="dark:text-gray-400 text-gray-600 dark:hover:text-white hover:text-gray-900 transition-colors"
+      className="text-gray-400 hover:text-gray-700 transition-colors"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       aria-label={label}
     >
-      <Icon size={24} />
+      <Icon size={18} />
     </motion.a>
   );
 }

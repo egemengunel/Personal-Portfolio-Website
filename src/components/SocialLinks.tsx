@@ -26,7 +26,7 @@ const socialLinks = [
 
 export function SocialLinks() {
   return (
-    <div className="flex justify-center space-x-6 mb-16">
+    <div className="flex items-center space-x-4">
       {socialLinks.map((link) => (
         <SocialLink key={link.label} {...link} />
       ))}

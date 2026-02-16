@@ -5,7 +5,7 @@ import { workExperience } from '../data/workExperienceData';
 export function WorkExperience() {
   return (
     <section className="mb-8 md:mb-16">
-      <h2 className="text-2xl md:text-3xl font-bold text-left mb-6 md:mb-8 text-gray-900">
+      <h2 className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-4 md:mb-5">
         Work Experience
       </h2>
       
