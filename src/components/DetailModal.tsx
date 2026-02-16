@@ -33,12 +33,12 @@ export const DetailModal = memo(function DetailModal({ project, isOpen, onClose 
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto">
-      <div className="flex items-center justify-center min-h-screen p-2 md:p-4">
-        <div className="fixed inset-0 bg-black/40" onClick={onClose} />
-        <div className="relative bg-white/95 backdrop-blur-xl rounded-2xl w-full max-w-7xl max-h-[90vh] flex flex-col shadow-2xl border border-white/20">
+      <div className="min-h-screen md:flex md:items-center md:justify-center md:p-4">
+        <div className="fixed inset-0 bg-black/40 hidden md:block" onClick={onClose} />
+        <div className="relative bg-white md:bg-white/95 md:backdrop-blur-xl md:rounded-2xl w-full md:max-w-7xl min-h-screen md:min-h-0 md:max-h-[90vh] flex flex-col md:shadow-2xl md:border md:border-white/20">
           
           {/* Header - Frosted glass bar */}
-          <div className="sticky top-0 z-10 px-5 py-4 md:px-8 md:py-5 border-b border-gray-200/60 flex-shrink-0 bg-white/70 backdrop-blur-2xl rounded-t-2xl">
+          <div className="sticky top-0 z-10 px-5 py-4 md:px-8 md:py-5 border-b border-gray-200/60 flex-shrink-0 bg-white/70 backdrop-blur-2xl md:rounded-t-2xl">
             <div className="flex items-center justify-between">
               <h2 className="text-lg md:text-xl font-semibold text-gray-900">{project.title}</h2>
               <div className="flex items-center gap-2.5">
@@ -70,10 +70,10 @@ export const DetailModal = memo(function DetailModal({ project, isOpen, onClose 
           </div>
 
           {/* Two-column body */}
-          <div className="flex flex-col md:flex-row flex-1 min-h-0 overflow-hidden">
+          <div className="flex flex-col md:flex-row flex-1 min-h-0 overflow-y-auto md:overflow-hidden">
             
             {/* Left side - Description & Skills */}
-            <div className="w-full md:w-1/2 p-5 md:p-8 overflow-y-auto border-b md:border-b-0 md:border-r border-gray-200/60">
+            <div className="w-full md:w-1/2 p-5 md:p-8 md:overflow-y-auto border-b md:border-b-0 md:border-r border-gray-200/60">
               
               {/* Project Description */}
               <div className="mb-8">
@@ -112,7 +112,7 @@ export const DetailModal = memo(function DetailModal({ project, isOpen, onClose 
             </div>
 
             {/* Right side - Scrollable Images */}
-            <div className="w-full md:w-1/2 overflow-y-auto bg-gray-50/50">
+            <div className="w-full md:w-1/2 md:overflow-y-auto bg-gray-50/50">
               <div className="p-5 md:p-8 space-y-4">
                 {project.media.map((item, index) => (
                   <div
