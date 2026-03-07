@@ -4,6 +4,57 @@ import type { Project } from '../types/project';
 
 export const projects: Project[] = [
   {
+    title: "HomeSketch",
+    description: "An AI-powered interior design iOS app that transforms any room — snap a photo, select a style and color palette, and instantly receive photorealistic AI-generated redesigns via the Replicate API.",
+    link: "https://gethomesketch.app",
+    linkText: "View on App Store",
+    linkIcon: "appstore",
+    icon: "/icons/homesketch-icon.png",
+    techStack: [
+      { icon: SiSwift, name: 'Swift' },
+      { icon: SiSwift, name: 'SwiftUI' },
+      { icon: TbBrain, name: 'Replicate AI' },
+      { icon: SiXcode, name: 'Xcode' },
+      { icon: SiGit, name: 'Git' }
+    ],
+    media: [
+      {
+        type: 'image',
+        url: '/projects/homesketch/homesketch-1.png',
+      },
+      {
+        type: 'image',
+        url: '/projects/homesketch/homesketch-2.png',
+      },
+      {
+        type: 'image',
+        url: '/projects/homesketch/homesketch-3.png',
+      },
+      {
+        type: 'image',
+        url: '/projects/homesketch/homesketch-4.png',
+      }
+    ],
+    features: [
+      {
+        title: "AI Room Redesign",
+        description: "Upload a photo of any room and receive photorealistic AI-generated redesigns powered by the Replicate API, shaped by custom prompts built from your style and color selections."
+      },
+      {
+        title: "Style & Color Customization",
+        description: "Choose from a curated set of interior design styles and color palettes to personalize your AI prompt, with Pro-exclusive options gated behind the subscription paywall."
+      },
+      {
+        title: "Supabase Backend & API Proxy",
+        description: "Supabase Edge Functions written in TypeScript securely proxy all Replicate API calls, keeping secrets server-side while handling image uploads and storage."
+      },
+      {
+        title: "Subscription & Monetization",
+        description: "RevenueCat powers the in-app subscription system with entitlement checks, driving conversion through locked premium styles and color palettes."
+      }
+    ]
+  },
+  {
     title: "Coughylyzer",
     description: "An iOS application that analyzes respiratory sounds to identify potential respiratory conditions using machine learning, developed as my Computer Engineering thesis.",
     link: "https://github.com/egemengunel/Coughylyzer",

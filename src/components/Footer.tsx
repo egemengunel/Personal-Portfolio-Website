@@ -9,10 +9,7 @@ export function Footer() {
       transition={{ delay: 0.8 }}
     >
       <p>
-        Made with <span className="text-red-500">❤️</span> by Egemen Günel
-      </p>
-      <p className="mt-1">
-        at Wrocław, Poland
+        Made with love by Egemen.
       </p>
     </motion.footer>
   );
