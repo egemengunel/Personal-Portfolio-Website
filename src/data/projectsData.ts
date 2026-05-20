@@ -55,6 +55,54 @@ export const projects: Project[] = [
     ]
   },
   {
+    title: "Shelf",
+    description: "A SwiftUI book discovery app powered by the Gutendex API, giving access to over 70,000 public domain classics from Project Gutenberg. Browse by genre, search by title or author, and save favorites — no account or API key required.",
+    link: "https://github.com/egemengunel/Shelf-App",
+    icon: "/icons/shelf-icon.jpg",
+    techStack: [
+      { icon: SiSwift, name: 'Swift' },
+      { icon: SiSwift, name: 'SwiftUI' },
+      { icon: SiXcode, name: 'Xcode' },
+      { icon: SiGit, name: 'Git' }
+    ],
+    media: [
+      {
+        type: 'image',
+        url: '/projects/shelf/shelf-browse.png',
+      },
+      {
+        type: 'image',
+        url: '/projects/shelf/shelf-search.png',
+      },
+      {
+        type: 'image',
+        url: '/projects/shelf/shelf-favorites.png',
+      },
+      {
+        type: 'image',
+        url: '/projects/shelf/shelf-book-detail.png',
+      }
+    ],
+    features: [
+      {
+        title: "Genre Carousels",
+        description: "Horizontally-scrolling category carousels (Horror, Sci-Fi, Philosophy, History, and more), loaded progressively in batches as you scroll to avoid thundering-herd requests on launch."
+      },
+      {
+        title: "Full-Text Search",
+        description: "Real-time search across 70,000+ titles and authors with a four-state state machine — idle, loading, results, and empty — powered by URLSession async/await with response caching."
+      },
+      {
+        title: "Book Detail View",
+        description: "Cover image, authors with birth/death years, AI-generated summaries, and genre tags for every book in the Project Gutenberg catalog."
+      },
+      {
+        title: "Local Favorites",
+        description: "Save and manage books locally with a persistent FavoritesManager backed by @AppStorage, surviving app restarts without any backend or account required."
+      }
+    ]
+  },
+  {
     title: "Coughylyzer",
     description: "An iOS application that analyzes respiratory sounds to identify potential respiratory conditions using machine learning, developed as my Computer Engineering thesis.",
     link: "https://github.com/egemengunel/Coughylyzer",
