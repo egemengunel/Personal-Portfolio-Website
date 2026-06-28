@@ -6,11 +6,9 @@ export const workExperience: Project[] = [
     {
         title: "Lucid",
         description: "A SwiftUI study app for iOS and iPadOS where you build collections of flashcards, test yourself with quizzes, and chat with an AI study assistant — built on a Swift 6, MVVM + @Observable architecture with Supabase authentication.",
-        // TODO: replace with the live App Store URL (kept as '#' so no broken link ships)
-        link: "#",
+        link: "https://apps.apple.com/us/app/lucid-ai-flashcards-quiz/id6766661083",
         linkText: "View on App Store",
         linkIcon: "appstore",
-        // TODO: add app icon at public/icons/lucid-icon.png
         icon: "/icons/lucid-icon.png",
         techStack: [
             { icon: SiSwift, name: 'Swift' },
@@ -20,7 +18,7 @@ export const workExperience: Project[] = [
             { icon: SiXcode, name: 'Xcode' },
             { icon: SiGit, name: 'Git' }
         ],
-        // TODO: add screenshots at public/work-experience/lucid/lucid-1.png ... lucid-4.png
+
         media: [
             {
                 type: 'image',
@@ -41,15 +39,15 @@ export const workExperience: Project[] = [
         ],
         features: [
             {
-                title: "AI Study Assistant",
+                title: "Lucid Study Assistant",
                 description: "A dedicated Chat tab backed by a conversational AI assistant with persistent chat history, so you can ask questions and work through material interactively."
             },
             {
-                title: "Flashcard Collections",
-                description: "Organize study material into collections of flashcards and drill them in a focused, distraction-free study view built entirely in SwiftUI."
+                title: "Collections",
+                description: "Organize study material into collections and drill them in a focused, distraction-free study view built entirely in SwiftUI."
             },
             {
-                title: "Quizzes",
+                title: "Quizzes&Flashcards",
                 description: "Turn collections into interactive quizzes with stateful answer feedback that reinforces recall and tracks how you respond to each question."
             },
             {
