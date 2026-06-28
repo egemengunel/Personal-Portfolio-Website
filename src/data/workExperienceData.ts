@@ -1,7 +1,112 @@
-import { SiSwift, SiTypescript, SiVuedotjs, SiNuxtdotjs, SiTailwindcss, SiGit, SiFigma } from 'react-icons/si';
+import { SiSwift, SiTypescript, SiVuedotjs, SiNuxtdotjs, SiTailwindcss, SiGit, SiFigma, SiXcode, SiSupabase } from 'react-icons/si';
+import { TbBrain } from 'react-icons/tb';
 import type { Project } from '../types/project';
 
 export const workExperience: Project[] = [
+    {
+        title: "Lucid",
+        description: "Co-Founder, Lead iOS Engineer | Jan. 2026 - June 2026",
+        link: "https://apps.apple.com/us/app/lucid-ai-flashcards-quiz/id6766661083",
+        linkText: "View on App Store",
+        linkIcon: "appstore",
+        icon: "/icons/lucid-icon.png",
+        techStack: [
+            { icon: SiSwift, name: 'Swift' },
+            { icon: SiSwift, name: 'SwiftUI' },
+            { icon: TbBrain, name: 'AI Assistant' },
+            { icon: SiSupabase, name: 'Supabase' },
+            { icon: SiXcode, name: 'Xcode' },
+            { icon: SiGit, name: 'Git' }
+        ],
+
+        media: [
+            {
+                type: 'image',
+                url: '/work-experience/lucid/lucid-1.png',
+            },
+            {
+                type: 'image',
+                url: '/work-experience/lucid/lucid-2.png',
+            },
+            {
+                type: 'image',
+                url: '/work-experience/lucid/lucid-3.png',
+            },
+            {
+                type: 'image',
+                url: '/work-experience/lucid/lucid-4.png',
+            }
+        ],
+        features: [
+            {
+                title: "Lucid Study Assistant",
+                description: "A dedicated Chat tab backed by a conversational AI assistant with persistent chat history, so you can ask questions and work through material interactively."
+            },
+            {
+                title: "Collections",
+                description: "Organize study material into collections and drill them in a focused, distraction-free study view built entirely in SwiftUI."
+            },
+            {
+                title: "Quizzes&Flashcards",
+                description: "Turn collections into interactive quizzes with stateful answer feedback that reinforces recall and tracks how you respond to each question."
+            },
+            {
+                title: "Modern Architecture",
+                description: "Built with Swift 6 on an MVVM + @Observable architecture with environment-based dependency injection, a typed NetworkClient service layer, and Supabase-backed authentication."
+            }
+        ]
+    },
+    {
+        title: "HomeSketch",
+        description: "Independent iOS Engineer | Jan. 2026 - Mar. 2026",
+        link: "https://gethomesketch.app",
+        linkText: "View on App Store",
+        linkIcon: "appstore",
+        icon: "/icons/homesketch-icon.png",
+        techStack: [
+            { icon: SiSwift, name: 'Swift' },
+            { icon: SiSwift, name: 'SwiftUI' },
+            { icon: TbBrain, name: 'Replicate AI' },
+            { icon: SiXcode, name: 'Xcode' },
+            { icon: SiGit, name: 'Git' }
+        ],
+        media: [
+            {
+                type: 'image',
+                url: '/projects/homesketch/homesketch-1.png',
+            },
+            {
+                type: 'image',
+                url: '/projects/homesketch/homesketch-2.png',
+            },
+            {
+                type: 'image',
+                url: '/projects/homesketch/homesketch-3.png',
+            },
+            {
+                type: 'image',
+                url: '/projects/homesketch/homesketch-4.png',
+            }
+        ],
+        features: [
+            {
+                title: "AI Room Redesign",
+                description: "Upload a photo of any room and receive photorealistic AI-generated redesigns powered by the Replicate API, shaped by custom prompts built from your style and color selections."
+            },
+            {
+                title: "Style & Color Customization",
+                description: "Choose from a curated set of interior design styles and color palettes to personalize your AI prompt, with Pro-exclusive options gated behind the subscription paywall."
+            },
+            {
+                title: "Supabase Backend & API Proxy",
+                description: "Supabase Edge Functions written in TypeScript securely proxy all Replicate API calls, keeping secrets server-side while handling image uploads and storage."
+            },
+            {
+                title: "Subscription & Monetization",
+                description: "RevenueCat powers the in-app subscription system with entitlement checks, driving conversion through locked premium styles and color palettes."
+            }
+        ]
+    },
     {
         title: "WeDance",
         description: "Fullstack Web Developer Intern | June 2025 - Sep. 2025",
