@@ -1,7 +1,114 @@
-import { SiSwift, SiTypescript, SiVuedotjs, SiNuxtdotjs, SiTailwindcss, SiGit, SiFigma } from 'react-icons/si';
+import { SiSwift, SiTypescript, SiVuedotjs, SiNuxtdotjs, SiTailwindcss, SiGit, SiFigma, SiXcode } from 'react-icons/si';
+import { TbBrain } from 'react-icons/tb';
 import type { Project } from '../types/project';
 
 export const workExperience: Project[] = [
+    {
+        title: "Lucid",
+        // TODO: confirm description / role line for Lucid
+        description: "A quiz and flashcard iOS app that helps you study smarter — create decks, generate quizzes, and track your progress with a clean, focused SwiftUI experience.",
+        // TODO: replace with the live App Store URL (kept as '#' so no broken link ships)
+        link: "#",
+        linkText: "View on App Store",
+        linkIcon: "appstore",
+        // TODO: add app icon at public/icons/lucid-icon.png
+        icon: "/icons/lucid-icon.png",
+        techStack: [
+            { icon: SiSwift, name: 'Swift' },
+            { icon: SiSwift, name: 'SwiftUI' },
+            { icon: SiXcode, name: 'Xcode' },
+            { icon: SiGit, name: 'Git' }
+        ],
+        // TODO: add screenshots at public/work-experience/lucid/lucid-1.png ... lucid-4.png
+        media: [
+            {
+                type: 'image',
+                url: '/work-experience/lucid/lucid-1.png',
+            },
+            {
+                type: 'image',
+                url: '/work-experience/lucid/lucid-2.png',
+            },
+            {
+                type: 'image',
+                url: '/work-experience/lucid/lucid-3.png',
+            },
+            {
+                type: 'image',
+                url: '/work-experience/lucid/lucid-4.png',
+            }
+        ],
+        // TODO: review/adjust feature copy to match Lucid's actual functionality
+        features: [
+            {
+                title: "Flashcard Decks",
+                description: "Create and organize flashcard decks by topic, with a clean SwiftUI interface designed for fast, distraction-free studying."
+            },
+            {
+                title: "Quiz Mode",
+                description: "Turn any deck into an interactive quiz to test recall, with immediate feedback that reinforces learning."
+            },
+            {
+                title: "Spaced Repetition",
+                description: "Surfaces cards for review based on how well you know them, prioritizing weaker material to improve long-term retention."
+            },
+            {
+                title: "Progress Tracking",
+                description: "Track study streaks and mastery across decks so you always know what to review next."
+            }
+        ]
+    },
+    {
+        title: "HomeSketch",
+        description: "An AI-powered interior design iOS app that transforms any room — snap a photo, select a style and color palette, and instantly receive photorealistic AI-generated redesigns via the Replicate API.",
+        link: "https://gethomesketch.app",
+        linkText: "View on App Store",
+        linkIcon: "appstore",
+        icon: "/icons/homesketch-icon.png",
+        techStack: [
+            { icon: SiSwift, name: 'Swift' },
+            { icon: SiSwift, name: 'SwiftUI' },
+            { icon: TbBrain, name: 'Replicate AI' },
+            { icon: SiXcode, name: 'Xcode' },
+            { icon: SiGit, name: 'Git' }
+        ],
+        media: [
+            {
+                type: 'image',
+                url: '/projects/homesketch/homesketch-1.png',
+            },
+            {
+                type: 'image',
+                url: '/projects/homesketch/homesketch-2.png',
+            },
+            {
+                type: 'image',
+                url: '/projects/homesketch/homesketch-3.png',
+            },
+            {
+                type: 'image',
+                url: '/projects/homesketch/homesketch-4.png',
+            }
+        ],
+        features: [
+            {
+                title: "AI Room Redesign",
+                description: "Upload a photo of any room and receive photorealistic AI-generated redesigns powered by the Replicate API, shaped by custom prompts built from your style and color selections."
+            },
+            {
+                title: "Style & Color Customization",
+                description: "Choose from a curated set of interior design styles and color palettes to personalize your AI prompt, with Pro-exclusive options gated behind the subscription paywall."
+            },
+            {
+                title: "Supabase Backend & API Proxy",
+                description: "Supabase Edge Functions written in TypeScript securely proxy all Replicate API calls, keeping secrets server-side while handling image uploads and storage."
+            },
+            {
+                title: "Subscription & Monetization",
+                description: "RevenueCat powers the in-app subscription system with entitlement checks, driving conversion through locked premium styles and color palettes."
+            }
+        ]
+    },
     {
         title: "WeDance",
         description: "Fullstack Web Developer Intern | June 2025 - Sep. 2025",
