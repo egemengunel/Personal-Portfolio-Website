@@ -5,7 +5,7 @@ import type { Project } from '../types/project';
 export const workExperience: Project[] = [
     {
         title: "Lucid",
-        description: "A SwiftUI study app for iOS and iPadOS where you build collections of flashcards, test yourself with quizzes, and chat with an AI study assistant — built on a Swift 6, MVVM + @Observable architecture with Supabase authentication.",
+        description: "Co-Founder, Lead iOS Engineer | Jan. 2026 - June 2026",
         link: "https://apps.apple.com/us/app/lucid-ai-flashcards-quiz/id6766661083",
         linkText: "View on App Store",
         linkIcon: "appstore",
@@ -58,7 +58,7 @@ export const workExperience: Project[] = [
     },
     {
         title: "HomeSketch",
-        description: "An AI-powered interior design iOS app that transforms any room — snap a photo, select a style and color palette, and instantly receive photorealistic AI-generated redesigns via the Replicate API.",
+        description: "Independent iOS Engineer | Jan. 2026 - Mar. 2026",
         link: "https://gethomesketch.app",
         linkText: "View on App Store",
         linkIcon: "appstore",
