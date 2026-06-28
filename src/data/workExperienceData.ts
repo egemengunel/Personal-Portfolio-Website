@@ -1,12 +1,11 @@
-import { SiSwift, SiTypescript, SiVuedotjs, SiNuxtdotjs, SiTailwindcss, SiGit, SiFigma, SiXcode } from 'react-icons/si';
+import { SiSwift, SiTypescript, SiVuedotjs, SiNuxtdotjs, SiTailwindcss, SiGit, SiFigma, SiXcode, SiSupabase } from 'react-icons/si';
 import { TbBrain } from 'react-icons/tb';
 import type { Project } from '../types/project';
 
 export const workExperience: Project[] = [
     {
         title: "Lucid",
-        // TODO: confirm description / role line for Lucid
-        description: "A quiz and flashcard iOS app that helps you study smarter — create decks, generate quizzes, and track your progress with a clean, focused SwiftUI experience.",
+        description: "A SwiftUI study app for iOS and iPadOS where you build collections of flashcards, test yourself with quizzes, and chat with an AI study assistant — built on a Swift 6, MVVM + @Observable architecture with Supabase authentication.",
         // TODO: replace with the live App Store URL (kept as '#' so no broken link ships)
         link: "#",
         linkText: "View on App Store",
@@ -16,6 +15,8 @@ export const workExperience: Project[] = [
         techStack: [
             { icon: SiSwift, name: 'Swift' },
             { icon: SiSwift, name: 'SwiftUI' },
+            { icon: TbBrain, name: 'AI Assistant' },
+            { icon: SiSupabase, name: 'Supabase' },
             { icon: SiXcode, name: 'Xcode' },
             { icon: SiGit, name: 'Git' }
         ],
@@ -38,23 +39,22 @@ export const workExperience: Project[] = [
                 url: '/work-experience/lucid/lucid-4.png',
             }
         ],
-        // TODO: review/adjust feature copy to match Lucid's actual functionality
         features: [
             {
-                title: "Flashcard Decks",
-                description: "Create and organize flashcard decks by topic, with a clean SwiftUI interface designed for fast, distraction-free studying."
+                title: "AI Study Assistant",
+                description: "A dedicated Chat tab backed by a conversational AI assistant with persistent chat history, so you can ask questions and work through material interactively."
             },
             {
-                title: "Quiz Mode",
-                description: "Turn any deck into an interactive quiz to test recall, with immediate feedback that reinforces learning."
+                title: "Flashcard Collections",
+                description: "Organize study material into collections of flashcards and drill them in a focused, distraction-free study view built entirely in SwiftUI."
             },
             {
-                title: "Spaced Repetition",
-                description: "Surfaces cards for review based on how well you know them, prioritizing weaker material to improve long-term retention."
+                title: "Quizzes",
+                description: "Turn collections into interactive quizzes with stateful answer feedback that reinforces recall and tracks how you respond to each question."
             },
             {
-                title: "Progress Tracking",
-                description: "Track study streaks and mastery across decks so you always know what to review next."
+                title: "Modern Architecture",
+                description: "Built with Swift 6 on an MVVM + @Observable architecture with environment-based dependency injection, a typed NetworkClient service layer, and Supabase-backed authentication."
             }
         ]
     },
