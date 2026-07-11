@@ -20,19 +20,19 @@ export const projects: Project[] = [
     media: [
       {
         type: 'image',
-        url: '/projects/cosmo-papers/cosmo1.png',
+        url: '/projects/cosmo-papers/cosmo1.webp',
       },
       {
         type: 'image',
-        url: '/projects/cosmo-papers/cosmo2.png',
+        url: '/projects/cosmo-papers/cosmo2.webp',
       },
       {
         type: 'image',
-        url: '/projects/cosmo-papers/cosmo3.png',
+        url: '/projects/cosmo-papers/cosmo3.webp',
       },
       {
         type: 'image',
-        url: '/projects/cosmo-papers/cosmo4.png',
+        url: '/projects/cosmo-papers/cosmo4.webp',
       },
     ],
     features: [
@@ -42,7 +42,7 @@ export const projects: Project[] = [
       },
       {
         title: "Natural-Language Search",
-        description: "On-device smart search powered by Apple's NaturalLanguage framework understands queries the way you'd say them out loud — by title, description, category, date, or copyright-free — with live inline highlighting."
+        description: "On-device smart search powered by Apple's NaturalLanguage framework understands queries the way you'd say them out loud — 'aurora over mountains' or 'Saturn' — with built-in voice search and live inline highlighting."
       },
       {
         title: "Widgets & Lock-Screen Wallpapers",
