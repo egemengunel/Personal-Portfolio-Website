@@ -4,6 +4,57 @@ import type { Project } from '../types/project';
 
 export const projects: Project[] = [
   {
+    title: "Cosmo Papers",
+    description: "A native iOS space-wallpapers app built on NASA's Astronomy Picture of the Day — rebuilt for v2.0 with the complete APOD archive (1995–present), on-device natural-language search, curated cosmic categories, Home Screen widgets, and a Cosmo Plus subscription. SwiftUI + MVVM with a coordinator, Core Data, and iOS 26 Liquid Glass throughout.",
+    link: "https://cosmopapers.app",
+    linkText: "View on App Store",
+    linkIcon: "appstore",
+    icon: "/icons/cosmo-papers-icon.png",
+    techStack: [
+      { icon: SiSwift, name: 'Swift' },
+      { icon: SiSwift, name: 'SwiftUI' },
+      { icon: SiFigma, name: 'Figma' },
+      { icon: SiXcode, name: 'Xcode' },
+      { icon: SiGit, name: 'Git' }
+    ],
+    media: [
+      {
+        type: 'image',
+        url: '/projects/cosmo-papers/cosmo1.webp',
+      },
+      {
+        type: 'image',
+        url: '/projects/cosmo-papers/cosmo2.webp',
+      },
+      {
+        type: 'image',
+        url: '/projects/cosmo-papers/cosmo3.webp',
+      },
+      {
+        type: 'image',
+        url: '/projects/cosmo-papers/cosmo4.webp',
+      },
+    ],
+    features: [
+      {
+        title: "Complete NASA Archive",
+        description: "Browse the entire Astronomy Picture of the Day catalog from 1995 to today, organized into curated categories like Aurora, Hubble & Webb, Black Holes & Cosmology, Mars, and Spacecraft & Missions."
+      },
+      {
+        title: "Natural-Language Search",
+        description: "On-device smart search powered by Apple's NaturalLanguage framework understands queries the way you'd say them out loud — 'aurora over mountains' or 'Saturn' — with built-in voice search and live inline highlighting."
+      },
+      {
+        title: "Widgets & Lock-Screen Wallpapers",
+        description: "Preview any image as a lock-screen wallpaper, save in full resolution, favorite what you love, and add rotating cosmos widgets to your Home Screen."
+      },
+      {
+        title: "Cosmo Plus",
+        description: "A subscription (RevenueCat + Superwall) that unlocks the full archive, premium categories, smart search, HD saves, on-device translation, and live rotating widgets."
+      }
+    ]
+  },
+  {
     title: "Shelf",
     description: "A SwiftUI book discovery app powered by the Gutendex API, giving access to over 70,000 public domain classics from Project Gutenberg. Browse by genre, search by title or author, and save favorites — no account or API key required.",
     link: "https://github.com/egemengunel/Shelf-App",
@@ -101,61 +152,6 @@ export const projects: Project[] = [
       {
         title: "Liquid Glass UI Effects",
         description: "Implemented iOS 26's Liquid Glass effects for morphing UI transitions and dynamic elements, creating smooth state changes during recording."
-      }
-    ]
-  },
-  {
-    title: "Cosmo Papers",
-    description: "A SwiftUI application that showcases NASA's Astronomy Picture of the Day, featuring daily space imagery and educational content.",
-    link: "https://cosmopapers.app",
-    linkText: "View on App Store",
-    linkIcon: "appstore",
-    icon: "/icons/cosmo-papers-icon.png",
-    techStack: [
-      { icon: SiSwift, name: 'Swift' },
-      { icon: SiSwift, name: 'SwiftUI' },
-      { icon: SiFigma, name: 'Figma' },
-      { icon: SiXcode, name: 'Xcode' },
-      { icon: SiGit, name: 'Git' }
-    ],
-    media: [
-      {
-        type: 'image',
-        url: '/projects/cosmo-papers/cosmo1.png',
-
-      },
-      {
-        type: 'image',
-        url: '/projects/cosmo-papers/cosmo2.png',
-
-      },
-      {
-        type: 'image',
-        url: '/projects/cosmo-papers/cosmo3.png',
-
-      },
-      {
-        type: 'image',
-        url: '/projects/cosmo-papers/cosmo4.png',
-
-      },
-    ],
-    features: [
-      {
-        title: "Daily Space Content",
-        description: "Fresh astronomical content updated daily from NASA's APOD API"
-      },
-      {
-        title: "Interactive Interface",
-        description: "Smooth and intuitive SwiftUI interface with fluid animations"
-      },
-      {
-        title: "Educational Information",
-        description: "Detailed explanations and scientific context for each image"
-      },
-      {
-        title: "Offline Support",
-        description: "Cache system for viewing previous content without internet"
       }
     ]
   },
