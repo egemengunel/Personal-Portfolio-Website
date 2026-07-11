@@ -1,8 +1,0 @@
-https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/75/32/1c/75321c36-085f-99a3-bffa-17a0eccde02e/Slice_1.png/{w}x{h}{c}.{f}
-https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c5/c8/79/c5c879b4-cb74-275e-8e62-76ea3597435c/Slice_2.png/{w}x{h}{c}.{f}
-https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/97/65/cc/9765cc13-73a9-659e-1cf4-2f9dd1b4b2b5/Slice_3.png/{w}x{h}{c}.{f}
-https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/09/73/ce/0973ce7d-c9ca-46df-802f-475e795226e7/Slice_4.png/{w}x{h}{c}.{f}
-https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fb/6e/b0/fb6eb0fb-533c-765a-e84f-41cd46d95ff5/Slice_5.png/{w}x{h}{c}.{f}
-https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3a/4d/03/3a4d03f2-536c-08d3-5996-aaac9d16c371/Slice_6.png/{w}x{h}{c}.{f}
-https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f7/03/57/f7035721-6cc1-1a8b-8913-3df258219274/Slice_7.png/{w}x{h}{c}.{f}
-https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/64/54/a2/6454a21a-c0e6-4d51-4155-faca2011a9e6/Slice_8.png/{w}x{h}{c}.{f}
