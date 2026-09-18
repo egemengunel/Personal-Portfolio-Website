@@ -146,17 +146,17 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         id: 'liquid-glass',
-        heading: 'Liquid Glass in the week it shipped',
+        heading: "What is Apple's and what is mine",
         body: [
           "Everything glass in here is stock. The tab bar, the buttons, the glass effect on the lung icon, the SF Symbols. I did not rebuild Liquid Glass, I adopted it, and it sits on mesh gradients because that is what Apple's guidelines ask for. Glass wants rich content behind it, and it resamples whatever is underneath so it stays legible.",
           "What is mine is the animated mesh gradient, the gauge, the chart, and the choreography of the recording state. The waveform is a row of glass capsules that move with your voice, and when a recording completes they collapse into a single circle with a checkmark, then expand back out for the next one.",
-          "That transition is the thing I did not get right. Morphing four capsules into one circle and back, three times in a row, was harder than I expected. This was a thesis, so I stopped when it was plausible rather than when it was good. It works. It is not as smooth as it should be.",
+          "The transition was the hardest part to get right. Morphing four capsules into one circle and back, three times in a row, took more work than I expected, and this was a thesis so I was never going to spend a week on a single animation. I am happy with where it ended up.",
         ],
         media: [
           {
             type: 'image',
             url: '/case-studies/coughylyzer/2026-09/record-morph.webp',
-            caption: 'Capsules, mid collapse, checkmark. Three frames from the transition I never fully landed.',
+            caption: 'After each recording the waveform capsules collapse into a single circle with a checkmark, then expand back out for the next one.',
           },
         ],
       },
