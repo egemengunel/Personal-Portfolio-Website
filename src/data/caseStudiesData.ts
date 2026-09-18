@@ -36,6 +36,12 @@ export const caseStudies: CaseStudy[] = [
         href: 'https://apps.apple.com/us/app/lucid-ai-flashcards-quiz/id6766661083',
       },
     ],
+    gallery: [
+      { type: 'image', url: '/work-experience/lucid/lucid-1.png' },
+      { type: 'image', url: '/work-experience/lucid/lucid-2.png' },
+      { type: 'image', url: '/work-experience/lucid/lucid-3.png' },
+      { type: 'image', url: '/work-experience/lucid/lucid-4.png' },
+    ],
     sections: [],
   },
   {

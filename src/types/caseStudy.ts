@@ -18,6 +18,25 @@ export interface CaseStudySection {
   media?: CaseStudyMedia[];
 }
 
+export interface CaseStudyTypeSpecimen {
+  label: string;
+  sample: string;
+  /** CSS font-size, e.g. "2.25rem". Kept as a value so the data stays free of class names. */
+  size: string;
+  weight?: number;
+  tracking?: string;
+}
+
+export interface CaseStudyDesignSystem {
+  heading?: string;
+  note?: string;
+  /** Rendered as live CSS swatches, not screenshots of Sketch artboards. */
+  palette?: { name: string; value: string }[];
+  typeScale?: CaseStudyTypeSpecimen[];
+  /** Component sheets exported from Sketch, where live CSS will not do. */
+  media?: CaseStudyMedia[];
+}
+
 export interface CaseStudy {
   slug: string;
   title: string;
@@ -28,8 +47,14 @@ export interface CaseStudy {
   status: CaseStudyStatus;
   /** App icon — reuses the existing /icons assets where one exists. */
   icon?: string;
-  /** Wide image for the detail hero and social cards. */
+  /** Wide image for social cards. */
   cover?: string;
+  /**
+   * Screens shown before any prose. Sized by height rather than width, so
+   * single-panel and two-panel App Store sheets sit on the same baseline.
+   */
+  gallery?: CaseStudyMedia[];
+  designSystem?: CaseStudyDesignSystem;
   platforms: string[];
   stack: string[];
   links?: { label: string; href: string }[];

@@ -25,10 +25,10 @@ export const MOCK = {
   hero: '/work-experience/lucid/lucid-2.png',
 
   gallery: [
+    { url: '/work-experience/lucid/lucid-1.png', caption: 'The opening shot — one panel, so it is half the width of the others.' },
     { url: '/work-experience/lucid/lucid-2.png', caption: 'Collections carry a per-subject gradient that follows you into the session.' },
     { url: '/work-experience/lucid/lucid-3.png', caption: 'Quiz feedback is stateful — the card itself answers back.' },
     { url: '/work-experience/lucid/lucid-4.png', caption: 'The chat tab had to feel like a study partner, not a support widget.' },
-    { url: '/work-experience/lucid/lucid-1.png', caption: 'Empty states do the teaching.' },
   ],
 
   sections: [

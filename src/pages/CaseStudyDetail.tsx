@@ -1,49 +1,17 @@
 import { Link, Navigate, useParams } from 'react-router-dom';
-import { HiOutlineArrowLeft, HiOutlineArrowUpRight } from 'react-icons/hi2';
+import { HiOutlineArrowLeft } from 'react-icons/hi2';
 import { getCaseStudy } from '../data/caseStudiesData';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
-import type { CaseStudyMedia } from '../types/caseStudy';
+import { CaseStudyHeader } from '../components/caseStudy/CaseStudyHeader';
+import { CaseStudyGallery } from '../components/caseStudy/CaseStudyGallery';
+import { CaseStudySections } from '../components/caseStudy/CaseStudySections';
+import { CaseStudyDesignSystemPanel } from '../components/caseStudy/CaseStudyDesignSystemPanel';
 
-function Figure({ media }: { media: CaseStudyMedia }) {
-  return (
-    <figure className="mt-6">
-      {media.compareWith ? (
-        <div className="grid grid-cols-2 gap-3">
-          {[media.url, media.compareWith].map((src, i) => (
-            <div key={src}>
-              <img
-                src={src}
-                alt=""
-                loading="lazy"
-                decoding="async"
-                className="w-full rounded-xl border border-gray-200/80 bg-white"
-              />
-              {media.compareLabels?.[i] && (
-                <p className="mt-2 text-xs text-gray-400 text-center">
-                  {media.compareLabels[i]}
-                </p>
-              )}
-            </div>
-          ))}
-        </div>
-      ) : (
-        <img
-          src={media.url}
-          alt=""
-          loading="lazy"
-          decoding="async"
-          className="w-full rounded-xl border border-gray-200/80 bg-white"
-        />
-      )}
-      {media.caption && (
-        <figcaption className="mt-3 text-sm text-gray-400 leading-relaxed max-w-2xl">
-          {media.caption}
-        </figcaption>
-      )}
-    </figure>
-  );
-}
-
+/**
+ * Gallery-first layout: the screens come before the prose, decision sections
+ * alternate sides, and the stack is demoted to a line at the very bottom.
+ * Layout variants are prototyped at /lab before they land here.
+ */
 export function CaseStudyDetail() {
   const { slug } = useParams();
   const study = getCaseStudy(slug);
@@ -57,6 +25,8 @@ export function CaseStudyDetail() {
 
   if (!study) return <Navigate to="/case-studies" replace />;
 
+  const hasBody = study.sections.length > 0;
+
   return (
     <article className="pt-10 md:pt-14">
       <Link
@@ -67,137 +37,48 @@ export function CaseStudyDetail() {
         All case studies
       </Link>
 
-      {/* Hero */}
-      <header className="mt-6 flex items-start gap-4">
-        {study.icon && (
-          <img
-            src={study.icon}
-            alt=""
-            className="w-14 h-14 md:w-16 md:h-16 rounded-2xl object-cover flex-shrink-0"
-          />
-        )}
-        <div className="min-w-0">
-          <h1 className="text-2xl md:text-3xl font-semibold text-gray-900">{study.title}</h1>
-          <p className="mt-2 text-sm md:text-base text-gray-500 leading-relaxed max-w-2xl">
-            {study.tagline}
-          </p>
-        </div>
-      </header>
-
-      {/* Facts */}
-      <dl className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-5 max-w-3xl">
-        <div>
-          <dt className="text-xs font-medium text-gray-400 uppercase tracking-wider">Role</dt>
-          <dd className="mt-1.5 text-sm text-gray-600 leading-relaxed">{study.role}</dd>
-        </div>
-        <div>
-          <dt className="text-xs font-medium text-gray-400 uppercase tracking-wider">Timeframe</dt>
-          <dd className="mt-1.5 text-sm text-gray-600">{study.timeframe}</dd>
-        </div>
-        <div>
-          <dt className="text-xs font-medium text-gray-400 uppercase tracking-wider">Platform</dt>
-          <dd className="mt-1.5 text-sm text-gray-600">{study.platforms.join(', ')}</dd>
-        </div>
-        {study.links && study.links.length > 0 && (
-          <div>
-            <dt className="text-xs font-medium text-gray-400 uppercase tracking-wider">Live</dt>
-            <dd className="mt-1.5 flex flex-col gap-1">
-              {study.links.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-sm text-gray-900 hover:text-gray-500 transition-colors"
-                >
-                  {link.label}
-                  <HiOutlineArrowUpRight className="w-3.5 h-3.5" />
-                </a>
-              ))}
-            </dd>
-          </div>
-        )}
-      </dl>
-
-      {/* Stack */}
-      <div className="mt-6 flex flex-wrap gap-2">
-        {study.stack.map((item) => (
-          <span
-            key={item}
-            className="px-3 py-1 rounded-full text-xs font-medium text-gray-500 bg-gray-100 border border-gray-200/80"
-          >
-            {item}
-          </span>
-        ))}
+      <div className="mt-8">
+        <CaseStudyHeader study={study} />
       </div>
 
-      {/* Summary — the version for someone who reads 20 seconds and leaves */}
+      {study.gallery && <CaseStudyGallery items={study.gallery} />}
+
       {study.summary && (
-        <div className="mt-10 p-5 md:p-6 rounded-2xl bg-white border border-gray-200/80 max-w-3xl">
-          <dl className="space-y-4">
-            {(
-              [
-                ['Problem', study.summary.problem],
-                ['Approach', study.summary.approach],
-                ['Outcome', study.summary.outcome],
-              ] as const
-            ).map(([label, value]) => (
-              <div key={label}>
-                <dt className="text-xs font-medium text-gray-400 uppercase tracking-wider">
-                  {label}
-                </dt>
-                <dd className="mt-1.5 text-sm md:text-base text-gray-600 leading-relaxed">
-                  {value}
-                </dd>
-              </div>
-            ))}
-          </dl>
+        <div className="mt-16 grid md:grid-cols-3 gap-8 md:gap-10">
+          {(
+            [
+              ['Problem', study.summary.problem],
+              ['Approach', study.summary.approach],
+              ['Outcome', study.summary.outcome],
+            ] as const
+          ).map(([label, value]) => (
+            <div key={label}>
+              <h2 className="text-xs font-medium text-gray-400 uppercase tracking-wider">
+                {label}
+              </h2>
+              <p className="mt-2 text-sm md:text-base text-gray-600 leading-relaxed">{value}</p>
+            </div>
+          ))}
         </div>
       )}
 
-      {/* Metrics */}
       {study.metrics && study.metrics.length > 0 && (
-        <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl">
+        <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl">
           {study.metrics.map((metric) => (
-            <div
-              key={metric.label}
-              className="p-4 rounded-xl bg-white border border-gray-200/80"
-            >
-              <div className="text-xl md:text-2xl font-semibold text-gray-900">
-                {metric.value}
-              </div>
+            <div key={metric.label} className="p-4 rounded-xl bg-white border border-gray-200/80">
+              <div className="text-xl md:text-2xl font-semibold text-gray-900">{metric.value}</div>
               <div className="mt-1 text-xs text-gray-400 leading-relaxed">{metric.label}</div>
             </div>
           ))}
         </div>
       )}
 
-      {/* Body */}
-      {study.sections.length > 0 ? (
-        <div className="mt-12 space-y-14">
-          {study.sections.map((section) => (
-            <section key={section.id} id={section.id} className="scroll-mt-24">
-              <h2 className="text-lg md:text-xl font-semibold text-gray-900">
-                {section.heading}
-              </h2>
-              <div className="mt-3 space-y-4 max-w-2xl">
-                {section.body.map((paragraph, i) => (
-                  <p
-                    key={i}
-                    className="text-sm md:text-base text-gray-600 leading-relaxed"
-                  >
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
-              {section.media?.map((media) => (
-                <Figure key={media.url} media={media} />
-              ))}
-            </section>
-          ))}
+      {hasBody ? (
+        <div className="mt-20">
+          <CaseStudySections sections={study.sections} />
         </div>
       ) : (
-        <div className="mt-12 p-6 rounded-2xl border border-dashed border-gray-300 max-w-2xl">
+        <div className="mt-16 p-6 rounded-2xl border border-dashed border-gray-300 max-w-2xl">
           <h2 className="text-sm font-medium text-gray-900">
             This write-up is still being written.
           </h2>
@@ -207,6 +88,19 @@ export function CaseStudyDetail() {
           </p>
         </div>
       )}
+
+      {study.designSystem && (
+        <div className="mt-20">
+          <CaseStudyDesignSystemPanel system={study.designSystem} />
+        </div>
+      )}
+
+      <div className="mt-16 pt-8 border-t border-gray-200/70">
+        <span className="text-xs font-medium text-gray-400 uppercase tracking-wider">
+          Built with
+        </span>
+        <p className="mt-2 text-sm text-gray-500">{study.stack.join(' · ')}</p>
+      </div>
     </article>
   );
 }

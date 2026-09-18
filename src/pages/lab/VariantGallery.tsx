@@ -51,16 +51,13 @@ export function VariantGallery() {
       <div className="mt-10 -mx-4 md:-mx-8 lg:-mx-16">
         <div className="flex gap-4 overflow-x-auto px-4 md:px-8 lg:px-16 pb-4 snap-x snap-mandatory">
           {MOCK.gallery.map((shot) => (
-            <figure
-              key={shot.url}
-              className="snap-start flex-shrink-0 w-[78vw] sm:w-[60vw] md:w-[42vw] lg:w-[32vw]"
-            >
+            <figure key={shot.url} className="snap-start flex-shrink-0">
               <img
                 src={shot.url}
                 alt=""
-                className="w-full rounded-2xl border border-gray-200/80 bg-white"
+                className="h-[22rem] sm:h-[26rem] lg:h-[30rem] w-auto rounded-2xl border border-gray-200/80 bg-white"
               />
-              <figcaption className="mt-3 text-sm text-gray-400 leading-relaxed">
+              <figcaption className="mt-3 max-w-xs text-sm text-gray-400 leading-relaxed">
                 {shot.caption}
               </figcaption>
             </figure>
