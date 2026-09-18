@@ -73,11 +73,17 @@ per-route share cards require prerendering, which is not set up.
 
 ### Assets
 
-Case study imagery lives in `public/case-studies/<slug>/<YYYY-MM>/` — dated,
-because in-progress apps keep changing. Assets come out of the Sketch source
-file via the Sketch MCP server: use `run_code` with `sketch.export` (absolute
-`output` + explicit `filename`). Note that `get_design_assets` is for design
-*system* assets (swatches, symbols, text styles), not frame images.
+App icons live in `public/icons/` at 256x256 — all of them, including for apps
+that only appear as case studies. Case study imagery (screens, before/after
+pairs) goes in `public/case-studies/<slug>/<YYYY-MM>/`, dated because
+in-progress apps keep changing.
+
+Assets come out of the Sketch source files via the Sketch MCP server: use
+`run_code` with `sketch.export` (absolute `output` + explicit `filename`). Note
+that `get_design_assets` is for design *system* assets (swatches, symbols, text
+styles), not frame images. Check with the user before exporting anything beyond
+what was asked for — final assets are often exported by hand and may differ from
+what is in the Sketch file.
 
 `sips` on macOS cannot write WebP here; `brew install webp` for `cwebp` before
 committing large exports. Everything else in `public/` has already been

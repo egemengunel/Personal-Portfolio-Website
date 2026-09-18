@@ -89,9 +89,10 @@ prerendering the routes to static HTML at build time.
 
 ### Exporting design assets from Sketch
 
-Case study imagery lives in `public/case-studies/<slug>/<YYYY-MM>/` — dated,
-because in-progress apps keep changing. Assets are exported straight from the
-Sketch source file via the Sketch MCP server (`sketch.export`).
+App icons live in `public/icons/` at 256x256. Case study imagery (screens,
+before/after pairs) goes in `public/case-studies/<slug>/<YYYY-MM>/` — dated,
+because in-progress apps keep changing. Assets are exported from the Sketch
+source files via the Sketch MCP server (`sketch.export`).
 
 Exported PNGs should be compressed before committing. `sips` on this machine
 cannot write WebP, so install the encoder first:

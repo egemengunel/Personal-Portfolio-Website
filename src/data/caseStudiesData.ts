@@ -16,7 +16,7 @@ export const caseStudies: CaseStudy[] = [
     timeframe: '2026 — in progress',
     status: 'writing',
     platforms: ['iOS'],
-    icon: '/case-studies/antenna/2026-09/icon-d-ant-rebalanced.png',
+    icon: '/icons/antenna-icon.png',
     stack: ['Swift', 'SwiftUI', 'Core ML', 'Sketch'],
     sections: [],
   },
