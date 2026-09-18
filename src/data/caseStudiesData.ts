@@ -96,6 +96,28 @@ export const caseStudies: CaseStudy[] = [
       { label: 'Abnormal recall', value: '0.3761' },
       { label: 'People in the dataset', value: '2,635' },
     ],
+    designSystem: {
+      heading: 'The system underneath',
+      note: "Three accents, four score bands, and a mesh gradient built out of the accents themselves. These are the values from the shipped asset catalog, not the ones I drew.",
+      palette: [
+        { name: 'Accent primary', value: '#66C8CA' },
+        { name: 'Accent secondary', value: '#437EB4' },
+        { name: 'Accent tertiary', value: '#2F3D4E' },
+        { name: 'Mesh green', value: '#A3F29E' },
+        { name: 'Needs attention', value: '#EC5E73' },
+        { name: 'Fair', value: '#F3AF77' },
+        { name: 'Good', value: '#FCEC60' },
+        { name: 'Excellent', value: '#98E189' },
+      ],
+      typeScale: [
+        { label: 'Heading 1', sample: '83', size: '4rem', weight: 700, tracking: '-0.02em' },
+        { label: 'Heading 2', sample: 'Record', size: '4rem', weight: 400, tracking: '-0.02em' },
+        { label: 'Heading 3', sample: 'Four Things You Should Know', size: '1.375rem', weight: 700 },
+        { label: 'Heading 4', sample: 'Lung Score', size: '1.25rem', weight: 600 },
+        { label: 'Heading 5', sample: 'Excellent Score', size: '1.0625rem', weight: 600 },
+        { label: 'Body', sample: 'Find a quiet environment with minimal background noise', size: '1.0625rem', weight: 400 },
+      ],
+    },
     sections: [
       {
         id: 'ceiling',
@@ -164,7 +186,7 @@ export const caseStudies: CaseStudy[] = [
         id: 'what-id-change',
         heading: 'What I would change',
         body: [
-          "The design and the build drifted apart. I drew one thing in Sketch and implemented something slightly different in SwiftUI, so the padding and the type on the results cards do not match what I designed. Nobody made me reconcile them and I did not.",
+          "The design and the build drifted apart. Every accent moved between Sketch and the asset catalog: the teal went from #33CCCC to #66C8CA, the blue from #2980B9 to #437EB4, the navy from #2C3E50 to #2F3D4E. I was correcting each one by eye in Xcode until it looked right on a real screen, and never went back to update the file I drew it in. The padding on the results cards drifted the same way. Nobody made me reconcile them and I did not.",
           "The trend chart formats its x-axis as a weekday abbreviation. Take five recordings on the same Friday and you get five labels reading Fri. It also smooths between points, which I still think is right, because exact values would make it look more precise than it is. The labels are just wrong.",
           "The result explanation is assembled from three strings that were each written to stand alone, so it says \"indicates excellent score\" and then immediately \"indicates excellent respiratory health\", and it says \"continue monitoring your score over time\" twice in the same block.",
           "The Continue button on all three guide screens says Continiue. It has said that the whole time.",

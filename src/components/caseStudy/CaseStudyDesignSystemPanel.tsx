@@ -19,7 +19,7 @@ export function CaseStudyDesignSystemPanel({ system }: { system: CaseStudyDesign
 
       <div className="mt-8 space-y-10">
         {palette && palette.length > 0 && (
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {palette.map((swatch) => (
               <div key={swatch.name}>
                 <div
