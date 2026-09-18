@@ -1,11 +1,11 @@
 import type { CaseStudy } from '../types/caseStudy';
 
 /**
- * Case studies are ordered deliberately — the index renders them in this order,
+ * Case studies are ordered deliberately. The index renders them in this order,
  * strongest first. `status` drives how the card behaves:
- *   published — written, linked, indexable
- *   writing   — linked, but the page says it is still being written
- *   planned   — listed as a quiet tile, not linked
+ *   published: written, linked, indexable
+ *   writing:   linked, but the page says it is still being written
+ *   planned:   listed as a quiet tile, not linked
  */
 export const caseStudies: CaseStudy[] = [
   {
@@ -47,22 +47,95 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: 'cosmo-papers',
     title: 'Cosmo Papers',
-    tagline: 'Rebuilding a shipped wallpaper app around 30 years of NASA archive.',
+    tagline: "My first shipped app, rebuilt after the API it depended on stopped being reliable.",
     role: 'Design & iOS engineering',
-    timeframe: '2025 to 2026',
-    status: 'writing',
+    timeframe: 'Oct 2025 to Jul 2026',
+    status: 'published',
     icon: '/icons/cosmo-papers-icon.png',
     cover: '/projects/cosmo-papers/cosmo1.webp',
     platforms: ['iOS'],
-    stack: ['SwiftUI', 'Core Data', 'NaturalLanguage', 'RevenueCat', 'Superwall'],
+    stack: ['Swift 6', 'SwiftUI', 'Core Data', 'NaturalLanguage', 'Metal', 'Nuke', 'RevenueCat', 'Superwall'],
     links: [{ label: 'View on App Store', href: 'https://cosmopapers.app' }],
     gallery: [
       { type: 'image', url: '/projects/cosmo-papers/cosmo1.webp' },
       { type: 'image', url: '/projects/cosmo-papers/cosmo2.webp' },
       { type: 'image', url: '/projects/cosmo-papers/cosmo3.webp' },
       { type: 'image', url: '/projects/cosmo-papers/cosmo4.webp' },
+      { type: 'image', url: '/case-studies/cosmo-papers/2026-09/v2-archive.webp' },
+      { type: 'image', url: '/case-studies/cosmo-papers/2026-09/v2-lockscreen.webp' },
+      { type: 'image', url: '/case-studies/cosmo-papers/2026-09/v2-favorites.webp' },
     ],
-    sections: [],
+    summary: {
+      problem:
+        "v1 pulled live from NASA's Astronomy Picture of the Day API. When that API went down, and it went down often, the app showed nothing at all.",
+      approach:
+        "Bundle the whole archive locally, then rebuild the product around curation instead of around whatever the API returned that day.",
+      outcome:
+        "v2.0 shipped 7 July 2026. It did not spike on launch. Impressions rose 62% in the first month while downloads moved 3%, and the app has grown steadily in the two months since.",
+    },
+    metrics: [
+      { label: 'Downloads, launch month', value: '184' },
+      { label: 'Downloads, last 30 days', value: '251' },
+      { label: 'Impressions, launch month', value: '19.2K' },
+      { label: 'Impressions, last 30 days', value: '36.4K' },
+    ],
+    sections: [
+      {
+        id: 'the-api',
+        heading: 'An API I did not control took my only shipped app down',
+        body: [
+          "Cosmo Papers exists because I wanted to browse NASA's Astronomy Picture of the Day and set the images as my wallpaper. It is the app that got me into iOS in the first place, and it was the first thing I designed and shipped myself.",
+          "v1.0 went out on 24 October 2025 and pulled everything live from NASA's APOD API. That turned out to be the mistake. Over the following year there were US government shutdowns and budget cuts, NASA stopped maintaining the API properly, and when it went down my app showed nothing. There was no fallback in it. At the time this was my only app on the App Store and I was sending it to companies as the thing that proved I could build for iOS, and it was just broken, and there was nothing I could do about it from my side.",
+          "Even when it worked it was slow, and it would sometimes return a video for the day with no usable source URL, which is a strange thing for an imagery API to do.",
+          "I did not decide to cut it in one go. Two weeks after launch I shipped a network failure threshold to handle the outages. Seven months later I started bundling full resolution images offline. Three weeks after that, in v2.0, I removed the API entirely. Looking at my own commit history now, it reads as an eight month retreat from a dependency I kept trying to live with.",
+        ],
+        media: [
+          {
+            type: 'image',
+            url: '/case-studies/cosmo-papers/2026-09/perf-compare.webp',
+            caption: 'v1.1.1 on the left, still rendering, against v2.0 on the right. Once the catalog is local there is nothing to wait for.',
+          },
+        ],
+      },
+      {
+        id: 'going-local',
+        heading: 'Going local changed what the product was',
+        body: [
+          "Once the whole archive was bundled in the app, the constraint that shaped v1 disappeared. I was no longer limited to whatever the API felt like returning that day.",
+          "The first thing that went was the Today tab. An app built on the picture of the day, which no longer fetches today's picture, has no business having a Today tab. What I actually had was every image back to 1995, so the product stopped being a daily feed and became curation.",
+          "That let me write my own taxonomy, which APOD does not provide: Aurora, Hubble and Webb, Galaxies, Black Holes and Cosmology, Star Clusters, Nebulae. Explore, which was a flat grid of whatever was newest, became Browse, which is one carousel per category, backed by a grid you can zoom out of to see everything back to 1995 with a scrubber for jumping to a date.",
+          "The trade is real and I want to be clear about it. The app will never show today's picture again, and new images only arrive when I ship a build. I decided reliability was worth more than freshness, because an app that is occasionally empty is worse than an app that is always a month behind.",
+        ],
+        media: [
+          {
+            type: 'image',
+            url: '/case-studies/cosmo-papers/2026-09/v1-today.webp',
+            compareWith: '/case-studies/cosmo-papers/2026-09/v2-browse.webp',
+            compareLabels: ['v1.1.1', 'v2.0'],
+            caption: 'One picture and a wall of text, against a category carousel over the whole archive.',
+          },
+        ],
+      },
+      {
+        id: 'dark',
+        heading: 'Dark was one decision, not three workarounds',
+        body: [
+          "v1 had no position on appearance at all. It followed whatever the system was set to, and wherever a component broke in dark mode I forced it back to light locally. There were three of those patches by the end, in the vertical action buttons, the onboarding button and the expandable text. Three separate fixes for a decision I had never actually made.",
+          "v2 makes the decision once, at the app root, with a single preferredColorScheme call. All three patches went away with it.",
+          "The reason is that everything in this app is a photograph of space. Hubble and Webb images are mostly black, and on a light background they never sat right, the wallpaper and the chrome were fighting each other. On dark, the images are the only bright thing on screen, which is what a wallpaper app should be.",
+          "The background is not flat black either. It is a subtle gradient from black up into a deep blue, with stars over it, and every so often a shooting star crosses the screen. You have to be looking to catch one.",
+        ],
+        media: [
+          {
+            type: 'image',
+            url: '/case-studies/cosmo-papers/2026-09/v1-detail.webp',
+            compareWith: '/case-studies/cosmo-papers/2026-09/v2-detail.webp',
+            compareLabels: ['v1.1.1', 'v2.0'],
+            caption: 'The same screen before and after. Actions moved out of a vertical stack on top of the image and got labels.',
+          },
+        ],
+      },
+    ],
   },
   {
     slug: 'coughylyzer',
