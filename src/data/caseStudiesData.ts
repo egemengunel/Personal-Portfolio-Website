@@ -135,6 +135,68 @@ export const caseStudies: CaseStudy[] = [
           },
         ],
       },
+      {
+        id: 'one-at-a-time',
+        heading: 'One image at a time',
+        body: [
+          "v1's Explore was a flat grid of whatever was newest. That is fine for a feed and wrong for choosing a wallpaper, because you scan twenty thumbnails at once and commit to none of them.",
+          "Browse shows you roughly one image at a time instead, in a carousel per category, with the current image centred and the neighbours peeking in at the edges. I took that from old iTunes. Turning an iPhone 3GS or 4 sideways and flicking through album covers, one at a time, felt like going through a shelf rather than reading a list, and that is the feeling I wanted for picking a wallpaper.",
+          "Every swipe fires a haptic, and there is a rubber band haptic when you reach the end of a category. It is a small thing but it makes the images feel like objects you are handling rather than rows you are scrolling.",
+          "After about twenty images the carousel ends on a card that says to keep swiping, which takes you into the full category grid. From there you can zoom out to everything back to 1995, grouped by month, with a scrubber for jumping to a date. The grid only reveals the next batch once most of the current batch has actually finished loading, so scrolling never outruns rendering and you are not looking at empty rectangles.",
+        ],
+        media: [
+          {
+            type: 'image',
+            url: '/case-studies/cosmo-papers/2026-09/v1-explore.webp',
+            compareWith: '/case-studies/cosmo-papers/2026-09/v2-carousel.webp',
+            compareLabels: ['v1.1.1', 'v2.0'],
+            caption: 'A grid of everything, against one image at a time per category.',
+          },
+        ],
+      },
+      {
+        id: 'search',
+        heading: 'Search, and what you are actually buying',
+        body: [
+          "There was no search in v1 at all. In v2 it is a single field with no filter chips and no sort menu. You type what you want and the app works out what you meant.",
+          "The parsing runs on Apple's NaturalLanguage framework. It lemmatizes the query, maps words onto my categories by meaning using word embeddings, and pulls out years, decades and copyright-free intent. I chose it over Foundation Models deliberately. Apple Intelligence would have put a hardware floor of iPhone 15 Pro under the feature, and NaturalLanguage is free, on device, and runs on everything.",
+          "Free users get plain text matching. Cosmo Plus gets the query understanding, and it also gets a different field: a glass capsule with a Metal shader running behind it and a placeholder that cycles through example queries, so you learn what the field can do by watching it rather than by reading instructions.",
+          "I was careful about what the subscription is sold as. It does not buy the images. Those belong to NASA and to the photographers, they are credited in the app, and many of them are copyrighted and marked personal use only. What you are paying for is the curation, the taxonomy I wrote, the browsing experience and search. I wanted that stated in the app rather than buried in a terms page, because selling someone else's photographs would not be right.",
+        ],
+        media: [
+          {
+            type: 'image',
+            url: '/case-studies/cosmo-papers/2026-09/v2-search.webp',
+            caption: 'One field, no filters. The highlight shows which part of the query was understood as a facet.',
+          },
+        ],
+      },
+      {
+        id: 'launch-screen',
+        heading: 'The launch screen',
+        body: [
+          "A grey mark on a black screen. A highlight sweeps around it while a gradient rises from the bottom, black into deep blue, and by the time the highlight finishes its pass the mark is lit white and the gradient has filled the screen. Then it hands over to Browse.",
+          "It lasts about three seconds and it is the only thing anyone sees before the app itself. I spent time on it because it is the one moment where the app has the screen entirely to itself, with no photographs on it yet, and it is the only chance to say what kind of app this is before the content starts doing that job.",
+        ],
+        media: [
+          {
+            type: 'image',
+            url: '/case-studies/cosmo-papers/2026-09/v2-launch.webp',
+            caption: 'Three frames from the launch animation, about a second apart.',
+          },
+        ],
+      },
+      {
+        id: 'in-code',
+        heading: 'I designed v2 in code, and it shows in places',
+        body: [
+          "Coughylyzer I designed in Sketch first, colors and type before any UI. Cosmo Papers v2 I did the other way round, in Xcode, on a device, adjusting until it looked right.",
+          "Part of that I would defend. The app has exactly one accent color in its asset catalog, and everything else on screen is a photograph. In a wallpaper app the color comes from the content, so there is almost nothing worth tokenizing. A palette would have been ceremony.",
+          "The type scale is the part I would not defend. Heading 3, heading 4 and heading 5 are all 32 points, which is three names for one size, and there is a token called body35 sitting between body3 and body4 because at some point I needed a size in between and did not want to renumber everything. That is what a scale looks like when it grows one screen at a time instead of being decided once.",
+          "The Sketch file is worse than the code. Cosmo Papers was originally designed in Figma in 2024, and when I moved to Sketch I imported it. The import lost icons, brought grids in wrong, and stacked colors on top of each other. The Foundations page in there still describes v1, which is the version this whole case study is about replacing.",
+          "And the archive is frozen. New images only arrive when I ship a build. I still think reliability was the right trade against an API that kept going down, but it means an app built on the Astronomy Picture of the Day cannot show you today's picture. I have not solved that. I chose around it.",
+        ],
+      },
     ],
   },
   {
