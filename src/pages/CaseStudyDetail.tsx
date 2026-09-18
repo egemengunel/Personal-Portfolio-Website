@@ -83,8 +83,9 @@ export function CaseStudyDetail() {
             This write-up is still being written.
           </h2>
           <p className="mt-2 text-sm text-gray-500 leading-relaxed">
-            The app itself is real and linked above — the long-form breakdown of the decisions
-            behind it is in progress.
+            {study.links && study.links.length > 0
+              ? 'The app itself is real and linked above — the long-form breakdown of the decisions behind it is in progress.'
+              : 'The app is still in development — the long-form breakdown of the decisions behind it is in progress.'}
           </p>
         </div>
       )}

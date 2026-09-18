@@ -56,6 +56,12 @@ export const caseStudies: CaseStudy[] = [
     platforms: ['iOS'],
     stack: ['SwiftUI', 'Core Data', 'NaturalLanguage', 'RevenueCat', 'Superwall'],
     links: [{ label: 'View on App Store', href: 'https://cosmopapers.app' }],
+    gallery: [
+      { type: 'image', url: '/projects/cosmo-papers/cosmo1.webp' },
+      { type: 'image', url: '/projects/cosmo-papers/cosmo2.webp' },
+      { type: 'image', url: '/projects/cosmo-papers/cosmo3.webp' },
+      { type: 'image', url: '/projects/cosmo-papers/cosmo4.webp' },
+    ],
     sections: [],
   },
   {
@@ -69,6 +75,12 @@ export const caseStudies: CaseStudy[] = [
     cover: '/projects/coughylyzer/Coughylyzer1.png',
     platforms: ['iOS'],
     stack: ['SwiftUI', 'Core ML', 'AVFoundation'],
+    gallery: [
+      { type: 'image', url: '/projects/coughylyzer/Coughylyzer1.png' },
+      { type: 'image', url: '/projects/coughylyzer/Coughylyzer2.png' },
+      { type: 'image', url: '/projects/coughylyzer/Coughylyzer3.png' },
+      { type: 'image', url: '/projects/coughylyzer/Coughylyzer4.png' },
+    ],
     sections: [],
   },
   {
@@ -82,6 +94,12 @@ export const caseStudies: CaseStudy[] = [
     cover: '/projects/shelf/shelf-browse.png',
     platforms: ['iOS'],
     stack: ['SwiftUI', 'Gutendex API'],
+    gallery: [
+      { type: 'image', url: '/projects/shelf/shelf-browse.png' },
+      { type: 'image', url: '/projects/shelf/shelf-search.png' },
+      { type: 'image', url: '/projects/shelf/shelf-book-detail.png' },
+      { type: 'image', url: '/projects/shelf/shelf-favorites.png' },
+    ],
     sections: [],
   },
   {
@@ -95,6 +113,12 @@ export const caseStudies: CaseStudy[] = [
     cover: '/projects/homesketch/homesketch-1.png',
     platforms: ['iOS'],
     stack: ['SwiftUI', 'Supabase', 'StoreKit'],
+    gallery: [
+      { type: 'image', url: '/projects/homesketch/homesketch-1.png' },
+      { type: 'image', url: '/projects/homesketch/homesketch-2.png' },
+      { type: 'image', url: '/projects/homesketch/homesketch-3.png' },
+      { type: 'image', url: '/projects/homesketch/homesketch-4.png' },
+    ],
     sections: [],
   },
 ];
