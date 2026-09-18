@@ -54,10 +54,15 @@ in `src/components/caseStudy/`. Two decisions there are load-bearing:
   one-panel (height/width ~2.2) and two-panel (~1.1) exports; a fixed-width card
   renders the one-panel screens at double everything else's height. A fixed
   height puts them on a shared baseline and lets width vary.
-- **The header icon is sized in `em`, not pixels.** The font size sits on the
-  title row so the icon can be `0.7em` — the system font's cap height measures
-  ~0.705em, so the icon stays just under the cap of the first letter at every
-  breakpoint instead of drifting when the title size changes.
+- **`scroll-pl-*` must mirror the scroller's `px-*`.** With
+  `scroll-snap-type: x mandatory`, snapping aligns the first item to the
+  scrollport edge and scrolls the leading padding away, so the gutter silently
+  disappears and images touch the screen edge on mobile. `scroll-padding` moves
+  the snap origin inward — the CSS counterpart of a SwiftUI ScrollView's
+  horizontal safe-area inset. Change one value and you must change the other.
+
+The case study header carries no icon, eyebrow or date — title, tagline, and one
+quiet line of role plus links. App icons appear on the index cards only.
 
 Layout alternatives are prototyped at `/lab` (`src/pages/LayoutLab.tsx` plus
 `src/pages/lab/`), which is not linked from the nav and keeps its own mock copies
