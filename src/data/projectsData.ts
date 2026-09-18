@@ -117,22 +117,22 @@ export const projects: Project[] = [
     media: [
       {
         type: 'image',
-        url: '/projects/coughylyzer/Coughylyzer1.png',
+        url: '/projects/coughylyzer/coughylyzer1.webp',
 
       },
       {
         type: 'image',
-        url: '/projects/coughylyzer/Coughylyzer2.png',
+        url: '/projects/coughylyzer/coughylyzer2.webp',
 
       },
       {
         type: 'image',
-        url: '/projects/coughylyzer/Coughylyzer3.png',
+        url: '/projects/coughylyzer/coughylyzer3.webp',
 
       },
       {
         type: 'image',
-        url: '/projects/coughylyzer/Coughylyzer4.png',
+        url: '/projects/coughylyzer/coughylyzer4.webp',
 
       }
     ],
