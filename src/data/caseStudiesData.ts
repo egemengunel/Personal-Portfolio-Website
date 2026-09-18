@@ -70,7 +70,7 @@ export const caseStudies: CaseStudy[] = [
     tagline: 'An expressive take on iOS 26 Liquid Glass, built the week it landed.',
     role: 'Design & iOS engineering',
     timeframe: '2025',
-    status: 'planned',
+    status: 'writing',
     icon: '/icons/coughylyzer-icon.png',
     cover: '/projects/coughylyzer/Coughylyzer1.png',
     platforms: ['iOS'],
@@ -83,48 +83,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     sections: [],
   },
-  {
-    slug: 'shelf',
-    title: 'Shelf',
-    tagline: 'A typographic design system for reading, built as a job application.',
-    role: 'Design & iOS engineering',
-    timeframe: '2025',
-    status: 'planned',
-    icon: '/icons/shelf-icon.jpg',
-    cover: '/projects/shelf/shelf-browse.png',
-    platforms: ['iOS'],
-    stack: ['SwiftUI', 'Gutendex API'],
-    gallery: [
-      { type: 'image', url: '/projects/shelf/shelf-browse.png' },
-      { type: 'image', url: '/projects/shelf/shelf-search.png' },
-      { type: 'image', url: '/projects/shelf/shelf-book-detail.png' },
-      { type: 'image', url: '/projects/shelf/shelf-favorites.png' },
-    ],
-    sections: [],
-  },
-  {
-    slug: 'homesketch',
-    title: 'HomeSketch',
-    tagline: 'AI room redesign, from Supabase proxy to paywall.',
-    role: 'Design & iOS engineering',
-    timeframe: '2025',
-    status: 'planned',
-    icon: '/icons/homesketch-icon.png',
-    cover: '/projects/homesketch/homesketch-1.png',
-    platforms: ['iOS'],
-    stack: ['SwiftUI', 'Supabase', 'StoreKit'],
-    gallery: [
-      { type: 'image', url: '/projects/homesketch/homesketch-1.png' },
-      { type: 'image', url: '/projects/homesketch/homesketch-2.png' },
-      { type: 'image', url: '/projects/homesketch/homesketch-3.png' },
-      { type: 'image', url: '/projects/homesketch/homesketch-4.png' },
-    ],
-    sections: [],
-  },
 ];
 
 export const getCaseStudy = (slug?: string): CaseStudy | undefined =>
   caseStudies.find((study) => study.slug === slug);
-
-/** Cards that link somewhere. `planned` entries are listed but inert. */
-export const linkableCaseStudies = caseStudies.filter((s) => s.status !== 'planned');
