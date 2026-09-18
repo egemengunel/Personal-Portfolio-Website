@@ -18,7 +18,7 @@ export function VariantGallery() {
         {/* Font size lives on the row so the icon can be sized in em. The system
             font's cap height measures ~0.705em, so 0.7em keeps the icon just
             under the cap of the "L" at every breakpoint. */}
-        <div className="flex items-center gap-3 md:gap-4 text-4xl md:text-6xl">
+        <div className="flex items-center gap-3 md:gap-4 text-5xl md:text-[4.25rem]">
           <img
             src={MOCK.icon}
             alt=""
@@ -35,8 +35,6 @@ export function VariantGallery() {
 
         <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-gray-400">
           <span>{MOCK.role}</span>
-          <span className="text-gray-300">·</span>
-          <span>{MOCK.platform}</span>
           <a
             href={MOCK.appStore}
             target="_blank"
