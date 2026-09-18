@@ -12,7 +12,7 @@ import { VariantSplit } from './lab/VariantSplit';
 
 const VARIANTS = [
   { id: 'editorial', label: 'A · Editorial', note: 'Big title, one opening image, narrow prose, wide figures.', render: VariantEditorial },
-  { id: 'gallery', label: 'B · Gallery first', note: 'The work before the words — a bleeding scroller of App Store sheets.', render: VariantGallery },
+  { id: 'gallery', label: 'B · Gallery first', note: 'A header with the icon inline, then the work before the words. Images alternate sides at text height.', render: VariantGallery },
   { id: 'split', label: 'C · Sticky split', note: 'Facts pinned in a left rail, right column almost entirely visual.', render: VariantSplit },
 ] as const;
 
