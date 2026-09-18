@@ -13,12 +13,15 @@ export function CaseStudyGallery({ items }: { items: CaseStudyMedia[] }) {
   if (items.length === 0) return null;
 
   return (
-    <div className="mt-10 -mx-4 md:-mx-8 lg:-mx-16">
-      {/* scroll-pl-* must mirror px-*: with `snap-mandatory`, snapping aligns the
-          first item to the scrollport edge and scrolls the padding away, so the
-          leading gutter vanishes. scroll-padding moves the snap origin inward —
-          the CSS counterpart of a ScrollView's horizontal safe-area inset. */}
-      <div className="flex gap-4 overflow-x-auto px-4 md:px-8 lg:px-16 scroll-pl-4 md:scroll-pl-8 lg:scroll-pl-16 pb-4 snap-x snap-mandatory">
+    <div className="mt-10 -mx-4">
+      {/* Three values must stay equal: the negative margin, the padding, and the
+          scroll-padding. The margin can never exceed RootLayout's px-4 or the
+          page overflows horizontally once the viewport reaches the container's
+          max width. And with `snap-mandatory`, snapping aligns the first item to
+          the scrollport edge and scrolls the padding away unless scroll-padding
+          moves the snap origin back in, which is the CSS counterpart of a
+          ScrollView's horizontal safe-area inset. */}
+      <div className="flex gap-4 overflow-x-auto px-4 scroll-pl-4 pb-4 snap-x snap-mandatory">
         {items.map((item) => (
           <figure key={item.url} className="snap-start flex-shrink-0">
             <img

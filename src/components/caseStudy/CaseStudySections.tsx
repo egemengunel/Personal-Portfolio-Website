@@ -73,7 +73,7 @@ export function CaseStudySections({ sections }: { sections: CaseStudySection[] }
                   alt=""
                   loading="lazy"
                   decoding="async"
-                  className="mx-auto w-auto max-h-[22rem] md:max-h-[26rem] rounded-2xl border border-gray-200/80 bg-white"
+                  className="mx-auto w-auto max-w-full max-h-[22rem] md:max-h-[26rem] rounded-2xl border border-gray-200/80 bg-white"
                 />
               )}
               {media.caption && (

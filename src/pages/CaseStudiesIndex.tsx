@@ -5,9 +5,9 @@ import { useDocumentMeta } from '../hooks/useDocumentMeta';
 
 export function CaseStudiesIndex() {
   useDocumentMeta({
-    title: 'Case Studies — Egemen Günel',
+    title: 'Case Studies · Egemen Günel',
     description:
-      'Longer write-ups on the design and engineering decisions behind the apps I build — what the constraint was, what I rejected, and what shipped.',
+      'Longer write-ups on the design and engineering decisions behind the apps I build: what the constraint was, what I rejected, and what shipped.',
     path: '/case-studies',
   });
 
@@ -15,7 +15,7 @@ export function CaseStudiesIndex() {
     <div className="pt-10 md:pt-14">
       <h1 className="text-2xl md:text-3xl font-semibold text-gray-900">Case Studies</h1>
       <p className="mt-3 text-sm md:text-base text-gray-500 leading-relaxed max-w-2xl">
-        Longer write-ups on the decisions behind the apps — what the constraint was, what I tried,
+        Longer write-ups on the decisions behind the apps: what the constraint was, what I tried,
         what I rejected, and what actually shipped. Design and code are the same job here, so both
         show up.
       </p>

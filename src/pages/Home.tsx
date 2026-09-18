@@ -11,7 +11,7 @@ const Projects = lazy(() =>
 
 export function Home() {
   useDocumentMeta({
-    title: 'Egemen Günel — iOS Developer',
+    title: 'Egemen Günel · iOS Developer',
     description:
       'Swift & iOS engineer building polished, design-led apps. Published work on the App Store, with case studies on the decisions behind them.',
     path: '/',

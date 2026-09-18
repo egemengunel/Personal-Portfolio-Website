@@ -4,7 +4,7 @@ import { HiOutlineArrowRight } from 'react-icons/hi2';
 const whatIDo = [
   'Native app development with Swift, SwiftUI, and UIKit across iOS and macOS',
   'On-device machine learning using Core ML and Create ML for real-time inference',
-  'Custom animations, transitions, and design systems — from Liquid Glass effects to reusable component libraries',
+  'Custom animations, transitions, and design systems, from Liquid Glass effects to reusable component libraries',
   'Figma-to-code workflows with pixel-perfect UI implementation',
   'API integration, local data persistence, and offline-first architecture',
 ];

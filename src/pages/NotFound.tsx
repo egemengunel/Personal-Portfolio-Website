@@ -3,7 +3,7 @@ import { useDocumentMeta } from '../hooks/useDocumentMeta';
 
 export function NotFound() {
   useDocumentMeta({
-    title: 'Not found — Egemen Günel',
+    title: 'Not found · Egemen Günel',
     description: 'That page does not exist.',
     path: '/404',
   });

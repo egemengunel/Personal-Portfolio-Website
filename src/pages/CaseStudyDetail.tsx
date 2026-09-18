@@ -17,7 +17,7 @@ export function CaseStudyDetail() {
   const study = getCaseStudy(slug);
 
   useDocumentMeta({
-    title: study ? `${study.title} — Case Study` : 'Case Study — Egemen Günel',
+    title: study ? `${study.title} · Case Study` : 'Case Study · Egemen Günel',
     description: study?.tagline ?? 'Case study.',
     path: `/case-studies/${slug ?? ''}`,
     image: study?.cover,
@@ -84,8 +84,8 @@ export function CaseStudyDetail() {
           </h2>
           <p className="mt-2 text-sm text-gray-500 leading-relaxed">
             {study.links && study.links.length > 0
-              ? 'The app itself is real and linked above — the long-form breakdown of the decisions behind it is in progress.'
-              : 'The app is still in development — the long-form breakdown of the decisions behind it is in progress.'}
+              ? 'The app itself is real and linked above. The long-form breakdown of the decisions behind it is in progress.'
+              : 'The app is still in development. The long-form breakdown of the decisions behind it is in progress.'}
           </p>
         </div>
       )}

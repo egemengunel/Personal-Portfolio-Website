@@ -5,7 +5,7 @@ import type { Project } from '../types/project';
 export const projects: Project[] = [
   {
     title: "Cosmo Papers",
-    description: "A native iOS space-wallpapers app built on NASA's Astronomy Picture of the Day — rebuilt for v2.0 with the complete APOD archive (1995–present), on-device natural-language search, curated cosmic categories, Home Screen widgets, and a Cosmo Plus subscription. SwiftUI + MVVM with a coordinator, Core Data, and iOS 26 Liquid Glass throughout.",
+    description: "A native iOS space-wallpapers app built on NASA's Astronomy Picture of the Day, rebuilt for v2.0 with the complete APOD archive (1995–present), on-device natural-language search, curated cosmic categories, Home Screen widgets, and a Cosmo Plus subscription. SwiftUI + MVVM with a coordinator, Core Data, and iOS 26 Liquid Glass throughout.",
     link: "https://cosmopapers.app",
     linkText: "View on App Store",
     linkIcon: "appstore",
@@ -42,7 +42,7 @@ export const projects: Project[] = [
       },
       {
         title: "Natural-Language Search",
-        description: "On-device smart search powered by Apple's NaturalLanguage framework understands queries the way you'd say them out loud — 'aurora over mountains' or 'Saturn' — with built-in voice search and live inline highlighting."
+        description: "On-device smart search powered by Apple's NaturalLanguage framework understands queries the way you'd say them out loud, 'aurora over mountains' or 'Saturn', with built-in voice search and live inline highlighting."
       },
       {
         title: "Widgets & Lock-Screen Wallpapers",
@@ -56,7 +56,7 @@ export const projects: Project[] = [
   },
   {
     title: "Shelf",
-    description: "A SwiftUI book discovery app powered by the Gutendex API, giving access to over 70,000 public domain classics from Project Gutenberg. Browse by genre, search by title or author, and save favorites — no account or API key required.",
+    description: "A SwiftUI book discovery app powered by the Gutendex API, giving access to over 70,000 public domain classics from Project Gutenberg. Browse by genre, search by title or author, and save favorites, with no account or API key required.",
     link: "https://github.com/egemengunel/Shelf-App",
     icon: "/icons/shelf-icon.jpg",
     techStack: [
@@ -90,7 +90,7 @@ export const projects: Project[] = [
       },
       {
         title: "Full-Text Search",
-        description: "Real-time search across 70,000+ titles and authors with a four-state state machine — idle, loading, results, and empty — powered by URLSession async/await with response caching."
+        description: "Real-time search across 70,000+ titles and authors with a four-state state machine (idle, loading, results, and empty) powered by URLSession async/await with response caching."
       },
       {
         title: "Book Detail View",

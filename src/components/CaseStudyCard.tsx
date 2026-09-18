@@ -62,7 +62,7 @@ export function CaseStudyCard({ study }: { study: CaseStudy }) {
     return (
       <div
         className={`${base} border-dashed border-gray-200 opacity-60`}
-        aria-label={`${study.title} — case study planned`}
+        aria-label={`${study.title}, case study planned`}
       >
         <CardBody study={study} />
       </div>
