@@ -65,11 +65,17 @@ export function Card(project: Project) {
             {project.description}
           </p>
 
-          <div className="mt-3 flex items-center gap-4">
+          {/*
+            Case study outranks Details: it goes to the long-form page, Details
+            only opens a modal of the same card's screenshots. So it gets the
+            chip, an outline rather than a fill, and Details drops to a quiet
+            text link. The emphasis used to be the other way round.
+          */}
+          <div className="mt-3 flex items-center gap-3">
             {project.caseStudySlug && (
               <Link
                 to={`/case-studies/${project.caseStudySlug}`}
-                className="relative z-10 text-[13px] md:text-sm text-gray-400 hover:text-gray-700 transition-colors"
+                className="relative z-10 inline-flex items-center rounded-full border border-gray-300 px-2.5 py-1 text-[13px] md:text-sm font-medium text-gray-900 hover:border-gray-400 hover:bg-gray-50 transition-colors"
               >
                 Case study
               </Link>
@@ -79,7 +85,7 @@ export function Card(project: Project) {
             <button
               type="button"
               onClick={() => setIsModalOpen(true)}
-              className="inline-flex items-center gap-1 text-[13px] md:text-sm font-medium text-gray-900 hover:text-gray-500 transition-colors after:absolute after:inset-0 after:rounded-2xl after:content-['']"
+              className="inline-flex items-center gap-1 text-[13px] md:text-sm text-gray-500 hover:text-gray-900 transition-colors after:absolute after:inset-0 after:rounded-2xl after:content-['']"
             >
               Details
               <HiOutlineArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
