@@ -44,6 +44,11 @@ richer, long-form model (`sections`, `summary`, `metrics`, before/after media vi
 Case studies are intentionally a separate model from `Project`, not an extension
 of it. Do not merge them.
 
+Before writing or editing the copy of any case study, read
+`docs/writing-a-case-study.md`. It covers the order of work (source material,
+then questions, then a voice note, then prose, then screens), what a section has
+to contain, the voice rules, and what never goes on the page.
+
 ### Case study page layout
 
 `CaseStudyDetail` is gallery-first: screens before prose, decision sections
