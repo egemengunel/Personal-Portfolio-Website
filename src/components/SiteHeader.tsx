@@ -42,19 +42,21 @@ export function SiteHeader() {
           </NavLink>
 
           {/*
-            The label is dropped below sm, not the link. At 375px the name plus
-            a full nav overflows, and the name is the thing that must not
-            truncate to "Egemen Gü…".
+            The one solid button in an otherwise all-text header, because it is
+            the one link a recruiter actually needs to act on. The label drops
+            below sm, not the button itself: at 375px the name plus a full nav
+            overflows, and the name is the thing that must not truncate to
+            "Egemen Gü…", so the button shrinks to its icon instead.
           */}
           <a
             href={CV_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-sm text-gray-400 hover:text-gray-700 transition-colors"
-            aria-label="Resume"
+            className="flex items-center gap-1.5 rounded-full bg-gray-900 text-white hover:bg-gray-700 transition-colors px-2.5 py-2 sm:px-3.5 sm:py-1.5"
+            aria-label="View resume"
           >
-            <HiOutlineDocumentText className="w-4 h-4" />
-            <span className="hidden sm:inline">Resume</span>
+            <HiOutlineDocumentText className="w-4 h-4 flex-shrink-0" />
+            <span className="hidden sm:inline text-sm font-medium">View Resume</span>
           </a>
 
           {/* Socials live in the footer on small screens, where there is room */}
