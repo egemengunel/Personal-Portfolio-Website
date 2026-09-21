@@ -220,10 +220,10 @@ export const caseStudies: CaseStudy[] = [
         id: 'iphone-duo',
         heading: 'Designing for a phone that folds',
         body: [
-          "The iPhone Duo shipped in the middle of September and the design templates landed about a week later. Antenna is laid out for both of its displays already, the outer one and the inner one.",
-          "It is early and there is no hardware to check it on. But a fold asks the questions this app is already asking: which tiles survive on the narrow outer screen, and what the extra width on the inside actually buys you beyond more of the same.",
+          "Apple announced the iPhone Duo on 9 September and it does not reach anybody until 23 October. Antenna is laid out for both of its displays already, the 5.4 inch outer one and the 7.6 inch inside.",
+          "So there is no hardware to check this against, and there will not be for another month. But a fold asks the questions this app is already asking: which tiles survive on the narrow outer screen, and what the extra width on the inside actually buys you beyond more of the same.",
           "The answer so far is that the width is not for more tiles, it is for one tile to say more. Opened up, Peak Activity becomes the whole day: the peak window, how it compares to typical, when it goes quiet, and a line telling you to cover up if you are out after seven. Your Finds gets a second row. Nothing appears that was not already on the phone.",
-          "These are work in progress. The hardware is weeks old and the design templates are newer than that, so what ships may not look like this.",
+          "These are work in progress. The device is not out, the templates for designing on it are about a week old, and I have drawn this against a screen size rather than a phone, so what ships may not look like this.",
         ],
         media: [
           {
