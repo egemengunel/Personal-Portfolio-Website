@@ -1,11 +1,10 @@
 import { NavLink, Link } from 'react-router-dom';
-import { HiOutlineDocumentText } from 'react-icons/hi2';
 import { SocialLinks } from './SocialLinks';
 import { ROLE, CV_URL } from '../data/identity';
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
   [
-    'text-sm transition-colors',
+    'hidden sm:inline text-sm transition-colors',
     isActive ? 'text-gray-900 font-medium' : 'text-gray-400 hover:text-gray-700',
   ].join(' ');
 
@@ -37,26 +36,26 @@ export function SiteHeader() {
 
         {/* Right — nav, resume, socials */}
         <nav className="flex items-center gap-3 sm:gap-4 flex-shrink-0">
+          {/*
+            View Resume always keeps its full label, so at 375px this is what
+            gives way instead: the site's one other nav route, still reachable
+            from the footer on the same page.
+          */}
           <NavLink to="/case-studies" className={navLinkClass}>
             Case Studies
           </NavLink>
 
           {/*
             The one solid button in an otherwise all-text header, because it is
-            the one link a recruiter actually needs to act on. The label drops
-            below sm, not the button itself: at 375px the name plus a full nav
-            overflows, and the name is the thing that must not truncate to
-            "Egemen Gü…", so the button shrinks to its icon instead.
+            the one link a recruiter actually needs to act on.
           */}
           <a
             href={CV_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 rounded-full bg-gray-900 text-white hover:bg-gray-700 transition-colors px-2.5 py-2 sm:px-3.5 sm:py-1.5"
-            aria-label="View resume"
+            className="rounded-full bg-gray-900 text-white hover:bg-gray-700 transition-colors px-3.5 py-1.5 text-sm font-medium whitespace-nowrap"
           >
-            <HiOutlineDocumentText className="w-4 h-4 flex-shrink-0" />
-            <span className="hidden sm:inline text-sm font-medium">View Resume</span>
+            View Resume
           </a>
 
           {/* Socials live in the footer on small screens, where there is room */}
