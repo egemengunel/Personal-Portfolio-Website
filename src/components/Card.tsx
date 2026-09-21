@@ -76,7 +76,7 @@ export function Card(project: Project) {
                 to={`/case-studies/${project.caseStudySlug}`}
                 className="relative z-10 text-[13px] md:text-sm text-gray-500 hover:text-gray-900 transition-colors"
               >
-                Case study
+                View case study
               </Link>
             ) : (
               <span />
