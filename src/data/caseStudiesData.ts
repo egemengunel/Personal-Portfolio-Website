@@ -15,10 +15,237 @@ export const caseStudies: CaseStudy[] = [
     role: 'Design & iOS engineering',
     timeframe: '2026, in progress',
     status: 'writing',
-    platforms: ['iOS'],
+    platforms: ['iOS', 'iPadOS'],
     icon: '/icons/antenna-icon.png',
-    stack: ['Swift', 'SwiftUI', 'Core ML', 'Sketch'],
-    sections: [],
+    stack: ['Swift 6', 'SwiftUI', 'Core ML', 'Vision', 'SwiftData', 'Supabase'],
+    summary: {
+      problem:
+        "The category has one app built with care and a long tail of thin wrappers that open straight into a camera feed. Nobody in it had decided what an identification app should feel like to use.",
+      approach:
+        "Answer the danger question first, report conditions instead of threats, and keep one tile shape doing conditions, camera coaching and results so the whole app reads as one thing.",
+      outcome:
+        "Not shipped. The design was drawn twice and thrown out once, after the first version put a full-screen photograph of a recluse on the home screen and I did not want to open my own app.",
+    },
+    designSystem: {
+      heading: 'Two greens and Apple\u2019s palette',
+      note:
+        "These two are the whole brand. Everything else on screen is a system semantic: the gray ramp, the background and label hierarchies in light and dark, and the verdict states, which are Apple\u2019s green, orange and red rather than anything of mine. That last one is the reason for a rule. Brand green and the system harmless green sit close enough together that brand green is banned anywhere near a verdict, because a green accent beside a severity word reads as a safety signal. Type works the same way: twelve styles that are named Dynamic Type styles with a weight on top, not point sizes.",
+      palette: [
+        { name: 'Accent', value: '#00B91C' },
+        { name: 'Accent text', value: '#00450A' },
+      ],
+    },
+    sections: [
+      {
+        id: 'the-category',
+        heading: 'One serious app, and a lot of camera feeds',
+        body: [
+          "Antenna is a bug identifier, and it will be my fourth app on the App Store. I started it because the keyword research said there was room. There is one serious app in the category, Picture Insect, built over years, with a real encyclopedia behind it and an interface somebody clearly designed. Then there is everything else.",
+          "Everything else opens straight into a camera feed. The same handful of SF Symbols, the same layout, no personality, and a language model sitting where the identification should be, which is not what a language model is for. None of them look like anyone made a decision.",
+          "So the bar was to build the second app in this category that someone opens and can tell was designed. That is the whole brief.",
+        ],
+      },
+      {
+        id: 'first-design',
+        heading: 'The design that scared me off my own app',
+        body: [
+          "The first version of Antenna lives in a folder called Deprecated now, and there are two passes in there. The original was Sketch only and never coded, lean enough on color that it was closer to wireframes. The second added the color and the styling, and that one got built.",
+          "Both came out of Lucid. I had been living in that app for months, and it is colorful and it is playful, and I wanted the opposite for the next one. Muted, native elements, text doing the work, nothing decorative.",
+          "Home was a banner across the top with your location and one useful line, then a large card carrying the most dangerous species around you that season, then Your Finds with a small insight underneath.",
+          "The card is what killed it. I was implementing the carousel, I had it running on real species for my own area, and it filled the screen with a hornet and then a recluse. I wanted to close the app. It is my app and I wanted to close it.",
+          "Anyone frightened of spiders would have deleted it there. No warning, no setting, nothing at all between opening the app and a full-width photograph of the thing they are afraid of. An identification app cannot open like that.",
+          "So I stopped, went back to Sketch, moved every screen into Deprecated and redrew the app from scratch. The camera screens were the only thing worth keeping.",
+        ],
+        media: [
+          {
+            type: 'image',
+            url: '/case-studies/antenna/2026-09/home-before.webp',
+            compareWith: '/case-studies/antenna/2026-09/home-after.webp',
+            compareLabels: ['Deprecated', 'Now'],
+            caption: 'Both screens as you first see them. The old one opens on the most dangerous thing near you, photographed at full width.',
+          },
+          {
+            type: 'image',
+            url: '/case-studies/antenna/2026-09/detail-before.webp',
+            compareWith: '/case-studies/antenna/2026-09/detail-after.webp',
+            compareLabels: ['Deprecated', 'Now'],
+            caption: 'The venomous result, before and after. The verdict still comes first. Everything under it became tiles.',
+          },
+          {
+            type: 'image',
+            url: '/case-studies/antenna/2026-09/behaviour-before.webp',
+            compareWith: '/case-studies/antenna/2026-09/behaviour-after.webp',
+            compareLabels: ['Deprecated', 'Now'],
+            caption: 'Behaviour and Habitat. Paragraphs answering why it is there became icons with three-word labels.',
+          },
+        ],
+      },
+      {
+        id: 'dashboard-not-alarm',
+        heading: 'A dashboard, not an alarm',
+        body: [
+          "What replaced it reports conditions instead of threats. Your location and the weather, how active species are around you right now, humidity with what it means for mosquito breeding, sting risk, and how this season compares to a normal year. Thirty-eight active species, six of them can sting or bite. That is the same information the old card carried, without a photograph of any of them.",
+          "The only bugs on the screen now are the ones you found yourself, as thumbnails in Your Finds. You opted into those by photographing them.",
+          "The corner radius went from 8 to 24 in the same pass. Eight reads clinical, and this is an app people point at something that frightens them. It should feel calm and a little soft rather than like an instrument.",
+        ],
+        media: [
+          {
+            type: 'image',
+            url: '/case-studies/antenna/2026-09/widget-active-species.webp',
+            surfaceTint: '#DBEFE6',
+            caption: 'The tile the screen opens on. A count, a word for it, and the one line that matters: six of them can sting or bite.',
+          },
+          {
+            type: 'image',
+            url: '/case-studies/antenna/2026-09/widget-peak-activity.webp',
+            surfaceTint: '#DBEFE6',
+            span: 'half',
+            caption: 'When they are out today. The dotted line is what comes next.',
+          },
+          {
+            type: 'image',
+            url: '/case-studies/antenna/2026-09/widget-humidity.webp',
+            surfaceTint: '#DBEFE6',
+            span: 'half',
+            caption: 'Humidity, and what it means rather than what it is.',
+          },
+          {
+            type: 'image',
+            url: '/case-studies/antenna/2026-09/widget-your-finds.webp',
+            surfaceTint: '#DBEFE6',
+            caption: 'The only bugs on the screen are the ones you photographed yourself.',
+          },
+          {
+            type: 'image',
+            url: '/case-studies/antenna/2026-09/widget-gauge.webp',
+            surfaceTint: '#DBEFE6',
+            span: 'half',
+            caption: 'This season against a normal one.',
+          },
+          {
+            type: 'image',
+            url: '/case-studies/antenna/2026-09/widget-sting-risk.webp',
+            surfaceTint: '#DBEFE6',
+            span: 'half',
+            caption: 'Sting risk, and the one instruction that follows from it.',
+          },
+        ],
+      },
+      {
+        id: 'color-in-the-background',
+        heading: 'The color moved to the background',
+        body: [
+          "Lucid\u2019s rule was that the color is mine and the structure is Apple\u2019s. Antenna is the reverse, and that is deliberate.",
+          "The palette is Apple\u2019s semantics, and the catalog holds two brand values: a green for surfaces and a deeper green for text on light. Everything on the content layer is glass, so it takes its color from whatever sits behind it rather than carrying any of its own. I wanted to subtract color from the elements themselves, which is the thing Lucid does most of.",
+          "What sits behind it is a sky. It tracks the local clock and the season, so the app is lighter at midday than at dusk, and it stops whenever the system says to spend nothing: Reduce Motion, Low Power Mode, a scene that is not in front. It is ported from SwiftUI Sky, an MIT-licensed project, rather than written from scratch.",
+          "It is also not in the design system file at all, which is a gap I know about and have not closed.",
+        ],
+        media: [
+          {
+            type: 'image',
+            url: '/case-studies/antenna/2026-09/home-dark.webp',
+            caption: 'Dark. The tiles hold no color of their own, so the sky behind them is what changes.',
+          },
+        ],
+      },
+      {
+        id: 'one-shape',
+        heading: 'One shape carries the whole app',
+        body: [
+          "The tile is the unit. A small label with an icon, one large value, and a line underneath saying what it means. Humidity, 54%, ideal conditions for mosquito breeding.",
+          "The same object does three unrelated jobs. It reports conditions on Home. It coaches the camera: fill the frame, one bug not the whole leaf. Get closer, as close as is safe. Hold steady, brace your arm or lean in. And it answers questions on a result: what to do, nothing, to move it cup it and release it outside. Will there be more, possibly.",
+          "That last one is a link. It opens Behaviour and Habitat, which answers why it is there and how to keep it out with icons and three-word labels instead of paragraphs.",
+          "Using one shape for conditions, coaching and answers is what makes it feel like one app. It also means the camera is not its own country with its own visual language, which is where most of these apps come apart.",
+        ],
+        media: [
+          {
+            type: 'image',
+            url: '/case-studies/antenna/2026-09/widget-humidity.webp',
+            span: 'half',
+            surfaceTint: '#DBEFE6',
+            caption: 'A condition.',
+          },
+          {
+            type: 'image',
+            url: '/case-studies/antenna/2026-09/widget-framing.webp',
+            span: 'half',
+            surfaceTint: '#DBEFE6',
+            caption: 'An instruction.',
+          },
+          {
+            type: 'image',
+            url: '/case-studies/antenna/2026-09/widget-what-to-do.webp',
+            span: 'half',
+            surfaceTint: '#DBEFE6',
+            caption: 'An answer.',
+          },
+        ],
+      },
+      {
+        id: 'shutter',
+        heading: 'The shutter stays grey until the frame is right',
+        body: [
+          "Framing is the biggest lever on accuracy in this category, and accuracy is what the one-star reviews are about. So the coaching is not advice you can ignore.",
+          "Live detection runs on the preview and drives three states: nothing found, move closer, hold steady. The tile at the top of the viewfinder says which one you are in, and the shutter is only armed in the last of them. The app will not take the photograph it cannot read.",
+          "It is a small piece of rudeness that buys a lot. Every wrong identification in this category starts with a picture of a leaf.",
+        ],
+        media: [
+          {
+            type: 'image',
+            url: '/case-studies/antenna/2026-09/camera-move-closer.webp',
+            compareWith: '/case-studies/antenna/2026-09/camera-hold-steady.webp',
+            compareLabels: ['Move closer', 'Hold steady'],
+            caption: 'Same table, two states. The shutter is grey on the left and white on the right.',
+          },
+        ],
+      },
+      {
+        id: 'not-sure',
+        heading: 'Not sure about this one',
+        body: [
+          "Coughylyzer put a 0 to 100 score on a model that missed most of what mattered, and the number read as a measurement. That is the mistake I was not going to make twice.",
+          "Antenna has no score. Confidence changes the shape of the answer rather than sitting underneath it as a caveat. A high match gives you the verdict first, harmless or use caution or venomous, and then the name. As the match falls the screen becomes a shortlist instead: not sure about this one, three candidates with their own percentages and their own verdicts, and a line under them saying one option here can bite, treat it as the riskiest until you are sure.",
+          "I tried confidence bars under each candidate, colored by severity, and took them out. A shorter bar for a lower match reads as this one matters less, and on a screen where the 12% match is the False Widow, that is exactly backwards.",
+          "The identification runs on device against a bundled model, so the app is not asking a language model what it is looking at.",
+        ],
+        media: [
+          {
+            type: 'image',
+            url: '/case-studies/antenna/2026-09/low-confidence-after.webp',
+            caption: 'No score and no gauge. Three candidates with their own verdicts, and a line telling you which one to assume until you know.',
+          },
+        ],
+      },
+      {
+        id: 'iphone-duo',
+        heading: 'Designing for a phone that folds',
+        body: [
+          "The iPhone Duo shipped in the middle of September and the design templates landed about a week later. Antenna is laid out for both of its displays already, the outer one and the inner one.",
+          "It is early and there is no hardware to check it on. But a fold asks the questions this app is already asking: which tiles survive on the narrow outer screen, and what the extra width on the inside actually buys you beyond more of the same.",
+          "The answer so far is that the width is not for more tiles, it is for one tile to say more. Opened up, Peak Activity becomes the whole day: the peak window, how it compares to typical, when it goes quiet, and a line telling you to cover up if you are out after seven. Your Finds gets a second row. Nothing appears that was not already on the phone.",
+          "These are work in progress. The hardware is weeks old and the design templates are newer than that, so what ships may not look like this.",
+        ],
+        media: [
+          {
+            type: 'image',
+            url: '/case-studies/antenna/2026-09/duo-outer.webp',
+            compareWith: '/case-studies/antenna/2026-09/duo-inner.webp',
+            compareLabels: ['Outer', 'Inner'],
+            compareLayout: 'rows',
+            caption: 'Closed, the grid narrows and the camera moves into the accessory strip beside the cutout. Opened, the same grid splits and one tile expands into the space.',
+          },
+        ],
+      },
+      {
+        id: 'where-it-is',
+        heading: 'Where it is',
+        body: [
+          "Antenna is not shipped. The camera, the on-device identification, the chat and the collection are built. The paywall is deliberately last, and onboarding is drawn but not built.",
+          "Two things I already know are wrong. Telling it apart, the section that shows you similar species, may not survive, because it is the one screen where I cannot say what question it answers. And the humidity tile reads %54 rather than 54%, in the Sketch file and in the code, which is the same drift I wrote about in Coughylyzer turning up again in a project where I thought I knew better.",
+          "The design is at the point where the next thing to change it should be somebody using it, not more drawing.",
+        ],
+      },
+    ],
   },
   {
     slug: 'lucid',
