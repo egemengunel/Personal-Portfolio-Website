@@ -48,12 +48,12 @@ export const caseStudies: CaseStudy[] = [
       approach:
         'One app built on a single pile of study material, colorful enough that opening it does not feel like more work, without looking like nobody designed it.',
       outcome:
-        'v1.0 shipped 7 June 2026 in 13 languages. 85% of users finish onboarding. v1.1 followed in August and took the sign-in wall out of onboarding entirely.',
+        'v1.0 shipped 7 June 2026 in 13 languages. 82% of the people who start onboarding finish it. v1.1 followed on 1 September and took the sign-in wall out of onboarding entirely.',
     },
     metrics: [
-      { label: 'Onboarding completion', value: '85%' },
-      { label: 'Languages at launch', value: '13' },
-      { label: 'Localized strings', value: '307' },
+      { label: 'First-time downloads, last 30 days', value: '192' },
+      { label: 'Onboarding completion', value: '81.6%' },
+      { label: 'Guests who sign in after arriving', value: '19 of 23' },
     ],
     designSystem: {
       heading: 'Foundations',
@@ -96,18 +96,29 @@ export const caseStudies: CaseStudy[] = [
         body: [
           'Lucid started because a friend and I were students and we were tired of studying across three apps. One for flashcards, one for quizzes, one for asking a chatbot a question. None of them shared a source, so the same lecture slides had to go in three times to be useful three ways. He works on the backend, I do the design and all of the client side.',
           'Studying is a daunting task on its own, and I wanted Lucid to feel like it was on your side rather than like more of the same work. So the app is colorful, and it is colorful on purpose.',
-          'The risk with that is obvious. A colorful study app can stop looking serious. And underneath that there is a second risk, which is looking like nobody actually designed it.',
           'The rule I settled on is that the color is mine and the structure is Apple\u2019s. Every icon in the app is an SF Symbol. The tab bar is a real UITabBarController. The sheets are native half sheets. The primary buttons use the system glass prominent style. There is not one hardcoded point size in the type scale: all twelve text styles are named Dynamic Type styles with a weight on top, so the whole app grows when someone turns their text size up.',
-          'So almost nothing structural is decorated. The playfulness is all in color, in shape, and in how big things are. Large collection cards with a gradient and a stroke, big icons, secondary colors sitting underneath the glass elements on top of them. I think that is why it reads as expressive instead of as a toy. Underneath the gradients it behaves exactly like the apps that are already on your phone.',
+          'So almost nothing structural is decorated. The playfulness is all in color, in shape, and in how big things are. Large collection cards with a gradient and a stroke, big icons, secondary colors sitting underneath the glass elements on top of them. That is what makes it read as expressive rather than as a toy. Underneath the gradients it behaves exactly like the apps that are already on your phone.',
         ],
       },
       {
-        id: 'vibe-coded',
-        heading: 'I was designing against something specific',
+        id: 'create-button',
+        heading: 'I dropped into UIKit for one button',
         body: [
-          'The thing I did not want was for Lucid to look vibe coded. That is the term now for handing a whole app to an AI, shipping it fast, and making no real decisions about design along the way.',
-          'I can usually tell. There are UI bugs and routing bugs, because you cannot cover everything in a single pass. There are routes you can reach that you should not be able to reach. Custom UI sits where a native element would have done the job better, and because it is custom it loses all the animation and interaction that comes free with the real thing. There is often too much color, or shapes that are not native to the platform. And there is almost always a gradient going from blue to purple, which over the last few years has become the visual signature of the whole genre.',
-          'Flashcards are my example of the difference. If this app had been built purely for efficiency, the flashcards would be two text fields labeled front and back. Cards that stack on top of each other and flip when you tap them take a kind of precision and attention that gets skipped when the instruction is just to build a flashcard section.',
+          'The Create button in the tab bar is not a tab. Tapping it opens a half sheet with three options: a new collection, a quiz, or flashcards. Creating something should not be a destination you navigate to and then have to back out of. A sheet you can swipe away is not a burden and it does not take you off the screen you were already on.',
+          'On iOS 26 Apple added a tab role for search that changes the whole tab bar layout. The search item gets pulled out to the right as its own action button and the real tabs move over to the leading side, so they are no longer three items centered at the bottom. I wanted that treatment, but for a plus button rather than for search.',
+          'SwiftUI would not do it. That role wants to show a view, and I wanted a sheet. Presenting one from there blocked the main thread and deselected whatever tab you were on, so you tapped plus and lost your place. That is not an implementation, it is a bug with a nice appearance.',
+          'So the tab bar is a real UITabBarController. Create is an empty view controller that never appears, and the delegate intercepts the selection and presents the sheet instead. There is some hacking in there and I am not going to pretend otherwise.',
+          'Since I was already in that file I handled iOS 18 too, which has no floating tab bar and no role that would give me the same thing. There, Create sits in the center, which is where Instagram and TikTok put it, so it is a position people already understand. It does mean the button is in a different place depending on which iOS you are running. I decided that was fine, because in both cases it is in the place that version of iOS has taught people to look.',
+        ],
+        media: [
+          {
+            type: 'image',
+            url: '/case-studies/lucid/2026-09/tabbar-ios26.webp',
+            compareWith: '/case-studies/lucid/2026-09/tabbar-ios18.webp',
+            compareLabels: ['iOS 26 & 27', 'iOS 18'],
+            compareLayout: 'rows',
+            caption: 'The same three destinations. On iOS 26 Create is pulled out to the right as its own button and the tabs move left. On iOS 18 there is no layout that does that, so Create sits in the center.',
+          },
         ],
       },
       {
@@ -115,8 +126,9 @@ export const caseStudies: CaseStudy[] = [
         heading: 'You make a flashcard by making a flashcard',
         body: [
           'Anki does flashcard creation as front and back text fields. I have not spent enough time in Quizlet to say what their study mode looks like and they may well have real cards there, so my claim is about the creation path specifically. That is the part everyone treats as a form.',
+          'Two text fields is the fast path, and it is what you get when the instruction is just to build a flashcard section. Cards that stack on top of each other and flip when you tap them take a precision that does not survive that instruction.',
           'In Lucid you type on the card. There is a Flip button above it, because the card is holding a focused text field and tap to flip would fight the keyboard, and on the back you type the definition. You swipe the card away and it joins the stack. Before you have typed anything the card does a small flip on its own to show Enter a term on one side and Enter a definition on the other, so the gesture demonstrates itself instead of being explained, and chevrons glow at both edges to show that swiping is what comes next.',
-          'The physicality carries into studying, and there the card is not holding a text field any more, so you just tap it to turn it over. The cards sit in a stack and you swipe one away to get the next. I did not want a list that happens to contain terms.',
+          'The physicality carries into studying, and there the card is not holding a text field any more, so you just tap it to turn it over. The cards sit in a stack and you swipe one away to get the next. It is a stack you handle, not a list that happens to contain terms.',
           'I will come back to this one at the end, because the creation path is also the thing I would most like to change.',
         ],
         media: [
@@ -138,27 +150,6 @@ export const caseStudies: CaseStudy[] = [
             url: '/case-studies/lucid/2026-09/flash-study.webp',
             span: 'half',
             caption: 'Studying uses the same cards. No text field here, so a tap turns it over.',
-          },
-        ],
-      },
-      {
-        id: 'create-button',
-        heading: 'I dropped into UIKit for one button',
-        body: [
-          'The Create button in the tab bar is not a tab. Tapping it opens a half sheet with three options: a new collection, a quiz, or flashcards. I did not want creating something to be a destination you navigate to and then have to back out of. A sheet you can swipe away is not a burden and it does not take you off the screen you were already on.',
-          'On iOS 26 Apple added a tab role for search that changes the whole tab bar layout. The search item gets pulled out to the right as its own action button and the real tabs move over to the leading side, so they are no longer three items centered at the bottom. I wanted that treatment, but for a plus button rather than for search.',
-          'SwiftUI would not do it. That role wants to show a view, and I wanted a sheet. Presenting one from there blocked the main thread and deselected whatever tab you were on, so you tapped plus and lost your place. That is not an implementation, it is a bug with a nice appearance.',
-          'So the tab bar is a real UITabBarController. Create is an empty view controller that never appears, and the delegate intercepts the selection and presents the sheet instead. There is some hacking in there and I am not going to pretend otherwise.',
-          'Since I was already in that file I handled iOS 18 too, which has no floating tab bar and no role that would give me the same thing. There, Create sits in the center, which is where Instagram and TikTok put it, so it is a position people already understand. It does mean the button is in a different place depending on which iOS you are running. I decided that was fine, because in both cases it is in the place that version of iOS has taught people to look.',
-        ],
-        media: [
-          {
-            type: 'image',
-            url: '/case-studies/lucid/2026-09/tabbar-ios26.webp',
-            compareWith: '/case-studies/lucid/2026-09/tabbar-ios18.webp',
-            compareLabels: ['iOS 26 & 27', 'iOS 18'],
-            compareLayout: 'rows',
-            caption: 'The same three destinations. On iOS 26 Create is pulled out to the right as its own button and the tabs move left. On iOS 18 there is no layout that does that, so Create sits in the center.',
           },
         ],
       },
@@ -188,8 +179,9 @@ export const caseStudies: CaseStudy[] = [
           'Two of those steps ask questions. What your goals are, and how you learn best. It would be fair to assume those are decoration.',
           'They are not. Those answers, along with the institution you pick, choose which suggested prompts appear in the chat input on the main screen. Every prompt in the catalog is tagged with the goals and study methods it belongs to. Give me a quick pep talk only appears if you said you wanted to stay motivated. Draft an outline for my paper only appears if you said university or graduate school. They go to the backend as well and affect how the AI answers, though that part is my friend\u2019s side rather than mine.',
           'The last step used to be a wall. Sign in with Apple, with no way past it.',
-          'We put PostHog in to look at that funnel. Around 85% of people finish onboarding, which told me the seven steps themselves were not the problem. But whether the steps work and whether a hard sign-in belongs at the end of them are two different questions, so we took it out. Signing in is no longer part of onboarding and you can use Lucid as a guest.',
-          'Signing in is still offered, as a quiet line on the very first screen for people who already have an account. What replaced the wall is ten separate prompts that appear at the points where signing in is obviously worth something, each with its own wording. Your chats disappear when you are signed out. Sign in to keep this chat in your history. When you hit a limit it tells you what signing in would give you and that it is free. I think that is a better trade than one wall, because instead of asking before you have seen anything, it asks at the moment you would lose something.',
+          'We put PostHog in to look at that funnel. Around 82% of the people who start onboarding finish it, so the seven steps were not where anyone was leaving. The drop is immediately after onboarding, not inside it. Whether the steps work and whether a hard sign-in belongs at the end of them are two different questions though, so we took the wall out. Signing in is no longer part of onboarding and you can use Lucid as a guest.',
+          'Signing in is still offered, as a quiet line on the very first screen for people who already have an account. What replaced the wall is ten separate prompts that appear at the points where signing in is obviously worth something, each with its own wording. Your chats disappear when you are signed out. Sign in to keep this chat in your history. When you hit a limit it tells you what signing in would give you and that it is free. It is a better trade than one wall, because instead of asking before you have seen anything it asks at the moment you would lose something.',
+          'The number is in now. In a cohort of 81 people who arrived during a paid test in September, 58 were still guests, which reads like the prompts are failing until you look at when the other 23 signed in. Four of them signed in on arrival. The other nineteen signed in later, a median of seven and a half minutes in, at the prompt that fires the moment their first upload finishes processing. Signing in turned out to be a milestone people reach rather than a gate they pass, and the guests are mostly people who never got far enough to be asked.',
         ],
         media: [
           {
@@ -199,6 +191,16 @@ export const caseStudies: CaseStudy[] = [
             compareLabels: ['Goals', 'How you learn'],
             caption: 'The two steps that ask questions. Review faster, Stay organized and Build a study habit are selected here.',
           },
+        ],
+      },
+      {
+        id: 'first-session',
+        heading: 'Half the people who arrived did nothing at all',
+        body: [
+          'In September we put money behind the app for eleven days. Eighty-one people created an account over those days, and forty-two of them never sent a message, never uploaded a file and never took a photo. Not a slow start. Nothing at all. The ones who did something did it almost immediately: a median of about three minutes to a first upload, twenty-four of twenty-seven inside the first hour, and nobody came back on a later day to bring material.',
+          'That is the finding that changes what you design. There is no dormant group to win back with a notification or an email, because the decision gets made in the first session and it is final. Anything that fixes this has to land inside the first few minutes, and the place to put it is the empty collection. 44% of the collections created in that window are still empty. Someone opens a folder for their subject, names it, and never puts anything in it. That is a person who understood the app well enough to start and found nothing to do next.',
+          'The thresholds for the test were written in August, before any money went out, so the decision at the end would not be made on how the results felt. The row we landed on reads installs but no activation, which means the funnel is the problem and more spending only amplifies a leak. So we stopped. The channel works, the product underneath it does not convert yet, and buying more arrivals would have bought more of the same silence.',
+          'One thing in that data I have not resolved. Of the thirty-nine people who did anything at all, twelve used Lucid as a plain AI chat and never brought any material in. That is either a failure to say what the product is, or it is a second product hiding inside this one.',
         ],
       },
       {
@@ -225,7 +227,7 @@ export const caseStudies: CaseStudy[] = [
         heading: 'What I would change',
         body: [
           'The manual flashcard path, and I know that contradicts what I said earlier about flashcard creation.',
-          'The sheet gives you two ways in, generate them automatically or make them yourself. On the manual path you land on a single card, type a term, flip it, type a definition, swipe it away to add it to the stack, and tap Save flashcards when you are done. I added every hint I could think of. The card flips by itself before you have typed anything, there are glowing chevrons at both edges for the swipe, and there is a Flip button sitting above the card.',
+          'The sheet gives you two ways in, generate them automatically or make them yourself. On the manual path you land on a single card, type a term, flip it, type a definition, swipe it away to add it to the stack, and tap Save flashcards when you are done. I added every hint I could think of: the self-flip, the glowing chevrons, the Flip button.',
           'It is still cognitively loaded. There is one card in the middle of the screen and a Save flashcards button at the bottom, and I do not think it is obvious enough that the card is one of many or that swiping is how you get the next one. Someone can type a single card, tap save, and never find out that a stack was the point.',
           'I still would not go back to two text fields labeled front and back. That is the easy answer, and it is easy because it gives up on the thing that makes the feature worth using. But two text fields is a pattern people already understand, and being understood counts for something. So it is a real trade and I picked the side that is harder to teach.',
           'I do not have the better idea yet. There is probably a piece of UI that makes these are a stack and you are building it obvious without turning the card back into a form. I would like to find it.',
@@ -267,7 +269,7 @@ export const caseStudies: CaseStudy[] = [
       approach:
         "Bundle the whole archive locally, then rebuild the product around curation instead of around whatever the API returned that day.",
       outcome:
-        "v2.0 shipped 7 July 2026. It did not spike on launch. Impressions rose 62% in the first month while downloads moved 3%, and the app has grown steadily in the two months since.",
+        "v2.0 shipped 7 July 2026. It did not spike on launch. Impressions rose 62% in the first month while downloads moved 3%, and the app has grown steadily in the two months since. That gap is the store page failing to convert attention the product already has, which is the next thing I would fix.",
     },
     metrics: [
       { label: 'Downloads, launch month', value: '184' },
@@ -372,7 +374,7 @@ export const caseStudies: CaseStudy[] = [
         heading: 'The launch screen',
         body: [
           "A grey mark on a black screen. A highlight sweeps around it while a gradient rises from the bottom, black into deep blue, and by the time the highlight finishes its pass the mark is lit white and the gradient has filled the screen. Then it hands over to Browse.",
-          "It lasts about three seconds and it is the only thing anyone sees before the app itself. I spent time on it because it is the one moment where the app has the screen entirely to itself, with no photographs on it yet, and it is the only chance to say what kind of app this is before the content starts doing that job.",
+          "It lasts about three seconds. I spent time on it because it is the one moment the app has the screen to itself, with no photographs on it yet, and the only chance to say what kind of app this is before the content starts doing that job.",
         ],
         media: [
           {
@@ -517,7 +519,7 @@ export const caseStudies: CaseStudy[] = [
         id: 'what-id-change',
         heading: 'What I would change',
         body: [
-          "The design and the build drifted apart. Every accent moved between Sketch and the asset catalog: the teal went from #33CCCC to #66C8CA, the blue from #2980B9 to #437EB4, the navy from #2C3E50 to #2F3D4E. I was correcting each one by eye in Xcode until it looked right on a real screen, and never went back to update the file I drew it in. The padding on the results cards drifted the same way. Nobody made me reconcile them and I did not.",
+          "The design and the build drifted apart, because there was no step in my process where the file I drew and the asset catalog got reconciled, and nobody but me ever read the strings. Every accent moved between Sketch and the asset catalog: the teal went from #33CCCC to #66C8CA, the blue from #2980B9 to #437EB4, the navy from #2C3E50 to #2F3D4E. I was correcting each one by eye in Xcode until it looked right on a real screen, and never went back to update the file I drew it in. The padding on the results cards drifted the same way. Nobody made me reconcile them and I did not.",
           "The trend chart formats its x-axis as a weekday abbreviation. Take five recordings on the same Friday and you get five labels reading Fri. It also smooths between points, which I still think is right, because exact values would make it look more precise than it is. The labels are just wrong.",
           "The result explanation is assembled from three strings that were each written to stand alone, so it says \"indicates excellent score\" and then immediately \"indicates excellent respiratory health\", and it says \"continue monitoring your score over time\" twice in the same block.",
           "The Continue button on all three guide screens says Continiue. It has said that the whole time.",
