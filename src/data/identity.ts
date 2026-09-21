@@ -18,7 +18,7 @@ export const HEADLINE = 'I design iOS apps, then I build them.';
 export const LOCATION = 'Wrocław, Poland';
 
 export const AVAILABILITY =
-  'Open to design engineer and mobile product roles.';
+  'Open to design engineer, iOS engineer and product design roles.';
 
 export const INTRO = [
   'Both halves of the work are mine: the type scale, the component set, the motion, and the Swift that ships them. I do not hand a design over a wall and I do not build to someone else’s spec without arguing with it first.',

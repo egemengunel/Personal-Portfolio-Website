@@ -47,8 +47,6 @@ export function HomeIntro() {
 
       <p className="mt-4 text-sm md:text-base text-gray-400">
         {LOCATION}
-        <span className="mx-2 text-gray-300">·</span>
-        {AVAILABILITY}
       </p>
 
       <div className="mt-8 md:mt-10 space-y-4 max-w-2xl">
@@ -57,6 +55,9 @@ export function HomeIntro() {
             {paragraph}
           </p>
         ))}
+        <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+          {AVAILABILITY}
+        </p>
       </div>
 
       <div className="mt-10 md:mt-14">
