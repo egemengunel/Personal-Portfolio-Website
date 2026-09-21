@@ -5,11 +5,14 @@ import type { Project } from '../types/project';
 export const workExperience: Project[] = [
     {
         title: "Lucid",
-        description: "Co-Founder, Lead iOS Engineer | Jan. 2026 - June 2026",
+        role: "Co-Founder, Lead iOS Engineer",
+        period: "Jan 2026 to present",
+        description: "A study app that turns uploaded notes, slides and PDFs into flashcards, quizzes, and answers from a chat assistant. I designed it and led the iOS build; the backend is my co-founder's. Swift 6, MVVM on @Observable, a typed NetworkClient, and Supabase auth.",
         link: "https://apps.apple.com/us/app/lucid-ai-flashcards-quiz/id6766661083",
         linkText: "View on App Store",
         linkIcon: "appstore",
         icon: "/icons/lucid-icon.png",
+        caseStudySlug: "lucid",
         techStack: [
             { icon: SiSwift, name: 'Swift' },
             { icon: SiSwift, name: 'SwiftUI' },
@@ -58,7 +61,9 @@ export const workExperience: Project[] = [
     },
     {
         title: "HomeSketch",
-        description: "Independent iOS Engineer | Jan. 2026 - Mar. 2026",
+        role: "Independent iOS Engineer",
+        period: "Jan 2026 to Mar 2026",
+        description: "Photograph a room and get photorealistic redesigns back, shaped by the style and colour you pick. Replicate runs the model behind Supabase Edge Functions that keep the API key server-side, and RevenueCat gates the Pro styles. Design and build both mine.",
         link: "https://gethomesketch.app",
         linkText: "View on App Store",
         linkIcon: "appstore",
@@ -108,8 +113,64 @@ export const workExperience: Project[] = [
         ]
     },
     {
+        title: "Cosmo Papers",
+        role: "Independent iOS Engineer",
+        period: "Oct 2025 to Jul 2026",
+        description: "A space-wallpapers app built on NASA's Astronomy Picture of the Day, rebuilt for v2.0 around the full 1995 to present archive, on-device natural-language search, Home Screen widgets, and a Cosmo Plus subscription. SwiftUI and MVVM with a coordinator, Core Data, and iOS 26 Liquid Glass throughout.",
+        link: "https://cosmopapers.app",
+        linkText: "View on App Store",
+        linkIcon: "appstore",
+        icon: "/icons/cosmo-papers-icon.png",
+        caseStudySlug: "cosmo-papers",
+        techStack: [
+            { icon: SiSwift, name: 'Swift' },
+            { icon: SiSwift, name: 'SwiftUI' },
+            { icon: SiFigma, name: 'Figma' },
+            { icon: SiXcode, name: 'Xcode' },
+            { icon: SiGit, name: 'Git' }
+        ],
+        media: [
+            {
+                type: 'image',
+                url: '/projects/cosmo-papers/cosmo1.webp',
+            },
+            {
+                type: 'image',
+                url: '/projects/cosmo-papers/cosmo2.webp',
+            },
+            {
+                type: 'image',
+                url: '/projects/cosmo-papers/cosmo3.webp',
+            },
+            {
+                type: 'image',
+                url: '/projects/cosmo-papers/cosmo4.webp',
+            },
+        ],
+        features: [
+            {
+                title: "Complete NASA Archive",
+                description: "Browse the entire Astronomy Picture of the Day catalog from 1995 to today, organized into curated categories like Aurora, Hubble & Webb, Black Holes & Cosmology, Mars, and Spacecraft & Missions."
+            },
+            {
+                title: "Natural-Language Search",
+                description: "On-device smart search powered by Apple's NaturalLanguage framework understands queries the way you'd say them out loud, 'aurora over mountains' or 'Saturn', with built-in voice search and live inline highlighting."
+            },
+            {
+                title: "Widgets & Lock-Screen Wallpapers",
+                description: "Preview any image as a lock-screen wallpaper, save in full resolution, favorite what you love, and add rotating cosmos widgets to your Home Screen."
+            },
+            {
+                title: "Cosmo Plus",
+                description: "A subscription (RevenueCat + Superwall) that unlocks the full archive, premium categories, smart search, HD saves, on-device translation, and live rotating widgets."
+            }
+        ]
+    },
+    {
         title: "WeDance",
-        description: "Fullstack Web Developer Intern | June 2025 - Sep. 2025",
+        role: "Fullstack Web Developer Intern",
+        period: "Jun 2025 to Sep 2025",
+        description: "A dance community platform in Nuxt and Vue. I built the real-time chat on Server-Sent Events with connection recovery, a Facebook event import pipeline, and a calendar sync with iCal parsing, scheduled jobs, and an admin approval step.",
         link: "https://wedance.vip",
         linkText: "Visit WeDance",
         linkIcon: "/icons/wedance-icon.png",
@@ -154,52 +215,4 @@ export const workExperience: Project[] = [
             }
         ]
     },
-    {
-        title: "QUOX",
-        description: "iOS Developer (Collaboration) | Oct. 2024 - May. 2025",
-        link: "https://quox.app",
-        linkText: "Visit QUOX",
-        linkIcon: "/icons/quox-visit-icon.png",
-        icon: "/icons/quox-icon.png",
-        techStack: [
-            { icon: SiSwift, name: 'Swift' },
-            { icon: SiSwift, name: 'SwiftUI' },
-            { icon: SiFigma, name: 'Figma' },
-            { icon: SiGit, name: 'Git' }
-        ],
-        media: [
-            {
-                type: 'image',
-                url: '/work-experience/quox/Quox-1.png',
-            },
-            {
-                type: 'image',
-                url: '/work-experience/quox/Quox-2.png',
-            },
-            {
-                type: 'image',
-                url: '/work-experience/quox/Quox-3.png',
-            },
-        ],
-        features: [
-            {
-                title: "SwiftUI App Development",
-                description: "Built the iOS app from scratch using SwiftUI for future versions, helping transition from UIKit to modern declarative UI patterns."
-            },
-            {
-                title: "Responsive UI Components",
-                description: "Created clean, responsive card layouts that users could easily interact with, enhancing overall user experience."
-            },
-            {
-                title: "Reusable Component System",
-                description: "Designed reusable UI components with custom animations that reduced development time for new features by approximately 40%."
-            },
-            {
-                title: "Interactive Animations",
-                description: "Added polished animations that made the quote cards more engaging and responsive to user interactions."
-            }
-        ]
-    },
-
 ];
-
