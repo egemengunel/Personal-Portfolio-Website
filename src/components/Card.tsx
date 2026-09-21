@@ -66,15 +66,6 @@ export function Card(project: Project) {
           </p>
 
           <div className="mt-3 flex items-center gap-4">
-            <button
-              type="button"
-              onClick={() => setIsModalOpen(true)}
-              className="inline-flex items-center gap-1 text-[13px] md:text-sm font-medium text-gray-900 hover:text-gray-500 transition-colors after:absolute after:inset-0 after:rounded-2xl after:content-['']"
-            >
-              Details
-              <HiOutlineArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
-            </button>
-
             {project.caseStudySlug && (
               <Link
                 to={`/case-studies/${project.caseStudySlug}`}
@@ -83,6 +74,16 @@ export function Card(project: Project) {
                 Case study
               </Link>
             )}
+
+            {/* Details comes last: its arrow is the trailing element on the card. */}
+            <button
+              type="button"
+              onClick={() => setIsModalOpen(true)}
+              className="inline-flex items-center gap-1 text-[13px] md:text-sm font-medium text-gray-900 hover:text-gray-500 transition-colors after:absolute after:inset-0 after:rounded-2xl after:content-['']"
+            >
+              Details
+              <HiOutlineArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+            </button>
           </div>
         </div>
       </article>

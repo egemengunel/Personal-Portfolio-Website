@@ -4,16 +4,16 @@ import { ROLE, CV_URL } from '../data/identity';
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
   [
-    'hidden sm:inline text-sm transition-colors',
+    'text-[13px] sm:text-sm transition-colors whitespace-nowrap',
     isActive ? 'text-gray-900 font-medium' : 'text-gray-400 hover:text-gray-700',
   ].join(' ');
 
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-gray-200/70 bg-gray-50/85 backdrop-blur-md">
-      <div className="max-w-5xl mx-auto px-4 h-14 md:h-16 flex items-center justify-between gap-3">
+      <div className="max-w-5xl mx-auto px-3 sm:px-4 h-14 md:h-16 flex items-center justify-between gap-2 sm:gap-3">
         {/* Left — identity, and the way home from any page */}
-        <Link to="/" className="flex items-center gap-2.5 min-w-0 group">
+        <Link to="/" className="flex items-center gap-2 sm:gap-2.5 min-w-0 group">
           <div className="w-8 h-8 md:w-9 md:h-9 rounded-full overflow-hidden border border-gray-200 flex-shrink-0">
             <img
               src="/profile.jpeg"
@@ -35,12 +35,7 @@ export function SiteHeader() {
         </Link>
 
         {/* Right — nav, resume, socials */}
-        <nav className="flex items-center gap-3 sm:gap-4 flex-shrink-0">
-          {/*
-            Case Studies drops below sm; at 375px both plain-text links collided
-            with the name. It is one tap away in the footer on the same page,
-            and View Resume is the link worth keeping full width for.
-          */}
+        <nav className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
           <NavLink to="/case-studies" className={navLinkClass}>
             Case Studies
           </NavLink>
@@ -49,7 +44,7 @@ export function SiteHeader() {
             href={CV_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-gray-400 hover:text-gray-700 transition-colors whitespace-nowrap"
+            className="text-[13px] sm:text-sm text-gray-400 hover:text-gray-700 transition-colors whitespace-nowrap"
           >
             View Resume
           </a>
