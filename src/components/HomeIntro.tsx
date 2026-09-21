@@ -23,17 +23,6 @@ const whatIDo = [
   },
 ];
 
-const tools = [
-  'Swift',
-  'SwiftUI',
-  'UIKit',
-  'Core ML',
-  'Sketch',
-  'Figma',
-  'Supabase',
-  'RevenueCat',
-];
-
 export function HomeIntro() {
   return (
     <section className="pt-12 md:pt-20">
@@ -60,7 +49,7 @@ export function HomeIntro() {
         </p>
       </div>
 
-      <div className="mt-10 md:mt-14">
+      <div className="mt-10 md:mt-14 mb-12 md:mb-16">
         <h2 className="text-xs font-medium text-gray-400 uppercase tracking-wider">
           What I Do
         </h2>
@@ -72,22 +61,6 @@ export function HomeIntro() {
             </div>
           ))}
         </dl>
-      </div>
-
-      <div className="mt-8 md:mt-10 mb-12 md:mb-16">
-        <h2 className="text-xs font-medium text-gray-400 uppercase tracking-wider">
-          Tools
-        </h2>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {tools.map((tool) => (
-            <span
-              key={tool}
-              className="px-3 py-1 rounded-full text-xs md:text-sm font-medium text-gray-500 bg-gray-100 border border-gray-200/80"
-            >
-              {tool}
-            </span>
-          ))}
-        </div>
       </div>
     </section>
   );
