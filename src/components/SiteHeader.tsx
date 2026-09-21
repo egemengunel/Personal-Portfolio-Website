@@ -37,23 +37,19 @@ export function SiteHeader() {
         {/* Right — nav, resume, socials */}
         <nav className="flex items-center gap-3 sm:gap-4 flex-shrink-0">
           {/*
-            View Resume always keeps its full label, so at 375px this is what
-            gives way instead: the site's one other nav route, still reachable
-            from the footer on the same page.
+            Case Studies drops below sm; at 375px both plain-text links collided
+            with the name. It is one tap away in the footer on the same page,
+            and View Resume is the link worth keeping full width for.
           */}
           <NavLink to="/case-studies" className={navLinkClass}>
             Case Studies
           </NavLink>
 
-          {/*
-            The one solid button in an otherwise all-text header, because it is
-            the one link a recruiter actually needs to act on.
-          */}
           <a
             href={CV_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-gray-900 text-white hover:bg-gray-700 transition-colors px-3.5 py-1.5 text-sm font-medium whitespace-nowrap"
+            className="text-sm text-gray-400 hover:text-gray-700 transition-colors whitespace-nowrap"
           >
             View Resume
           </a>
