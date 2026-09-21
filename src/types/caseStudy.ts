@@ -28,6 +28,13 @@ export interface CaseStudyMedia {
    * as a value rather than a class so the data stays free of class names.
    */
   surfaceTint?: string;
+  /**
+   * The export already carries its own silhouette, so no corner radius is
+   * applied over it. The iPhone Duo's displays are the case this exists for:
+   * they are not a rounded rectangle, and rounding all four corners cuts the
+   * shape rather than following it.
+   */
+  ownShape?: boolean;
 }
 
 export interface CaseStudySection {

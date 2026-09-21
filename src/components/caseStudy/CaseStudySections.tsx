@@ -6,6 +6,12 @@ import type { CaseStudyMedia, CaseStudySection } from '../../types/caseStudy';
  * rectangle around a shape that already has edges. Screens sit on the page.
  */
 const chrome = 'rounded-[1.75rem]';
+/**
+ * Some exports already carry their own silhouette: the iPhone Duo's screens are
+ * not a plain rounded rectangle, so imposing one corner radius on all four
+ * corners cuts into the shape rather than describing it.
+ */
+const noChrome = '';
 
 /**
  * Phone screens are sized by height, exactly like the gallery: a capped height
@@ -14,14 +20,15 @@ const chrome = 'rounded-[1.75rem]';
  * from looking like two unrelated sets. Never set a width here as well — an
  * explicit width plus a max-height squashes the image instead of scaling it.
  */
-const byHeight = `mx-auto w-auto max-w-full max-h-[22rem] md:max-h-[26rem] ${chrome}`;
+const byHeight = (shell: string) =>
+  `mx-auto w-auto max-w-full max-h-[22rem] md:max-h-[26rem] ${shell}`;
 /**
  * Stacked compare panels. Height-capped like everything else so the two halves
  * of a pair share a baseline, but free to fill the column when the crop is wide
  * enough that width binds first, which is what a tab bar or a single control
  * does. The cap is low enough that a landscape panel still fits the column.
  */
-const byStacked = `mx-auto w-auto max-w-full max-h-[20rem] ${chrome}`;
+const byStacked = (shell: string) => `mx-auto w-auto max-w-full max-h-[20rem] ${shell}`;
 
 /** How many of the media column's six tracks a figure occupies. */
 const spanClass = {
@@ -33,6 +40,7 @@ const spanClass = {
 /** One figure: a single image, or a labelled before/after pair. */
 function Figure({ media, className = '' }: { media: CaseStudyMedia; className?: string }) {
   const stacked = media.compareLayout === 'rows';
+  const shell = media.ownShape ? noChrome : chrome;
 
   return (
     <figure className={className}>
@@ -45,7 +53,7 @@ function Figure({ media, className = '' }: { media: CaseStudyMedia; className?: 
                 alt=""
                 loading="lazy"
                 decoding="async"
-                className={stacked ? byStacked : byHeight}
+                className={stacked ? byStacked(shell) : byHeight(shell)}
               />
               {media.compareLabels?.[k] && (
                 <p className="mt-2 text-xs text-gray-400 text-center">{media.compareLabels[k]}</p>
@@ -58,10 +66,10 @@ function Figure({ media, className = '' }: { media: CaseStudyMedia; className?: 
           className="rounded-[1.75rem] px-6 py-7"
           style={{ background: `linear-gradient(180deg, ${media.surfaceTint}, transparent)` }}
         >
-          <img src={media.url} alt="" loading="lazy" decoding="async" className={byHeight} />
+          <img src={media.url} alt="" loading="lazy" decoding="async" className={byHeight(shell)} />
         </div>
       ) : (
-        <img src={media.url} alt="" loading="lazy" decoding="async" className={byHeight} />
+        <img src={media.url} alt="" loading="lazy" decoding="async" className={byHeight(shell)} />
       )}
       {media.caption && (
         <figcaption className="mt-3 text-sm text-gray-400 leading-relaxed text-center">

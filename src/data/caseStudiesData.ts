@@ -232,6 +232,7 @@ export const caseStudies: CaseStudy[] = [
             compareWith: '/case-studies/antenna/2026-09/duo-inner.webp',
             compareLabels: ['Outer', 'Inner'],
             compareLayout: 'rows',
+            ownShape: true,
             caption: 'Closed, the grid narrows and the camera moves into the accessory strip beside the cutout. Opened, the same grid splits and one tile expands into the space.',
           },
         ],
