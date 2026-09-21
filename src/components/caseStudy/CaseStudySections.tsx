@@ -15,8 +15,13 @@ const chrome = 'rounded-[1.75rem]';
  * explicit width plus a max-height squashes the image instead of scaling it.
  */
 const byHeight = `mx-auto w-auto max-w-full max-h-[22rem] md:max-h-[26rem] ${chrome}`;
-/** Wide crops (a tab bar, a single control) have no height to speak of. */
-const byWidth = `w-full ${chrome}`;
+/**
+ * Stacked compare panels. Height-capped like everything else so the two halves
+ * of a pair share a baseline, but free to fill the column when the crop is wide
+ * enough that width binds first, which is what a tab bar or a single control
+ * does. The cap is low enough that a landscape panel still fits the column.
+ */
+const byStacked = `mx-auto w-auto max-w-full max-h-[20rem] ${chrome}`;
 
 /** How many of the media column's six tracks a figure occupies. */
 const spanClass = {
@@ -40,7 +45,7 @@ function Figure({ media, className = '' }: { media: CaseStudyMedia; className?: 
                 alt=""
                 loading="lazy"
                 decoding="async"
-                className={stacked ? byWidth : byHeight}
+                className={stacked ? byStacked : byHeight}
               />
               {media.compareLabels?.[k] && (
                 <p className="mt-2 text-xs text-gray-400 text-center">{media.compareLabels[k]}</p>
