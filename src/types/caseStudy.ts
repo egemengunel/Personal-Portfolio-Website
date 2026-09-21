@@ -51,6 +51,13 @@ export interface CaseStudyTypeSpecimen {
   /** CSS font-size, e.g. "2.25rem". Kept as a value so the data stays free of class names. */
   size: string;
   weight?: number;
+  /**
+   * The platform text style this binds to, e.g. ".largeTitle", or "custom" when
+   * it does not. It gets its own column, because in a scale built on Dynamic
+   * Type the binding is the decision and the point size is only what it happens
+   * to render at today.
+   */
+  maps?: string;
   tracking?: string;
 }
 

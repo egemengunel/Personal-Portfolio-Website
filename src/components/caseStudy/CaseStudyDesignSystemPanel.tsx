@@ -53,6 +53,11 @@ export function CaseStudyDesignSystemPanel({ system }: { system: CaseStudyDesign
                 >
                   {row.sample}
                 </span>
+                {row.maps && (
+                  <span className="sm:ml-auto flex-shrink-0 text-xs text-gray-400 font-mono">
+                    {row.maps}
+                  </span>
+                )}
               </div>
             ))}
           </div>
