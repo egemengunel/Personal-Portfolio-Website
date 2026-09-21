@@ -8,6 +8,19 @@ export interface CaseStudyMedia {
   /** Renders two images side by side for before/after comparisons. */
   compareWith?: string;
   compareLabels?: [string, string];
+  /**
+   * How a compare pair is arranged. Tall phone screens read best side by side;
+   * wide crops (a tab bar, a single control) need to be stacked, because two of
+   * them in one column render too small to see what changed.
+   */
+  compareLayout?: 'columns' | 'rows';
+  /**
+   * Lets two figures share one row of the media column instead of stacking.
+   * Not the same thing as a compare pair: that is one figure with two panels
+   * and a single caption, this is two independent figures that each keep
+   * their own.
+   */
+  span?: 'half';
 }
 
 export interface CaseStudySection {

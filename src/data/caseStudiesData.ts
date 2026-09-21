@@ -23,9 +23,9 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: 'lucid',
     title: 'Lucid',
-    tagline: 'A study app with an expressive design system, built solo on the client side.',
-    role: 'Co-founder, design system & iOS engineering',
-    timeframe: 'Jan 2026 to Jun 2026',
+    tagline: 'A study app that had to feel playful without becoming a toy.',
+    role: 'Design & iOS engineering',
+    timeframe: 'Jan 2026 to present',
     status: 'writing',
     icon: '/icons/lucid-icon.png',
     platforms: ['iOS'],
@@ -42,7 +42,203 @@ export const caseStudies: CaseStudy[] = [
       { type: 'image', url: '/work-experience/lucid/lucid-3.png' },
       { type: 'image', url: '/work-experience/lucid/lucid-4.png' },
     ],
-    sections: [],
+    summary: {
+      problem:
+        'Studying meant three apps. One for flashcards, one for quizzes, one for asking a chatbot a question. None of them shared a source, so the same lecture slides had to go in three times to be useful three ways.',
+      approach:
+        'One app built on a single pile of study material, colorful enough that opening it does not feel like more work, without looking like nobody designed it.',
+      outcome:
+        'v1.0 shipped 7 June 2026 in 13 languages. 85% of users finish onboarding. v1.1 followed in August and took the sign-in wall out of onboarding entirely.',
+    },
+    metrics: [
+      { label: 'Onboarding completion', value: '85%' },
+      { label: 'Languages at launch', value: '13' },
+      { label: 'Localized strings', value: '307' },
+    ],
+    designSystem: {
+      heading: 'Foundations',
+      note:
+        'Thirteen brand colors, each with a hand-tuned dark variant rather than an inversion, and twelve text styles that map onto Dynamic Type instead of fixed point sizes. The sizes below are what those styles render at the default text size. They grow when the reader\u2019s does.',
+      palette: [
+        { name: 'Red', value: '#F97C7C' },
+        { name: 'Orange', value: '#FFC389' },
+        { name: 'Yellow', value: '#FCBB6F' },
+        { name: 'Green', value: '#AAD28C' },
+        { name: 'Blue', value: '#9BAFFF' },
+        { name: 'Purple', value: '#A797FF' },
+        { name: 'Pink', value: '#FE8BD1' },
+        { name: 'Light Pink', value: '#FAB8B8' },
+        { name: 'Dominant Orange', value: '#F7AA90' },
+        { name: 'Dominant Green', value: '#86B795' },
+        { name: 'Muted Orange', value: '#FAC9B8' },
+        { name: 'Muted Green', value: '#C5DECD' },
+        { name: 'Beige', value: '#E5D4C0' },
+      ],
+      typeScale: [
+        { label: 'Heading 1', sample: 'Collections', size: '2.125rem', weight: 700 },
+        { label: 'Heading 2', sample: 'Say hello to Lucid.', size: '1.75rem', weight: 700 },
+        { label: 'Heading 3', sample: 'What are your goals?', size: '1.75rem', weight: 400 },
+        { label: 'Heading 4', sample: 'Name your flashcards', size: '1.375rem', weight: 700 },
+        { label: 'Heading 5', sample: 'Select a collection', size: '1.25rem', weight: 600 },
+        { label: 'Heading 6', sample: 'Your subjects', size: '1.25rem', weight: 400 },
+        { label: 'Body 1', sample: 'Talk with your notes', size: '1.0625rem', weight: 600 },
+        { label: 'Body 2', sample: 'Lucid will adapt to your study style.', size: '1.0625rem', weight: 400 },
+        { label: 'Body 3', sample: 'Prepare for exams', size: '1rem', weight: 600 },
+        { label: 'Body 4', sample: 'Organize your materials into folders.', size: '1rem', weight: 400 },
+        { label: 'Body 5', sample: 'Review concepts with customized cards.', size: '0.9375rem', weight: 600 },
+        { label: 'Body 6', sample: 'By continuing, you agree to our terms.', size: '0.8125rem', weight: 600 },
+      ],
+    },
+    sections: [
+      {
+        id: 'color-and-structure',
+        heading: 'The color is mine, the structure is Apple\u2019s',
+        body: [
+          'Lucid started because a friend and I were students and we were tired of studying across three apps. One for flashcards, one for quizzes, one for asking a chatbot a question. None of them shared a source, so the same lecture slides had to go in three times to be useful three ways. He works on the backend, I do the design and all of the client side.',
+          'Studying is a daunting task on its own, and I wanted Lucid to feel like it was on your side rather than like more of the same work. So the app is colorful, and it is colorful on purpose.',
+          'The risk with that is obvious. A colorful study app can stop looking serious. And underneath that there is a second risk, which is looking like nobody actually designed it.',
+          'The rule I settled on is that the color is mine and the structure is Apple\u2019s. Every icon in the app is an SF Symbol. The tab bar is a real UITabBarController. The sheets are native half sheets. The primary buttons use the system glass prominent style. There is not one hardcoded point size in the type scale: all twelve text styles are named Dynamic Type styles with a weight on top, so the whole app grows when someone turns their text size up.',
+          'So almost nothing structural is decorated. The playfulness is all in color, in shape, and in how big things are. Large collection cards with a gradient and a stroke, big icons, secondary colors sitting underneath the glass elements on top of them. I think that is why it reads as expressive instead of as a toy. Underneath the gradients it behaves exactly like the apps that are already on your phone.',
+        ],
+      },
+      {
+        id: 'vibe-coded',
+        heading: 'I was designing against something specific',
+        body: [
+          'The thing I did not want was for Lucid to look vibe coded. That is the term now for handing a whole app to an AI, shipping it fast, and making no real decisions about design along the way.',
+          'I can usually tell. There are UI bugs and routing bugs, because you cannot cover everything in a single pass. There are routes you can reach that you should not be able to reach. Custom UI sits where a native element would have done the job better, and because it is custom it loses all the animation and interaction that comes free with the real thing. There is often too much color, or shapes that are not native to the platform. And there is almost always a gradient going from blue to purple, which over the last few years has become the visual signature of the whole genre.',
+          'Flashcards are my example of the difference. If this app had been built purely for efficiency, the flashcards would be two text fields labeled front and back. Cards that stack on top of each other and flip when you tap them take a kind of precision and attention that gets skipped when the instruction is just to build a flashcard section.',
+        ],
+      },
+      {
+        id: 'flashcards',
+        heading: 'You make a flashcard by making a flashcard',
+        body: [
+          'Anki does flashcard creation as front and back text fields. I have not spent enough time in Quizlet to say what their study mode looks like and they may well have real cards there, so my claim is about the creation path specifically. That is the part everyone treats as a form.',
+          'In Lucid you type on the card. There is a Flip button above it, because the card is holding a focused text field and tap to flip would fight the keyboard, and on the back you type the definition. You swipe the card away and it joins the stack. Before you have typed anything the card does a small flip on its own to show Enter a term on one side and Enter a definition on the other, so the gesture demonstrates itself instead of being explained, and chevrons glow at both edges to show that swiping is what comes next.',
+          'The physicality carries into studying, and there the card is not holding a text field any more, so you just tap it to turn it over. The cards sit in a stack and you swipe one away to get the next. I did not want a list that happens to contain terms.',
+          'I will come back to this one at the end, because the creation path is also the thing I would most like to change.',
+        ],
+        media: [
+          {
+            type: 'image',
+            url: '/case-studies/lucid/2026-09/flash-term.webp',
+            compareWith: '/case-studies/lucid/2026-09/flash-definition.webp',
+            compareLabels: ['Term', 'Definition'],
+            caption: 'The empty card is the form. Flip it over and the placeholder changes.',
+          },
+          {
+            type: 'image',
+            url: '/case-studies/lucid/2026-09/flash-swipe.webp',
+            span: 'half',
+            caption: 'Swiping the finished card away is how you get the next one. The card behind it is the stack you are building.',
+          },
+          {
+            type: 'image',
+            url: '/case-studies/lucid/2026-09/flash-study.webp',
+            span: 'half',
+            caption: 'Studying uses the same cards. No text field here, so a tap turns it over.',
+          },
+        ],
+      },
+      {
+        id: 'create-button',
+        heading: 'I dropped into UIKit for one button',
+        body: [
+          'The Create button in the tab bar is not a tab. Tapping it opens a half sheet with three options: a new collection, a quiz, or flashcards. I did not want creating something to be a destination you navigate to and then have to back out of. A sheet you can swipe away is not a burden and it does not take you off the screen you were already on.',
+          'On iOS 26 Apple added a tab role for search that changes the whole tab bar layout. The search item gets pulled out to the right as its own action button and the real tabs move over to the leading side, so they are no longer three items centered at the bottom. I wanted that treatment, but for a plus button rather than for search.',
+          'SwiftUI would not do it. That role wants to show a view, and I wanted a sheet. Presenting one from there blocked the main thread and deselected whatever tab you were on, so you tapped plus and lost your place. That is not an implementation, it is a bug with a nice appearance.',
+          'So the tab bar is a real UITabBarController. Create is an empty view controller that never appears, and the delegate intercepts the selection and presents the sheet instead. There is some hacking in there and I am not going to pretend otherwise.',
+          'Since I was already in that file I handled iOS 18 too, which has no floating tab bar and no role that would give me the same thing. There, Create sits in the center, which is where Instagram and TikTok put it, so it is a position people already understand. It does mean the button is in a different place depending on which iOS you are running. I decided that was fine, because in both cases it is in the place that version of iOS has taught people to look.',
+        ],
+        media: [
+          {
+            type: 'image',
+            url: '/case-studies/lucid/2026-09/tabbar-ios26.webp',
+            compareWith: '/case-studies/lucid/2026-09/tabbar-ios18.webp',
+            compareLabels: ['iOS 26 & 27', 'iOS 18'],
+            compareLayout: 'rows',
+            caption: 'The same three destinations. On iOS 26 Create is pulled out to the right as its own button and the tabs move left. On iOS 18 there is no layout that does that, so Create sits in the center.',
+          },
+        ],
+      },
+      {
+        id: 'collection-color',
+        heading: 'One color choice repaints the screen',
+        body: [
+          'When you create a collection you pick an icon and a color. That color is not just a label on a list row. It becomes the collection\u2019s detail view. The background is a linear gradient running from the color you picked down into the system background, and the Add Study Materials button takes the same color.',
+          'The cards carry it too. A collection card is a large gradient with a stroke and a border, the icon large in one corner and the name large in the other. They are deliberately big. I did not want a list of small rows, because a list makes every subject look the same, and this is the screen where your own material lives.',
+          'That is why there are thirteen brand colors and why each one has a hand-tuned dark variant rather than an inverted one. Every color in the set has to hold up as a full screen gradient behind real text, not just as a swatch two centimeters wide.',
+        ],
+        media: [
+          {
+            type: 'image',
+            url: '/case-studies/lucid/2026-09/collection-physics.webp',
+            compareWith: '/case-studies/lucid/2026-09/collection-anatomy.webp',
+            compareLabels: ['Physics', 'Anatomy'],
+            caption: 'Same screen, same layout. The only thing that changed is the color picked when the collection was created.',
+          },
+        ],
+      },
+      {
+        id: 'onboarding',
+        heading: 'Seven onboarding steps, and what they are for',
+        body: [
+          'Lucid\u2019s onboarding is seven steps and it is animated the whole way through. Decorative cards, a carousel, collection cards that blur and get replaced, documents and images and quiz cards sliding in on top of them so it looks like there is something inside. It is more production than most apps this size bother with, and that is on purpose. It is the first thing anyone sees and it sets the expectation that the rest was made with the same care.',
+          'Two of those steps ask questions. What your goals are, and how you learn best. It would be fair to assume those are decoration.',
+          'They are not. Those answers, along with the institution you pick, choose which suggested prompts appear in the chat input on the main screen. Every prompt in the catalog is tagged with the goals and study methods it belongs to. Give me a quick pep talk only appears if you said you wanted to stay motivated. Draft an outline for my paper only appears if you said university or graduate school. They go to the backend as well and affect how the AI answers, though that part is my friend\u2019s side rather than mine.',
+          'The last step used to be a wall. Sign in with Apple, with no way past it.',
+          'We put PostHog in to look at that funnel. Around 85% of people finish onboarding, which told me the seven steps themselves were not the problem. But whether the steps work and whether a hard sign-in belongs at the end of them are two different questions, so we took it out. Signing in is no longer part of onboarding and you can use Lucid as a guest.',
+          'Signing in is still offered, as a quiet line on the very first screen for people who already have an account. What replaced the wall is ten separate prompts that appear at the points where signing in is obviously worth something, each with its own wording. Your chats disappear when you are signed out. Sign in to keep this chat in your history. When you hit a limit it tells you what signing in would give you and that it is free. I think that is a better trade than one wall, because instead of asking before you have seen anything, it asks at the moment you would lose something.',
+        ],
+        media: [
+          {
+            type: 'image',
+            url: '/case-studies/lucid/2026-09/onboarding-goals.webp',
+            compareWith: '/case-studies/lucid/2026-09/onboarding-methods.webp',
+            compareLabels: ['Goals', 'How you learn'],
+            caption: 'The two steps that ask questions. Review faster, Stay organized and Build a study habit are selected here.',
+          },
+        ],
+      },
+      {
+        id: 'chat-input',
+        heading: 'The chat input was the weakest thing I shipped',
+        body: [
+          'Most of the feedback on Lucid\u2019s design has been positive, so the part worth pointing at is the part I was not happy with.',
+          'In the first version the chat screen had four suggestion cards sitting above the text field, each a rectangle with an icon and a line of text. Two problems with that. They read as the primary actions on the screen when they were only meant to be shortcuts. And the text field underneath them was glass on a near white background, so the input, the thing the entire screen exists for, ended up as the quietest element on it.',
+          'So I rebuilt the input as one component. The suggestions moved inside it as a scrollable row of chips along the top edge, with the placeholder under them and an @ button and a send button in the same container. Now the input is the largest and most defined thing above the tab bar, which is what it should have been in the first place.',
+          'Tagging changed with it. It used to render inline in the text, so @Mathematics appeared in your sentence in that collection\u2019s color. Now tagging puts a chip in that same top row with an x to remove it. The row has one job and swaps what it holds: suggestions before you type, the tagged collection after. It is easier to see what context your question is carrying, and easier to take it back.',
+        ],
+        media: [
+          {
+            type: 'image',
+            url: '/case-studies/lucid/2026-09/chat-input-before.webp',
+            compareWith: '/case-studies/lucid/2026-09/chat-input-after.webp',
+            compareLabels: ['Before', 'After'],
+            caption: 'Four cards outranking the field they sit above, against one component that holds the suggestions, the placeholder, the tag button and send.',
+          },
+        ],
+      },
+      {
+        id: 'what-id-change',
+        heading: 'What I would change',
+        body: [
+          'The manual flashcard path, and I know that contradicts what I said earlier about flashcard creation.',
+          'The sheet gives you two ways in, generate them automatically or make them yourself. On the manual path you land on a single card, type a term, flip it, type a definition, swipe it away to add it to the stack, and tap Save flashcards when you are done. I added every hint I could think of. The card flips by itself before you have typed anything, there are glowing chevrons at both edges for the swipe, and there is a Flip button sitting above the card.',
+          'It is still cognitively loaded. There is one card in the middle of the screen and a Save flashcards button at the bottom, and I do not think it is obvious enough that the card is one of many or that swiping is how you get the next one. Someone can type a single card, tap save, and never find out that a stack was the point.',
+          'I still would not go back to two text fields labeled front and back. That is the easy answer, and it is easy because it gives up on the thing that makes the feature worth using. But two text fields is a pattern people already understand, and being understood counts for something. So it is a real trade and I picked the side that is harder to teach.',
+          'I do not have the better idea yet. There is probably a piece of UI that makes these are a stack and you are building it obvious without turning the card back into a form. I would like to find it.',
+        ],
+        media: [
+          {
+            type: 'image',
+            url: '/case-studies/lucid/2026-09/flash-term.webp',
+            caption: 'This is the screen I am arguing with. One card, one button, and nothing on it says that a stack is what you are here to build.',
+          },
+        ],
+      },
+    ],
   },
   {
     slug: 'cosmo-papers',

@@ -63,7 +63,11 @@ export function CaseStudyDetail() {
       )}
 
       {study.metrics && study.metrics.length > 0 && (
-        <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl">
+        <div
+          className={`mt-8 grid grid-cols-2 gap-3 max-w-3xl ${
+            study.metrics.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-4'
+          }`}
+        >
           {study.metrics.map((metric) => (
             <div key={metric.label} className="p-4 rounded-xl bg-white border border-gray-200/80">
               <div className="text-xl md:text-2xl font-semibold text-gray-900">{metric.value}</div>
