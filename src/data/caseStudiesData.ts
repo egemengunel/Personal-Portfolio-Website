@@ -253,7 +253,7 @@ export const caseStudies: CaseStudy[] = [
     tagline: 'A study app that had to feel playful without becoming a toy.',
     role: 'Design & iOS engineering',
     timeframe: 'Jan 2026 to present',
-    status: 'writing',
+    status: 'published',
     icon: '/icons/lucid-icon.png',
     platforms: ['iOS'],
     stack: ['Swift 6', 'SwiftUI', 'Supabase', 'MVVM + @Observable'],
