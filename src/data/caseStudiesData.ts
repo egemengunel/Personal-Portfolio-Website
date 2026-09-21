@@ -29,10 +29,26 @@ export const caseStudies: CaseStudy[] = [
     designSystem: {
       heading: 'Two greens and Apple\u2019s palette',
       note:
-        "These two are the whole brand. Everything else on screen is a system semantic: the gray ramp, the background and label hierarchies in light and dark, and the verdict states, which are Apple\u2019s green, orange and red rather than anything of mine. That last one is the reason for a rule. Brand green and the system harmless green sit close enough together that brand green is banned anywhere near a verdict, because a green accent beside a severity word reads as a safety signal. Type works the same way: twelve styles that are named Dynamic Type styles with a weight on top, not point sizes.",
+        "These two are the whole brand. Everything else on screen is a system semantic: the gray ramp, the background and label hierarchies in light and dark, and the verdict states, which are Apple\u2019s green, orange and red rather than anything of mine. That last one is the reason for a rule. Brand green and the system harmless green sit close enough together that brand green is banned anywhere near a verdict, because a green accent beside a severity word reads as a safety signal. Type works the same way. Fifteen styles, and fourteen of them are a platform text style with a weight on top, so the whole app grows when somebody turns their text size up. Heading 3, at 24 points, is the only fixed size in it. All of it is set in SF Rounded, for the same reason the corners are 24 rather than 8.",
       palette: [
         { name: 'Accent', value: '#00B91C' },
         { name: 'Accent text', value: '#00450A' },
+      ],
+      typeScale: [
+        { label: 'Heading 1', sample: 'Home', size: '2.125rem', weight: 700, maps: '.largeTitle' },
+        { label: 'Heading 2', sample: 'Oriental hornet', size: '1.75rem', weight: 600, maps: '.title' },
+        { label: 'Heading 3', sample: 'Very active', size: '1.5rem', weight: 600, maps: 'custom, 24pt' },
+        { label: 'Heading 4', sample: 'Fill the frame', size: '1.375rem', weight: 700, maps: '.title2' },
+        { label: 'Body 1', sample: 'Active species near you', size: '1.0625rem', weight: 600, maps: '.headline' },
+        {
+          label: 'Body 2',
+          sample: 'Give paper wasp nests space, don\u2019t swat.',
+          size: '1.0625rem',
+          weight: 400,
+          maps: '.body',
+        },
+        { label: 'Body 5', sample: 'Harmless', size: '0.8125rem', weight: 600, maps: '.footnote' },
+        { label: 'Body 7', sample: '6 of them can sting or bite.', size: '0.6875rem', weight: 600, maps: '.caption2' },
       ],
     },
     sections: [
