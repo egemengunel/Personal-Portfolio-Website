@@ -1,72 +1,92 @@
-import { Link } from 'react-router-dom';
-import { HiOutlineArrowRight } from 'react-icons/hi2';
+import { NAME, HEADLINE, INTRO, LOCATION, AVAILABILITY } from '../data/identity';
 
+/**
+ * Two columns above md so the list is not a single long scroll on a phone.
+ * Each line is one thing that shows up in the work, not a technology.
+ */
 const whatIDo = [
-  'Native app development with Swift, SwiftUI, and UIKit across iOS and macOS',
-  'On-device machine learning using Core ML and Create ML for real-time inference',
-  'Custom animations, transitions, and design systems, from Liquid Glass effects to reusable component libraries',
-  'Figma-to-code workflows with pixel-perfect UI implementation',
-  'API integration, local data persistence, and offline-first architecture',
+  {
+    title: 'Design the app',
+    body: 'Type scale, colour, component set and motion, drawn in Sketch and Figma against the platform styles rather than beside them.',
+  },
+  {
+    title: 'Build the app',
+    body: 'Swift and SwiftUI, with UIKit underneath where SwiftUI refuses. MVVM on @Observable, typed networking, Core Data or @AppStorage for what has to survive a relaunch.',
+  },
+  {
+    title: 'Ship it',
+    body: 'App Store review, subscriptions through RevenueCat and Superwall, Supabase behind the parts that need a server, and the release notes after.',
+  },
+  {
+    title: 'Machine learning on device',
+    body: 'Core ML and Create ML for classification and search that runs without a round trip, and an interface honest about how sure the model is.',
+  },
 ];
 
-const skills = [
-  'Swift & SwiftUI',
-  'iOS Development & Design',
-  'REST API Integration',
-  'Local Data Persistence',
-  'Custom Animations & UI',
+const tools = [
+  'Swift',
+  'SwiftUI',
+  'UIKit',
+  'Core ML',
+  'Sketch',
+  'Figma',
+  'Supabase',
+  'RevenueCat',
 ];
 
 export function HomeIntro() {
   return (
-    <section className="pt-10 md:pt-14">
-      <p className="text-sm md:text-base text-gray-500 leading-relaxed max-w-2xl">
-        Swift &amp; iOS Engineer specializing in intuitive user experiences and responsive
-        applications. Computer Engineering graduate from Opole University of Technology with
-        published work on the App Store.
+    <section className="pt-12 md:pt-20">
+      <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-gray-900">
+        {NAME}
+      </h1>
+
+      <p className="mt-4 md:mt-5 text-xl md:text-3xl text-gray-500 leading-snug max-w-2xl">
+        {HEADLINE}
       </p>
 
-      <div className="mt-8">
-        <h2 className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-3">
-          What I Do
-        </h2>
-        <ul className="space-y-2 text-sm md:text-base text-gray-600 leading-relaxed max-w-2xl">
-          {whatIDo.map((item) => (
-            <li key={item} className="flex items-start gap-2.5">
-              <span className="text-gray-300 mt-1 text-xs">&#9679;</span>
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
+      <p className="mt-4 text-sm md:text-base text-gray-400">
+        {LOCATION}
+        <span className="mx-2 text-gray-300">·</span>
+        {AVAILABILITY}
+      </p>
+
+      <div className="mt-8 md:mt-10 space-y-4 max-w-2xl">
+        {INTRO.map((paragraph) => (
+          <p key={paragraph} className="text-sm md:text-base text-gray-600 leading-relaxed">
+            {paragraph}
+          </p>
+        ))}
       </div>
 
-      <div className="mt-8">
-        <h2 className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-3">
-          Skills &amp; Expertise
+      <div className="mt-10 md:mt-14">
+        <h2 className="text-xs font-medium text-gray-400 uppercase tracking-wider">
+          What I Do
         </h2>
-        <div className="flex flex-wrap gap-2">
-          {skills.map((skill) => (
+        <dl className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-5">
+          {whatIDo.map((item) => (
+            <div key={item.title}>
+              <dt className="text-sm md:text-base font-medium text-gray-900">{item.title}</dt>
+              <dd className="mt-1 text-sm text-gray-500 leading-relaxed">{item.body}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+
+      <div className="mt-8 md:mt-10 mb-12 md:mb-16">
+        <h2 className="text-xs font-medium text-gray-400 uppercase tracking-wider">
+          Tools
+        </h2>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {tools.map((tool) => (
             <span
-              key={skill}
+              key={tool}
               className="px-3 py-1 rounded-full text-xs md:text-sm font-medium text-gray-500 bg-gray-100 border border-gray-200/80"
             >
-              {skill}
+              {tool}
             </span>
           ))}
         </div>
-      </div>
-
-      <div className="mt-8 mb-10 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5 max-w-2xl">
-        <p className="text-sm md:text-base text-gray-500 leading-relaxed">
-          Open to iOS roles where I can ship polished products that people love using.
-        </p>
-        <Link
-          to="/case-studies"
-          className="group inline-flex items-center gap-1.5 text-sm md:text-base font-medium text-gray-900 hover:text-gray-600 transition-colors flex-shrink-0"
-        >
-          Read the case studies
-          <HiOutlineArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-        </Link>
       </div>
     </section>
   );
