@@ -4,9 +4,9 @@ import { projects } from '../data/projectsData';
 
 export function Projects() {
   return (
-    <section className="mb-8 md:mb-16">
+    <section>
       <h2 className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-4 md:mb-5">
-        My Projects
+        Projects
       </h2>
       
       <motion.div 
