@@ -22,7 +22,7 @@ export const AVAILABILITY =
 
 export const INTRO = [
   'Both halves of the work are mine: the type scale, the component set, the motion, and the Swift that ships them. I do not hand a design over a wall and I do not build to someone else’s spec without arguing with it first.',
-  'Three of my apps are on the App Store, one of them for a company I co-founded. Computer Engineering, Opole University of Technology. The case studies are where I show the decisions behind the apps, including the ones I got wrong.',
+  'Three of my apps are on the App Store. One of them, Lucid, I build with a friend. Computer Engineering, Opole University of Technology. The case studies are where I show the decisions behind the apps, including the ones I got wrong.',
 ];
 
 export const CV_URL =
