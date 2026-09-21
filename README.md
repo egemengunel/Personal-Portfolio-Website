@@ -5,7 +5,6 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 ## 🚀 Features
 
 - Responsive design for all devices
-- Dark/Light theme toggle
 - Project showcase with modal views
 - Interactive technology stack display
 - Social media links
