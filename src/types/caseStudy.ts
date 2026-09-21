@@ -20,7 +20,14 @@ export interface CaseStudyMedia {
    * and a single caption, this is two independent figures that each keep
    * their own.
    */
-  span?: 'half';
+  span?: 'half' | 'third';
+  /**
+   * A CSS color, sampled from the app itself, painted as a soft gradient behind
+   * the figure. Glass components exported on their own lose the thing that
+   * makes them glass, because there is nothing left for them to refract. Kept
+   * as a value rather than a class so the data stays free of class names.
+   */
+  surfaceTint?: string;
 }
 
 export interface CaseStudySection {

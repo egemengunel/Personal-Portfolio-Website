@@ -29,7 +29,7 @@ export function CaseStudyGallery({ items }: { items: CaseStudyMedia[] }) {
               alt=""
               loading="lazy"
               decoding="async"
-              className="h-[22rem] sm:h-[26rem] lg:h-[30rem] w-auto rounded-2xl border border-gray-200/80 bg-white"
+              className="h-[22rem] sm:h-[26rem] lg:h-[30rem] w-auto rounded-[1.75rem]"
             />
             {item.caption && (
               <figcaption className="mt-3 max-w-xs text-sm text-gray-400 leading-relaxed">

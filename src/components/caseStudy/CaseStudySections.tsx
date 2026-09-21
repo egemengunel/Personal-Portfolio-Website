@@ -1,6 +1,11 @@
 import type { CaseStudyMedia, CaseStudySection } from '../../types/caseStudy';
 
-const chrome = 'rounded-2xl border border-gray-200/80 bg-white';
+/**
+ * No card, no border, no white fill. Exports carry their own rounded device
+ * corners and a transparent margin, so a filled box behind one draws a second
+ * rectangle around a shape that already has edges. Screens sit on the page.
+ */
+const chrome = 'rounded-[1.75rem]';
 
 /**
  * Phone screens are sized by height, exactly like the gallery: a capped height
@@ -12,6 +17,13 @@ const chrome = 'rounded-2xl border border-gray-200/80 bg-white';
 const byHeight = `mx-auto w-auto max-w-full max-h-[22rem] md:max-h-[26rem] ${chrome}`;
 /** Wide crops (a tab bar, a single control) have no height to speak of. */
 const byWidth = `w-full ${chrome}`;
+
+/** How many of the media column's six tracks a figure occupies. */
+const spanClass = {
+  full: 'col-span-6',
+  half: 'col-span-3',
+  third: 'col-span-2',
+} as const;
 
 /** One figure: a single image, or a labelled before/after pair. */
 function Figure({ media, className = '' }: { media: CaseStudyMedia; className?: string }) {
@@ -35,6 +47,13 @@ function Figure({ media, className = '' }: { media: CaseStudyMedia; className?: 
               )}
             </div>
           ))}
+        </div>
+      ) : media.surfaceTint ? (
+        <div
+          className="rounded-[1.75rem] px-6 py-7"
+          style={{ background: `linear-gradient(180deg, ${media.surfaceTint}, transparent)` }}
+        >
+          <img src={media.url} alt="" loading="lazy" decoding="async" className={byHeight} />
         </div>
       ) : (
         <img src={media.url} alt="" loading="lazy" decoding="async" className={byHeight} />
@@ -99,7 +118,7 @@ export function CaseStudySections({ sections }: { sections: CaseStudySection[] }
             </div>
 
             <div
-              className={`grid grid-cols-2 gap-x-5 gap-y-10 items-start ${
+              className={`grid grid-cols-6 gap-x-5 gap-y-10 items-start ${
                 imageRight ? 'md:order-2' : 'md:order-1'
               }`}
             >
@@ -107,7 +126,7 @@ export function CaseStudySections({ sections }: { sections: CaseStudySection[] }
                 <Figure
                   key={item.url}
                   media={item}
-                  className={item.span === 'half' ? 'col-span-1' : 'col-span-2'}
+                  className={spanClass[item.span ?? 'full']}
                 />
               ))}
             </div>

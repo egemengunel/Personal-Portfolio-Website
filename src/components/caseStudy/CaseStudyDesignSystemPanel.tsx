@@ -67,7 +67,7 @@ export function CaseStudyDesignSystemPanel({ system }: { system: CaseStudyDesign
                   alt=""
                   loading="lazy"
                   decoding="async"
-                  className="w-full rounded-2xl border border-gray-200/80 bg-white"
+                  className="w-full rounded-[1.75rem]"
                 />
                 {item.caption && (
                   <figcaption className="mt-2.5 text-sm text-gray-400 leading-relaxed">
