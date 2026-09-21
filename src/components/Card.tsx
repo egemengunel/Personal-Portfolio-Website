@@ -66,19 +66,20 @@ export function Card(project: Project) {
           </p>
 
           {/*
-            Case study outranks Details: it goes to the long-form page, Details
-            only opens a modal of the same card's screenshots. So it gets the
-            chip, an outline rather than a fill, and Details drops to a quiet
-            text link. The emphasis used to be the other way round.
+            Both links carry the same quiet style, so separation does the work
+            a weight difference would otherwise do: Case study leads the row,
+            Details and its arrow sit against the card's trailing edge.
           */}
-          <div className="mt-3 flex items-center gap-3">
-            {project.caseStudySlug && (
+          <div className="mt-3 flex items-center justify-between gap-3">
+            {project.caseStudySlug ? (
               <Link
                 to={`/case-studies/${project.caseStudySlug}`}
-                className="relative z-10 inline-flex items-center rounded-full border border-gray-300 px-2.5 py-1 text-[13px] md:text-sm font-medium text-gray-900 hover:border-gray-400 hover:bg-gray-50 transition-colors"
+                className="relative z-10 text-[13px] md:text-sm text-gray-500 hover:text-gray-900 transition-colors"
               >
                 Case study
               </Link>
+            ) : (
+              <span />
             )}
 
             {/* Details comes last: its arrow is the trailing element on the card. */}
