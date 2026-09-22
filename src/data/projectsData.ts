@@ -4,59 +4,8 @@ import type { Project } from '../types/project';
 
 export const projects: Project[] = [
   {
-    title: "Cosmo Papers",
-    description: "A native iOS space-wallpapers app built on NASA's Astronomy Picture of the Day — rebuilt for v2.0 with the complete APOD archive (1995–present), on-device natural-language search, curated cosmic categories, Home Screen widgets, and a Cosmo Plus subscription. SwiftUI + MVVM with a coordinator, Core Data, and iOS 26 Liquid Glass throughout.",
-    link: "https://cosmopapers.app",
-    linkText: "View on App Store",
-    linkIcon: "appstore",
-    icon: "/icons/cosmo-papers-icon.png",
-    techStack: [
-      { icon: SiSwift, name: 'Swift' },
-      { icon: SiSwift, name: 'SwiftUI' },
-      { icon: SiFigma, name: 'Figma' },
-      { icon: SiXcode, name: 'Xcode' },
-      { icon: SiGit, name: 'Git' }
-    ],
-    media: [
-      {
-        type: 'image',
-        url: '/projects/cosmo-papers/cosmo1.webp',
-      },
-      {
-        type: 'image',
-        url: '/projects/cosmo-papers/cosmo2.webp',
-      },
-      {
-        type: 'image',
-        url: '/projects/cosmo-papers/cosmo3.webp',
-      },
-      {
-        type: 'image',
-        url: '/projects/cosmo-papers/cosmo4.webp',
-      },
-    ],
-    features: [
-      {
-        title: "Complete NASA Archive",
-        description: "Browse the entire Astronomy Picture of the Day catalog from 1995 to today, organized into curated categories like Aurora, Hubble & Webb, Black Holes & Cosmology, Mars, and Spacecraft & Missions."
-      },
-      {
-        title: "Natural-Language Search",
-        description: "On-device smart search powered by Apple's NaturalLanguage framework understands queries the way you'd say them out loud — 'aurora over mountains' or 'Saturn' — with built-in voice search and live inline highlighting."
-      },
-      {
-        title: "Widgets & Lock-Screen Wallpapers",
-        description: "Preview any image as a lock-screen wallpaper, save in full resolution, favorite what you love, and add rotating cosmos widgets to your Home Screen."
-      },
-      {
-        title: "Cosmo Plus",
-        description: "A subscription (RevenueCat + Superwall) that unlocks the full archive, premium categories, smart search, HD saves, on-device translation, and live rotating widgets."
-      }
-    ]
-  },
-  {
     title: "Shelf",
-    description: "A SwiftUI book discovery app powered by the Gutendex API, giving access to over 70,000 public domain classics from Project Gutenberg. Browse by genre, search by title or author, and save favorites — no account or API key required.",
+    description: "A SwiftUI book discovery app on the Gutendex API, with 70,000 public domain classics from Project Gutenberg. Browse by genre, search by title or author, save favourites. No account, no API key.",
     link: "https://github.com/egemengunel/Shelf-App",
     icon: "/icons/shelf-icon.jpg",
     techStack: [
@@ -90,7 +39,7 @@ export const projects: Project[] = [
       },
       {
         title: "Full-Text Search",
-        description: "Real-time search across 70,000+ titles and authors with a four-state state machine — idle, loading, results, and empty — powered by URLSession async/await with response caching."
+        description: "Real-time search across 70,000+ titles and authors with a four-state state machine (idle, loading, results, and empty) powered by URLSession async/await with response caching."
       },
       {
         title: "Book Detail View",
@@ -104,9 +53,11 @@ export const projects: Project[] = [
   },
   {
     title: "Coughylyzer",
-    description: "An iOS application that analyzes respiratory sounds to identify potential respiratory conditions using machine learning, developed as my Computer Engineering thesis.",
+    period: "Oct 2025 to Feb 2026",
+    description: "An iOS app that classifies respiratory sounds with an on-device Core ML model, built as my Computer Engineering thesis. The model is 66% accurate, which is the interesting part and the subject of its case study.",
     link: "https://github.com/egemengunel/Coughylyzer",
     icon: "/icons/coughylyzer-icon.png",
+    caseStudySlug: "coughylyzer",
     techStack: [
       { icon: SiSwift, name: 'Swift' },
       { icon: SiSwift, name: 'SwiftUI' },
@@ -117,22 +68,22 @@ export const projects: Project[] = [
     media: [
       {
         type: 'image',
-        url: '/projects/coughylyzer/Coughylyzer1.png',
+        url: '/projects/coughylyzer/coughylyzer1.webp',
 
       },
       {
         type: 'image',
-        url: '/projects/coughylyzer/Coughylyzer2.png',
+        url: '/projects/coughylyzer/coughylyzer2.webp',
 
       },
       {
         type: 'image',
-        url: '/projects/coughylyzer/Coughylyzer3.png',
+        url: '/projects/coughylyzer/coughylyzer3.webp',
 
       },
       {
         type: 'image',
-        url: '/projects/coughylyzer/Coughylyzer4.png',
+        url: '/projects/coughylyzer/coughylyzer4.webp',
 
       }
     ],
@@ -157,7 +108,8 @@ export const projects: Project[] = [
   },
   {
     title: "Moodful Music",
-    description: "A macOS app that creates personalized tracks based on mood and environment selections using an ML Model. | Swift Student Challange 2025 Submission",
+    period: "2025",
+    description: "A macOS app that suggests a track from your mood and your surroundings, using a text classification model trained in Create ML. My Swift Student Challenge 2025 submission.",
     link: "https://github.com/egemengunel/Moodful-Music",
     icon: "/icons/moodful-music-icon.png",
     techStack: [
@@ -203,7 +155,8 @@ export const projects: Project[] = [
   },
   {
     title: "AdoptMe",
-    description: "A responsive web application built with PHP that simplifies the pet adoption process, featuring user authentication and favorites system.",
+    period: "2024",
+    description: "A pet adoption site in PHP and MySQL, with authentication, filtered search, and saved favourites. My first full project with a database behind it.",
     link: "https://github.com/egemengunel/AdoptMe-Website",
     icon: "/icons/adoptme-website-icon.jpg",
     techStack: [

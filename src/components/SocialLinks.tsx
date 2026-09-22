@@ -24,9 +24,9 @@ const socialLinks = [
   }
 ];
 
-export function SocialLinks() {
+export function SocialLinks({ className = '' }: { className?: string }) {
   return (
-    <div className="flex items-center space-x-4">
+    <div className={`flex items-center gap-4 ${className}`.trim()}>
       {socialLinks.map((link) => (
         <SocialLink key={link.label} {...link} />
       ))}

@@ -39,9 +39,16 @@ export const DetailModal = memo(function DetailModal({ project, isOpen, onClose 
           
           {/* Header - Frosted glass bar */}
           <div className="sticky top-0 z-10 px-5 py-4 md:px-8 md:py-5 border-b border-gray-200/60 flex-shrink-0 bg-white/70 backdrop-blur-2xl md:rounded-t-2xl">
-            <div className="flex items-center justify-between">
-              <h2 className="text-lg md:text-xl font-semibold text-gray-900">{project.title}</h2>
-              <div className="flex items-center gap-2.5">
+            <div className="flex items-center justify-between gap-3">
+              <div className="min-w-0">
+                <h2 className="text-lg md:text-xl font-semibold text-gray-900">{project.title}</h2>
+                {(project.role || project.period) && (
+                  <p className="mt-0.5 text-xs md:text-sm text-gray-400 truncate">
+                    {[project.role, project.period].filter(Boolean).join(' · ')}
+                  </p>
+                )}
+              </div>
+              <div className="flex items-center gap-2.5 flex-shrink-0">
                 {project.link !== '#' && (
                   <a
                     href={project.link}

@@ -1,35 +1,27 @@
-import { lazy, Suspense, memo } from 'react';
-import { Header } from './components/Header';
+import { lazy } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { ErrorBoundary } from './components/ErrorBoundary';
+import RootLayout from './layouts/RootLayout';
+import Home from './pages/Home';
 
-// Group lazy loaded components
-const LazyComponents = {
-  WorkExperience: lazy(() => import('./components/WorkExperience').then(m => ({ default: m.WorkExperience }))),
-  Projects: lazy(() => import('./components/Projects').then(m => ({ default: m.Projects }))),
-  Footer: lazy(() => import('./components/Footer'))
-};
-
-// Memoize static components
-const MemoizedHeader = memo(Header);
+const CaseStudiesIndex = lazy(() => import('./pages/CaseStudiesIndex'));
+const CaseStudyDetail = lazy(() => import('./pages/CaseStudyDetail'));
+const NotFound = lazy(() => import('./pages/NotFound'));
+const LayoutLab = lazy(() => import('./pages/LayoutLab'));
 
 function App() {
   return (
     <ErrorBoundary>
-  
-        <div className="min-h-screen bg-gray-50 text-gray-900">
-            <div className="max-w-5xl mx-auto px-4 py-16">
-            <MemoizedHeader />
-            <Suspense fallback={<div className="animate-pulse h-16 bg-gray-200 rounded" />}>
-              <LazyComponents.WorkExperience />
-              <LazyComponents.Projects />
-              <LazyComponents.Footer />
-            </Suspense>
-            <div className="fixed bottom-6 right-6">
-              
-            </div>
-          </div>
-        </div>
- 
+      <Routes>
+        <Route element={<RootLayout />}>
+          <Route index element={<Home />} />
+          <Route path="case-studies" element={<CaseStudiesIndex />} />
+          <Route path="case-studies/:slug" element={<CaseStudyDetail />} />
+          {/* Throwaway layout comparison — not linked from the nav. */}
+          <Route path="lab" element={<LayoutLab />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
     </ErrorBoundary>
   );
 }
