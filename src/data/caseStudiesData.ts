@@ -244,7 +244,7 @@ export const caseStudies: CaseStudy[] = [
         body: [
           "Lucid\u2019s rule was that the color is mine and the structure is Apple\u2019s. Antenna is the reverse, and that is deliberate.",
           "The palette is Apple\u2019s semantics, and the catalog holds two brand values: a green for surfaces and a deeper green for text on light. Everything on the content layer is glass, so it takes its color from whatever sits behind it rather than carrying any of its own. I wanted to subtract color from the elements themselves, which is the thing Lucid does most of.",
-          "What sits behind it is a sky. It tracks the local clock and the season, so the app is lighter at midday than at dusk, and it stops whenever the system says to spend nothing: Reduce Motion, Low Power Mode, a scene that is not in front. It is ported from SwiftUI Sky, an MIT-licensed project, rather than written from scratch.",
+          "What sits behind it is a sky. It tracks the local clock and the season, so the app is lighter at midday than at dusk, and it stops whenever the system says to spend nothing: Reduce Motion, Low Power Mode, a scene that is not in front. It is ported from SwiftUI Sky, an MIT-licensed project, rather than written from scratch. The port is close to the original. What I changed is the timing: I moved the daylight and twilight boundaries and gave each appearance half the daylight arc rather than pinning it to a fixed hour, and those same boundaries drive the app\u2019s light and dark appearance, not just the colour of the sky behind it.",
           "It is also not in the design system file at all, which is a gap I know about and have not closed.",
         ],
         media: [
@@ -858,7 +858,8 @@ export const caseStudies: CaseStudy[] = [
           "The trend chart formats its x-axis as a weekday abbreviation. Take five recordings on the same Friday and you get five labels reading Fri. It also smooths between points, which I still think is right, because exact values would make it look more precise than it is. The labels are just wrong.",
           "The result explanation is assembled from three strings that were each written to stand alone, so it says \"indicates excellent score\" and then immediately \"indicates excellent respiratory health\", and it says \"continue monitoring your score over time\" twice in the same block.",
           "The Continue button on all three guide screens says Continiue. It has said that the whole time.",
-          "Bigger than any of those, the app reduces everything the model produced down to a single number. I would rather show more of what it actually captured, and that needs more interface than a gauge. The guide screens also lean on SF Symbols where small custom animations of someone sitting upright, finding a quiet room and coughing would do the job much better.",
+          "Bigger than the copy, the app reduces everything the model produced down to a single number. I would rather show more of what it actually captured, and that needs more interface than a gauge. The guide screens also lean on SF Symbols where small custom animations of someone sitting upright, finding a quiet room and coughing would do the job much better.",
+          "The type is the worst of it. I picked a custom font for the character it gave the score screen and took fixed point sizes with it, so none of the app answers Dynamic Type. Anyone who has turned text size up on their phone gets the size I chose instead, in an app that is asking them about their lungs. Lucid and Antenna are both built on the platform\u2019s text styles, which is the fix. This is the one I would go back and change first.",
         ],
         media: [
           {
