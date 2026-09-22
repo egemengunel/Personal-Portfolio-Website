@@ -5,7 +5,7 @@ import type { Project } from '../types/project';
 export const workExperience: Project[] = [
     {
         title: "Lucid",
-        role: "Co-Founder, Lead iOS Engineer",
+        role: "Design & iOS Engineer, 2-person project",
         period: "Jan 2026 to present",
         description: "A study app that turns uploaded notes, slides and PDFs into flashcards, quizzes, and answers from a chat assistant. I designed it and led the iOS build; the backend is my co-founder's. Swift 6, MVVM on @Observable, a typed NetworkClient, and Supabase auth.",
         link: "https://apps.apple.com/us/app/lucid-ai-flashcards-quiz/id6766661083",
@@ -61,8 +61,8 @@ export const workExperience: Project[] = [
     },
     {
         title: "HomeSketch",
-        role: "Independent iOS Engineer",
-        period: "Jan 2026 to Mar 2026",
+        role: "Independent Design & iOS Engineer",
+        period: "Dec 2025 to present",
         description: "Photograph a room and get photorealistic redesigns back, shaped by the style and colour you pick. Replicate runs the model behind Supabase Edge Functions that keep the API key server-side, and RevenueCat gates the Pro styles. Design and build both mine.",
         link: "https://gethomesketch.app",
         linkText: "View on App Store",
@@ -114,8 +114,8 @@ export const workExperience: Project[] = [
     },
     {
         title: "Cosmo Papers",
-        role: "Independent iOS Engineer",
-        period: "Oct 2025 to Jul 2026",
+        role: "Independent Design & iOS Engineer",
+        period: "Nov 2024 to Jul 2026",
         description: "A space-wallpapers app built on NASA's Astronomy Picture of the Day, rebuilt for v2.0 around the full 1995 to present archive, on-device natural-language search, Home Screen widgets, and a Cosmo Plus subscription. SwiftUI and MVVM with a coordinator, Core Data, and iOS 26 Liquid Glass throughout.",
         link: "https://cosmopapers.app",
         linkText: "View on App Store",
