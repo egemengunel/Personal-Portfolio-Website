@@ -1,7 +1,15 @@
+# Everything that is not a fingerprinted asset must revalidate. This has to
+# be written as /*, not /index.html: people request "/" and
+# "/case-studies/lucid", never "/index.html", so a rule written against
+# /index.html never matches the document anyone actually loads, and the
+# shell gets cached by default policy. A returning visitor then holds an
+# old shell pointing at asset hashes the new deploy no longer has, every
+# one of those 404s falls through to /index.html per _redirects, and the
+# browser refuses it with "'text/html' is not a valid JavaScript MIME type".
+/*
+  Cache-Control: public, max-age=0, must-revalidate
+
 # Vite fingerprints everything under /assets, so it can be cached forever.
+# Listed after /* so it wins for asset paths.
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
-
-# The shell must not be cached, or a deploy will not reach people who have visited before.
-/index.html
-  Cache-Control: public, max-age=0, must-revalidate
