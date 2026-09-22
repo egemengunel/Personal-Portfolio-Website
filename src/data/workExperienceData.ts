@@ -115,7 +115,7 @@ export const workExperience: Project[] = [
     {
         title: "Cosmo Papers",
         role: "Independent Design & iOS Engineer",
-        period: "Nov 2024 to Jul 2026",
+        period: "Mar 2025 to Jul 2026",
         description: "A space-wallpapers app built on NASA's Astronomy Picture of the Day, rebuilt for v2.0 around the full 1995 to present archive, on-device natural-language search, Home Screen widgets, and a Cosmo Plus subscription. SwiftUI and MVVM with a coordinator, Core Data, and iOS 26 Liquid Glass throughout.",
         link: "https://cosmopapers.app",
         linkText: "View on App Store",

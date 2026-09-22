@@ -582,7 +582,7 @@ export const caseStudies: CaseStudy[] = [
     title: 'Cosmo Papers',
     tagline: "My first shipped app, rebuilt after the API it depended on stopped being reliable.",
     role: 'Design & iOS engineering',
-    timeframe: 'Nov 2024 to Jul 2026',
+    timeframe: 'Mar 2025 to Jul 2026',
     status: 'published',
     icon: '/icons/cosmo-papers-icon.png',
     cover: '/projects/cosmo-papers/cosmo1.webp',
